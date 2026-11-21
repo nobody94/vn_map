@@ -19,6 +19,7 @@ import { PROVINCE_DETAILS } from '../src/data/provinceDetails.ts'
 import { MOUNTAINS } from '../src/data/mountains.ts'
 import { RIVERS } from '../src/data/rivers.ts'
 import type { MediaRef } from '../src/types/province.ts'
+import { fallbackKey } from '../src/data/mediaKey.ts'
 
 const OUT = fileURLToPath(new URL('../src/data/media.generated.json', import.meta.url))
 const UA = 'vn-map-media-script/0.1 (educational map project)'
@@ -30,11 +31,17 @@ const GOOD_EXT = /\.(jpe?g|png|webp)$/i
 
 type Article = { url: string; image: string | null; imageChecked?: boolean }
 type ImageInfo = { src: string; page: string; artist: string; license: string }
-type MediaFile = { articles: Record<string, Article>; searches: Record<string, string | null>; images: Record<string, ImageInfo> }
+type MediaFile = {
+  articles: Record<string, Article>
+  searches: Record<string, string | null>
+  images: Record<string, ImageInfo>
+  /** Ảnh dự phòng từ Openverse, theo tên mục → khóa ảnh "ov:<id>" */
+  fallback: Record<string, string | null>
+}
 
 const FULL = process.argv.includes('--full')
 const prev: MediaFile =
-  !FULL && existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : { articles: {}, searches: {}, images: {} }
+  !FULL && existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : { articles: {}, searches: {}, images: {}, fallback: {} }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
@@ -170,9 +177,99 @@ for (const f of fileList) {
   else console.warn(`  ✗ Không lấy được thông tin ảnh: ${f}`)
 }
 
-writeFileSync(OUT, JSON.stringify({ articles, searches: searchResults, images }, null, 2) + '\n')
-const noImage = refs.filter((r) => {
+// ─── 5. Dự phòng: mục vẫn chưa có ảnh → tìm trên Openverse (ảnh CC từ Flickr, Commons…) ───
+const hasWikiImage = (r: MediaRef) => {
   const f = r.imageFile ?? (r.wiki ? articles[r.wiki]?.image : null) ?? (r.imageSearch ? searchResults[r.imageSearch] : null)
-  return !f || !images[f]
+  return !!f && !!(images[f] ?? images[f.replace(/ /g, '_')] ?? images[f.replace(/_/g, ' ')])
+}
+const fallback: Record<string, string | null> = {}
+const fallbackRefs = refs.filter((r) => !hasWikiImage(r) && fallbackKey(r))
+const fallbackKeys = [...new Set(fallbackRefs.map((r) => fallbackKey(r)!))]
+const fallbackQueries = new Map<string, string[]>()
+for (const r of fallbackRefs) {
+  const k = fallbackKey(r)!
+  const qs = fallbackQueries.get(k) ?? [k, unaccent(k)]
+  if (r.imageSearch && !qs.includes(r.imageSearch)) qs.unshift(r.imageSearch)
+  fallbackQueries.set(k, qs)
+}
+
+function unaccent(s: string): string {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D')
+}
+const words = (s: string) => unaccent(s).toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length >= 2)
+
+/** Ảnh có tiêu đề chứa phần lớn từ khóa (bỏ dấu) mới được nhận — tránh ảnh lạc đề */
+function relevant(title: string, query: string): boolean {
+  const t = new Set(words(title))
+  const q = words(query)
+  if (!q.length) return false
+  return q.filter((w) => t.has(w)).length >= Math.ceil(q.length * 0.75)
+}
+
+const LICENSE_NAME = (l: string, v: string) => (l === 'cc0' ? 'CC0' : l === 'pdm' ? 'Public domain' : `CC ${l.toUpperCase()} ${v}`.trim())
+
+async function openverse(q: string): Promise<any[] | null> {
+  const url = new URL('https://api.openverse.org/v1/images/')
+  url.searchParams.set('q', q)
+  url.searchParams.set('page_size', '20')
+  url.searchParams.set('mature', 'false')
+  for (let attempt = 0; attempt < 3; attempt++) {
+    await sleep(3500)
+    const res = await fetch(url, { headers: { 'User-Agent': UA } })
+    if (res.ok) return (await res.json()).results ?? []
+    console.warn(`  ! Openverse ${res.status} — thử lại sau ${(attempt + 1) * 30}s`)
+    await sleep(30_000 * (attempt + 1))
+  }
+  return null
+}
+
+const newFallback = fallbackKeys.filter((k) => {
+  const old = prev.fallback?.[k]
+  if (old !== undefined && (old === null || prev.images[old])) {
+    fallback[k] = old
+    if (old) images[old] = prev.images[old]
+    return false
+  }
+  return true
+})
+console.log(`Tìm ảnh dự phòng Openverse: ${fallbackKeys.length} (mới: ${newFallback.length})`)
+for (const k of newFallback) {
+  let found: any = null
+  let failed = false
+  for (const q of fallbackQueries.get(k)!) {
+    const results = await openverse(q)
+    if (results == null) {
+      failed = true
+      break
+    }
+    found = results.find((x) => /^(jpe?g|png|webp)?$/i.test(x.filetype ?? '') && relevant(x.title ?? '', q) && !BAD_FILE.test(x.title ?? ''))
+    if (found) break
+  }
+  if (failed) {
+    // Hết lượt gọi (giới hạn ẩn danh) — lưu phần đã có, lần chạy sau tiếp tục
+    console.warn('  ! Openverse từ chối liên tục, dừng; chạy lại sau để tra tiếp')
+    break
+  }
+  if (found) {
+    const key = `ov:${found.id}`
+    fallback[k] = key
+    images[key] = {
+      src: found.thumbnail ?? found.url,
+      page: found.foreign_landing_url ?? found.url,
+      artist: stripHtml(found.creator) || 'Không rõ',
+      license: LICENSE_NAME(found.license ?? '', found.license_version ?? ''),
+    }
+    console.log(`  ✓ ${k} → "${found.title}" (${found.source})`)
+  } else {
+    fallback[k] = null
+    console.log(`  ✗ ${k}`)
+  }
+}
+
+writeFileSync(OUT, JSON.stringify({ articles, searches: searchResults, images, fallback }, null, 2) + '\n')
+const noImage = refs.filter((r) => {
+  if (hasWikiImage(r)) return false
+  const k = fallbackKey(r)
+  return !(k && fallback[k])
 }).length
 console.log(`\nĐã ghi ${OUT}\n${Object.keys(images).length} ảnh · ${noImage}/${refs.length} mục chưa có ảnh`)

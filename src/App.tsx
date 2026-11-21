@@ -64,10 +64,6 @@ function App() {
 
       <RegionLegend
         colorByRegion={colorByRegion}
-        onToggle={(on) => {
-          setColorByRegion(on)
-          setHighlightRegion(null)
-        }}
         onHighlight={setHighlightRegion}
         hiddenOnMobile={panelOpen}
       />
