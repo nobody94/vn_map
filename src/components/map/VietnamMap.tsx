@@ -1,10 +1,13 @@
-import { MapContainer } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import type { LatLngBoundsExpression } from 'leaflet'
 import { useGeoData } from '../../hooks/useGeoData'
 import type { ProvinceCollection } from '../../types/province'
 import type { RegionId } from '../../data/regions'
 import { ProvinceLayer } from './ProvinceLayer'
 import { IslandsLayer } from './IslandsLayer'
+import { MountainLayer } from './MountainLayer'
+import { RiverLayer } from './RiverLayer'
+import type { MapLayers } from '../controls/LayerSwitcher'
 import styles from './VietnamMap.module.css'
 
 interface Props {
@@ -12,7 +15,16 @@ interface Props {
   onSelect: (code: number | null) => void
   colorByRegion: boolean
   highlightRegion: RegionId | null
+  layers: MapLayers
+  selectedMountainId: string | null
+  onSelectMountain: (id: string) => void
+  selectedRiverId: string | null
+  onSelectRiver: (id: string) => void
 }
+
+/** Nền đổ bóng địa hình không có nhãn chữ (tránh nhãn tên địa danh nước ngoài) */
+const RELIEF_URL = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}'
+const RELIEF_ATTRIBUTION = 'Địa hình: &copy; <a href="https://www.esri.com" target="_blank" rel="noreferrer">Esri</a>'
 
 /** Khung nhìn ban đầu: toàn bộ đất liền + Hoàng Sa, Trường Sa */
 const INITIAL_BOUNDS: LatLngBoundsExpression = [
@@ -24,7 +36,17 @@ const MAX_BOUNDS: LatLngBoundsExpression = [
   [33.0, 128.0],
 ]
 
-export function VietnamMap({ selectedCode, onSelect, colorByRegion, highlightRegion }: Props) {
+export function VietnamMap({
+  selectedCode,
+  onSelect,
+  colorByRegion,
+  highlightRegion,
+  layers,
+  selectedMountainId,
+  onSelectMountain,
+  selectedRiverId,
+  onSelectRiver,
+}: Props) {
   const geo = useGeoData<ProvinceCollection>('geo/provinces.geojson')
 
   return (
@@ -39,6 +61,7 @@ export function VietnamMap({ selectedCode, onSelect, colorByRegion, highlightReg
         zoomControl={false}
         attributionControl
       >
+        {layers.terrain && <TileLayer url={RELIEF_URL} attribution={RELIEF_ATTRIBUTION} maxNativeZoom={13} className={styles.relief} />}
         {geo.status === 'ready' && (
           <ProvinceLayer
             data={geo.data}
@@ -46,9 +69,12 @@ export function VietnamMap({ selectedCode, onSelect, colorByRegion, highlightReg
             onSelect={onSelect}
             colorByRegion={colorByRegion}
             highlightRegion={highlightRegion}
+            terrain={layers.terrain}
           />
         )}
+        {layers.rivers && <RiverLayer selectedId={selectedRiverId} onSelect={onSelectRiver} />}
         <IslandsLayer onSelect={onSelect} />
+        {layers.peaks && <MountainLayer selectedId={selectedMountainId} onSelect={onSelectMountain} />}
       </MapContainer>
 
       {geo.status === 'loading' && <div className={styles.status}>Đang tải bản đồ…</div>}

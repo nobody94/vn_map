@@ -1,0 +1,75 @@
+.kind {
+  color: #0b4f8a;
+}
+
+/* Nguồn → cửa sông, nối bằng đường dọc */
+.flow {
+  position: relative;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.flow::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 1px;
+  background: linear-gradient(#93c5fd, #2b7bb9);
+}
+
+.flow > div {
+  position: relative;
+}
+
+.flow > div + div {
+  margin-top: 12px;
+}
+
+.flow > div::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #2b7bb9;
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.flow dt {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.flow dd {
+  margin: 1px 0 0;
+  color: var(--text-strong);
+}
+
+.provinces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.province {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.province:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}

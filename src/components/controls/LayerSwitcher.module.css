@@ -1,0 +1,70 @@
+.switcher {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm);
+  transition: right 0.22s ease-out;
+}
+
+/* Desktop: khi panel mở, dời sang trái cạnh panel */
+.shifted {
+  right: calc(var(--panel-width) + 28px);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 12px 0 8px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn:hover {
+  background: var(--hover);
+  color: var(--text-strong);
+}
+
+.on {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.on:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Điện thoại: chỉ hiện biểu tượng; panel nằm dưới nên không cần dời */
+@media (max-width: 768px) {
+  .shifted {
+    right: 16px;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+  }
+
+  .label {
+    display: none;
+  }
+}

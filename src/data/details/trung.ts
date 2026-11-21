@@ -22,7 +22,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       heritage: [
         { name: 'Thành nhà Hồ', description: 'Di sản thế giới UNESCO (2011), thành đá độc đáo thế kỷ XIV.', wiki: 'Thành nhà Hồ' },
         { name: 'Khu di tích Lam Kinh', description: 'Kinh đô thứ hai thời Hậu Lê, nơi an táng vua Lê Lợi.', wiki: 'Lam Kinh' },
-        { name: 'Bãi biển Sầm Sơn', description: 'Khu nghỉ mát biển nổi tiếng từ đầu thế kỷ XX.', wiki: 'Bãi biển Sầm Sơn' },
+        { name: 'Bãi biển Sầm Sơn', description: 'Khu nghỉ mát biển nổi tiếng từ đầu thế kỷ XX.', imageSearch: 'Sam Son beach' },
         { name: 'Vườn quốc gia Bến En', description: 'Hồ sông Mực và rừng nguyên sinh nhiều loài quý.', wiki: 'Vườn quốc gia Bến En' },
       ],
     },
@@ -43,7 +43,6 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ hội Pôồn Pôông',
         time: 'Tháng Giêng âm lịch',
         description: 'Lễ hội dân gian của người Mường với các trò diễn, hát múa cầu mùa.',
-        imageSearch: 'Muong people Thanh Hoa',
       },
     ],
     foods: [
@@ -52,7 +51,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Chè lam Phủ Quảng', description: 'Bánh làm từ bột nếp, mật mía, gừng, lạc.', wiki: 'Chè lam' },
     ],
     specialties: [
-      { name: 'Chiếu cói Nga Sơn', description: 'Chiếu dệt từ cói ven biển, bền và mát.', imageSearch: 'chiếu Nga Sơn' },
+      { name: 'Chiếu cói Nga Sơn', description: 'Chiếu dệt từ cói ven biển, bền và mát.' },
       { name: 'Mắm tép Hà Yên', description: 'Mắm tép đồng truyền thống, đậm vị.', imageSearch: 'mắm tép' },
       { name: 'Quế Ngọc Thường Xuân', description: 'Quế quý, tinh dầu cao, xưa dùng tiến vua.', wiki: 'Quế' },
     ],
@@ -75,7 +74,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       heritage: [
         { name: 'Khu di tích Kim Liên', description: 'Làng Sen, làng Hoàng Trù – quê nội, quê ngoại của Bác Hồ.', wiki: 'Khu di tích Kim Liên' },
         { name: 'Vườn quốc gia Pù Mát', description: 'Thuộc Khu dự trữ sinh quyển miền Tây Nghệ An.', wiki: 'Vườn quốc gia Pù Mát' },
-        { name: 'Bãi biển Cửa Lò', description: 'Bãi biển cát trắng, nước trong xanh.', wiki: 'Cửa Lò' },
+        { name: 'Bãi biển Cửa Lò', description: 'Bãi biển cát trắng, nước trong xanh.', imageSearch: 'Cua Lo beach' },
         { name: 'Đền Cuông', description: 'Thờ An Dương Vương, gắn với truyền thuyết nỏ thần.', wiki: 'Đền Cuông' },
       ],
     },
@@ -100,14 +99,14 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Cháo lươn Vinh', description: 'Cháo nấu với lươn xào nghệ, ăn kèm bánh mướt.', imageSearch: 'cháo lươn' },
-      { name: 'Nhút Thanh Chương', description: 'Mít non muối chua, món dân dã xứ Nghệ.', imageSearch: 'nhút Thanh Chương' },
+      { name: 'Cháo lươn Vinh', description: 'Cháo nấu với lươn xào nghệ, ăn kèm bánh mướt.' },
+      { name: 'Nhút Thanh Chương', description: 'Mít non muối chua, món dân dã xứ Nghệ.' },
       { name: 'Bánh mướt Diễn Châu', description: 'Bánh tráng mỏng mịn, ăn với chả, nước mắm.', imageSearch: 'bánh mướt' },
     ],
     specialties: [
       { name: 'Cam Vinh', description: 'Cam xã Đoài vỏ mỏng, ngọt thơm.', imageSearch: 'Cam Vinh' },
-      { name: 'Tương Nam Đàn', description: 'Tương ngô, đậu nành ủ chum truyền thống.', imageSearch: 'tương Nam Đàn' },
-      { name: 'Chè xanh xứ Nghệ', description: 'Nước chè xanh đặc, uống trong bát.', imageSearch: 'Vietnamese green tea' },
+      { name: 'Tương Nam Đàn', description: 'Tương ngô, đậu nành ủ chum truyền thống.' },
+      { name: 'Chè xanh xứ Nghệ', description: 'Nước chè xanh đặc, uống trong bát.' },
     ],
   },
 
@@ -128,7 +127,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       heritage: [
         { name: 'Ngã ba Đồng Lộc', description: 'Nơi hy sinh của 10 cô gái thanh niên xung phong năm 1968.', wiki: 'Ngã ba Đồng Lộc' },
         { name: 'Khu lưu niệm Nguyễn Du', description: 'Quê hương tác giả Truyện Kiều ở Tiên Điền.', wiki: 'Nguyễn Du' },
-        { name: 'Chùa Hương Tích', description: '"Hoan Châu đệ nhất danh lam" trên núi Hồng Lĩnh.', wiki: 'Chùa Hương Tích (Hà Tĩnh)' },
+        { name: 'Chùa Hương Tích', description: '"Hoan Châu đệ nhất danh lam" trên núi Hồng Lĩnh.', wiki: 'Chùa Hương Tích' },
         { name: 'Biển Thiên Cầm', description: 'Bãi biển gắn với truyền thuyết vua Thục chơi đàn.', wiki: 'Thiên Cầm' },
       ],
     },
@@ -137,7 +136,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ hội chùa Hương Tích',
         time: 'Mùa xuân, tháng Giêng – tháng Ba âm lịch',
         description: 'Hành hương lên ngôi chùa cổ trên dãy Hồng Lĩnh.',
-        wiki: 'Chùa Hương Tích (Hà Tĩnh)',
+        wiki: 'Chùa Hương Tích',
       },
       {
         name: 'Lễ giỗ Đại thi hào Nguyễn Du',
@@ -153,9 +152,9 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Ram bánh mướt', description: 'Ram chiên giòn cuốn cùng bánh mướt và rau sống.', imageSearch: 'ram Hà Tĩnh' },
+      { name: 'Ram bánh mướt', description: 'Ram chiên giòn cuốn cùng bánh mướt và rau sống.' },
       { name: 'Mực nhảy Vũng Áng', description: 'Mực câu tươi rói, làm hấp, nướng.', imageSearch: 'fresh squid Vietnam' },
-      { name: 'Bánh đa vừng', description: 'Bánh đa nướng giòn rắc vừng đen.', imageSearch: 'bánh đa vừng' },
+      { name: 'Bánh đa vừng', description: 'Bánh đa nướng giòn rắc vừng đen.' },
     ],
     specialties: [
       { name: 'Kẹo cu đơ', description: 'Kẹo lạc mật mía gừng kẹp bánh đa.', wiki: 'Kẹo cu đơ' },
@@ -184,9 +183,9 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
           description: 'Di sản thiên nhiên thế giới UNESCO.',
           wiki: 'Vườn quốc gia Phong Nha – Kẻ Bàng',
         },
-        { name: 'Hang Sơn Đoòng', description: 'Hang động tự nhiên lớn nhất thế giới.', wiki: 'Hang Sơn Đoòng' },
+        { name: 'Hang Sơn Đoòng', description: 'Hang động tự nhiên lớn nhất thế giới.', imageSearch: 'Son Doong cave' },
         { name: 'Thành cổ Quảng Trị', description: 'Chứng tích 81 ngày đêm khốc liệt năm 1972.', wiki: 'Thành cổ Quảng Trị' },
-        { name: 'Cầu Hiền Lương', description: 'Cây cầu trên sông Bến Hải, biểu tượng khát vọng thống nhất.', wiki: 'Cầu Hiền Lương' },
+        { name: 'Cầu Hiền Lương', description: 'Cây cầu trên sông Bến Hải, biểu tượng khát vọng thống nhất.', imageSearch: 'Hien Luong bridge' },
       ],
     },
     festivals: [
@@ -194,13 +193,12 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ hội Thống nhất non sông',
         time: 'Dịp 30/4 dương lịch',
         description: 'Tổ chức tại đôi bờ Hiền Lương – Bến Hải.',
-        wiki: 'Cầu Hiền Lương',
+        imageSearch: 'Hien Luong bridge',
       },
       {
         name: 'Lễ hội đua thuyền sông Kiến Giang',
         time: 'Dịp 2/9 dương lịch',
         description: 'Đua thuyền truyền thống sôi nổi của Lệ Thủy, Quảng Bình.',
-        imageSearch: 'boat race Vietnam',
       },
       {
         name: 'Lễ hội cầu ngư',
@@ -210,8 +208,8 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Cháo canh Quảng Bình', description: 'Bánh canh sợi bột gạo nấu với cá lóc hoặc thịt.', imageSearch: 'cháo canh' },
-      { name: 'Bánh bột lọc', description: 'Bánh trong suốt nhân tôm thịt, gói lá chuối.', wiki: 'Bánh bột lọc' },
+      { name: 'Cháo canh Quảng Bình', description: 'Bánh canh sợi bột gạo nấu với cá lóc hoặc thịt.' },
+      { name: 'Bánh bột lọc', description: 'Bánh trong suốt nhân tôm thịt, gói lá chuối.', imageSearch: 'bánh bột lọc Huế' },
       { name: 'Bánh ướt thịt nướng', description: 'Bánh ướt cuốn thịt heo nướng, rau sống.', imageSearch: 'bánh ướt thịt nướng' },
     ],
     specialties: [
@@ -263,7 +261,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ tế Nam Giao',
         time: 'Tái hiện trong dịp Festival Huế',
         description: 'Nghi lễ tế trời đất quan trọng nhất của triều Nguyễn.',
-        wiki: 'Đàn Nam Giao (Huế)',
+        wiki: 'Đàn Nam Giao',
       },
     ],
     foods: [
@@ -274,7 +272,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
     ],
     specialties: [
       { name: 'Mè xửng', description: 'Kẹo mạch nha dẻo phủ mè.', wiki: 'Mè xửng' },
-      { name: 'Nón bài thơ', description: 'Nón lá mỏng kẹp thơ, cảnh xứ Huế.', wiki: 'Nón lá' },
+      { name: 'Nón bài thơ', description: 'Nón lá mỏng kẹp thơ, cảnh xứ Huế.' },
       { name: 'Tôm chua', description: 'Tôm lên men với riềng, tỏi, ớt, măng đu đủ.', imageSearch: 'tôm chua Huế' },
     ],
   },
@@ -305,7 +303,6 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ Khao lề thế lính Hoàng Sa',
         time: 'Tháng Hai – tháng Ba âm lịch',
         description: 'Tưởng nhớ những người lính Hoàng Sa đi giữ biển đảo thời Nguyễn.',
-        imageSearch: 'Khao lề thế lính Hoàng Sa',
       },
       {
         name: 'Lễ mừng lúa mới',
@@ -321,13 +318,13 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Cá bống sông Trà', description: 'Cá bống nhỏ kho tiêu, đặc sản Quảng Ngãi.', imageSearch: 'cá bống kho' },
-      { name: 'Don Quảng Ngãi', description: 'Món canh từ loài nhuyễn thể nhỏ sống ở sông Trà Khúc.', imageSearch: 'don Quảng Ngãi' },
+      { name: 'Cá bống sông Trà', description: 'Cá bống nhỏ kho tiêu, đặc sản Quảng Ngãi.' },
+      { name: 'Don Quảng Ngãi', description: 'Món canh từ loài nhuyễn thể nhỏ sống ở sông Trà Khúc.' },
       { name: 'Gỏi lá Kon Tum', description: 'Hàng chục loại lá rừng cuốn với thịt, tôm.', imageSearch: 'gỏi lá Kon Tum' },
     ],
     specialties: [
       { name: 'Tỏi Lý Sơn', description: 'Tỏi trồng trên cát núi lửa, nhỏ, thơm, cay.', imageSearch: 'Lý Sơn garlic' },
-      { name: 'Mạch nha Thi Phổ', description: 'Mạch nha làm từ gạo nếp và mầm lúa.', wiki: 'Mạch nha' },
+      { name: 'Mạch nha Thi Phổ', description: 'Mạch nha làm từ gạo nếp và mầm lúa.' },
       { name: 'Sâm Ngọc Linh', description: 'Sâm quý của núi Ngọc Linh (Kon Tum).', wiki: 'Sâm Ngọc Linh' },
     ],
   },
@@ -350,7 +347,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         { name: 'Tháp Bà Ponagar', description: 'Quần thể tháp Chăm thờ Nữ thần Mẹ xứ sở.', wiki: 'Tháp Po Nagar' },
         { name: 'Tháp Po Klong Garai', description: 'Cụm tháp Chăm cổ trên đồi Trầu, Phan Rang.', wiki: 'Tháp Po Klong Garai' },
         { name: 'Làng gốm Bàu Trúc', description: 'Nghệ thuật làm gốm Chăm, di sản UNESCO cần bảo vệ khẩn cấp.', wiki: 'Làng gốm Bàu Trúc' },
-        { name: 'Vườn quốc gia Núi Chúa', description: 'Khu dự trữ sinh quyển với hệ sinh thái bán sa mạc.', wiki: 'Vườn quốc gia Núi Chúa' },
+        { name: 'Vườn quốc gia Núi Chúa', description: 'Khu dự trữ sinh quyển với hệ sinh thái bán sa mạc.', imageSearch: 'Nui Chua National Park' },
       ],
     },
     festivals: [
@@ -370,19 +367,18 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Festival Biển Nha Trang',
         time: 'Định kỳ, thường vào mùa hè',
         description: 'Lễ hội văn hóa – du lịch biển với nhiều hoạt động nghệ thuật.',
-        imageSearch: 'Nha Trang beach',
       },
     ],
     foods: [
       { name: 'Bún chả cá Nha Trang', description: 'Chả cá chiên, chả hấp, nước dùng ngọt thanh.', wiki: 'Bún chả cá' },
       { name: 'Nem nướng Ninh Hòa', description: 'Nem nướng cuốn bánh tráng, chấm tương đặc biệt.', wiki: 'Nem nướng' },
       { name: 'Bánh căn Phan Rang', description: 'Bánh đổ khuôn đất, chấm nước mắm cá.', wiki: 'Bánh căn' },
-      { name: 'Gỏi cá mai', description: 'Cá mai tái chanh, cuốn bánh tráng và rau.', imageSearch: 'gỏi cá mai' },
+      { name: 'Gỏi cá mai', description: 'Cá mai tái chanh, cuốn bánh tráng và rau.' },
     ],
     specialties: [
       { name: 'Yến sào Khánh Hòa', description: 'Tổ chim yến khai thác ở các đảo ven biển.', wiki: 'Yến sào' },
       { name: 'Nho Ninh Thuận', description: 'Nho trồng trên vùng đất nắng gió.', imageSearch: 'Ninh Thuận grapes' },
-      { name: 'Tỏi Phan Rang', description: 'Tỏi tép nhỏ, cay nồng.', imageSearch: 'garlic Vietnam' },
+      { name: 'Tỏi Phan Rang', description: 'Tỏi tép nhỏ, cay nồng.' },
     ],
   },
 
@@ -401,9 +397,9 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         'Bình Định là đất võ, quê hương nhà Tây Sơn, nghệ thuật Bài Chòi (UNESCO) và nhiều tháp Chăm. Gia Lai là vùng cồng chiêng, nhà rông của người Gia Rai, Ba Na.',
       ethnicGroups: ['Kinh', 'Gia Rai', 'Ba Na', 'Chăm', 'Hrê'],
       heritage: [
-        { name: 'Bảo tàng Quang Trung', description: 'Quê hương ba anh em nhà Tây Sơn.', wiki: 'Bảo tàng Quang Trung' },
+        { name: 'Bảo tàng Quang Trung', description: 'Quê hương ba anh em nhà Tây Sơn.', imageSearch: 'Quang Trung museum Tay Son' },
         { name: 'Tháp Bánh Ít', description: 'Cụm tháp Chăm trên đồi cao, kiến trúc độc đáo.', wiki: 'Tháp Bánh Ít' },
-        { name: 'Biển Hồ Pleiku', description: 'Hồ trên miệng núi lửa cổ, "đôi mắt Pleiku".', wiki: 'Biển Hồ (Gia Lai)' },
+        { name: 'Biển Hồ Pleiku', description: 'Hồ trên miệng núi lửa cổ, "đôi mắt Pleiku".', imageSearch: 'Biển Hồ Pleiku' },
         { name: 'Eo Gió – Kỳ Co', description: 'Bãi biển và vách đá đẹp ở Quy Nhơn.', imageSearch: 'Eo Gió Quy Nhơn' },
       ],
     },
@@ -412,7 +408,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ hội Đống Đa – Tây Sơn',
         time: 'Mùng 5 Tết Nguyên đán',
         description: 'Kỷ niệm chiến thắng Ngọc Hồi – Đống Đa tại quê hương Tây Sơn.',
-        wiki: 'Bảo tàng Quang Trung',
+        imageSearch: 'Quang Trung museum Tay Son',
       },
       {
         name: 'Lễ hội Cồng chiêng',
@@ -465,30 +461,27 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ hội Cà phê Buôn Ma Thuột',
         time: 'Tháng 3 dương lịch (2 năm một lần)',
         description: 'Tôn vinh hạt cà phê và văn hóa các dân tộc Tây Nguyên.',
-        imageSearch: 'Buon Ma Thuot coffee',
       },
       {
         name: 'Hội đua voi Buôn Đôn',
         time: 'Tháng 3 dương lịch',
         description: 'Những chú voi đua tài trên bãi đất ven sông Sêrêpốk.',
-        imageSearch: 'elephant Buon Don',
       },
       {
         name: 'Hội đua ngựa Gò Thì Thùng',
         time: 'Mùng 9 Tết Nguyên đán',
         description: 'Hội đua ngựa truyền thống trên đồi Gò Thì Thùng, Phú Yên.',
-        imageSearch: 'horse race Vietnam',
       },
     ],
     foods: [
-      { name: 'Bún đỏ Buôn Ma Thuột', description: 'Sợi bún đỏ, nước dùng cua, chả, trứng cút.', imageSearch: 'bún đỏ' },
+      { name: 'Bún đỏ Buôn Ma Thuột', description: 'Sợi bún đỏ, nước dùng cua, chả, trứng cút.' },
       { name: 'Cá ngừ đại dương Phú Yên', description: 'Cá ngừ đánh bắt xa bờ, làm gỏi, nướng.', wiki: 'Cá ngừ đại dương' },
       { name: 'Gà nướng – cơm lam', description: 'Gà thả đồi nướng than ăn với cơm lam ống tre.', wiki: 'Cơm lam' },
     ],
     specialties: [
       { name: 'Cà phê Buôn Ma Thuột', description: 'Cà phê Robusta nổi tiếng thế giới.', wiki: 'Cà phê Buôn Ma Thuột' },
       { name: 'Sầu riêng Đắk Lắk', description: 'Sầu riêng cơm vàng, béo ngậy.', wiki: 'Sầu riêng' },
-      { name: 'Bánh tráng Hòa Đa', description: 'Bánh tráng nướng mè đen giòn thơm của Phú Yên.', imageSearch: 'bánh tráng mè' },
+      { name: 'Bánh tráng Hòa Đa', description: 'Bánh tráng nướng mè đen giòn thơm của Phú Yên.' },
     ],
   },
 

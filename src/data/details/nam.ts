@@ -14,18 +14,17 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       'Vùng chuyển tiếp từ cao nguyên xuống đồng bằng, nổi bật núi Bà Đen giữa đồng bằng. Phía nam (Long An) là vùng trũng Đồng Tháp Mười và sông Vàm Cỏ.',
     peaks: [{ name: 'Núi Bà Đen – "Nóc nhà Nam Bộ"', heightM: 986, highest: true }],
     culture: {
-      cover: { caption: 'Núi Bà Đen', wiki: 'Núi Bà Đen' },
+      cover: { caption: 'Núi Bà Đen', imageSearch: 'Ba Den mountain' },
       summary:
         'Thánh địa của đạo Cao Đài với Tòa Thánh Tây Ninh. Long An là cửa ngõ miền Tây, mang văn hóa sông nước Đồng Tháp Mười.',
       ethnicGroups: ['Kinh', 'Khmer', 'Hoa', 'Chăm'],
       heritage: [
-        { name: 'Núi Bà Đen', description: 'Ngọn núi cao nhất Nam Bộ với quần thể chùa Bà.', wiki: 'Núi Bà Đen' },
+        { name: 'Núi Bà Đen', description: 'Ngọn núi cao nhất Nam Bộ với quần thể chùa Bà.', imageSearch: 'Ba Den mountain' },
         { name: 'Tòa Thánh Tây Ninh', description: 'Trung tâm của đạo Cao Đài, kiến trúc độc đáo.', wiki: 'Tòa Thánh Tây Ninh' },
-        { name: 'Hồ Dầu Tiếng', description: 'Một trong những hồ thủy lợi lớn nhất Việt Nam.', wiki: 'Hồ Dầu Tiếng' },
+        { name: 'Hồ Dầu Tiếng', description: 'Một trong những hồ thủy lợi lớn nhất Việt Nam.', imageSearch: 'Dau Tieng lake' },
         {
           name: 'Căn cứ Trung ương Cục miền Nam',
           description: 'Di tích quốc gia đặc biệt giữa rừng Tân Biên.',
-          wiki: 'Căn cứ Trung ương Cục miền Nam',
         },
       ],
     },
@@ -34,7 +33,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ hội Xuân núi Bà Đen',
         time: 'Tháng Giêng âm lịch',
         description: 'Hàng triệu lượt khách hành hương lên điện Bà Linh Sơn Thánh Mẫu.',
-        wiki: 'Núi Bà Đen',
+        imageSearch: 'Ba Den mountain',
       },
       {
         name: 'Hội Yến Diêu Trì Cung',
@@ -50,7 +49,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     ],
     specialties: [
       { name: 'Muối tôm Tây Ninh', description: 'Muối giã cùng tôm khô, ớt, chấm trái cây.', imageSearch: 'muối tôm Tây Ninh' },
-      { name: 'Gạo nàng thơm Chợ Đào', description: 'Loại gạo thơm nổi tiếng từng dùng tiến vua.', imageSearch: 'rice Long An' },
+      { name: 'Gạo nàng thơm Chợ Đào', description: 'Loại gạo thơm nổi tiếng từng dùng tiến vua.' },
       { name: 'Thanh long Long An', description: 'Vùng thanh long lớn ở Châu Thành.', wiki: 'Thanh long' },
     ],
   },
@@ -68,15 +67,15 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Núi Bà Rá', heightM: 723 },
     ],
     culture: {
-      cover: { caption: 'Vườn quốc gia Cát Tiên', wiki: 'Vườn quốc gia Cát Tiên' },
+      cover: { caption: 'Vườn quốc gia Cát Tiên', imageSearch: 'Cat Tien National Park' },
       summary:
         'Biên Hòa – Đồng Nai hơn 300 năm hình thành với Văn miếu Trấn Biên, văn miếu đầu tiên ở phương Nam. Bình Phước có văn hóa của người S’tiêng, M’Nông.',
       ethnicGroups: ['Kinh', 'Hoa', "S'tiêng", 'Châu Ro', 'Khmer', 'Nùng', 'Tày'],
       heritage: [
-        { name: 'Vườn quốc gia Cát Tiên', description: 'Khu dự trữ sinh quyển thế giới, rừng nhiệt đới nguyên sinh.', wiki: 'Vườn quốc gia Cát Tiên' },
+        { name: 'Vườn quốc gia Cát Tiên', description: 'Khu dự trữ sinh quyển thế giới, rừng nhiệt đới nguyên sinh.', imageSearch: 'Cat Tien National Park' },
         { name: 'Văn miếu Trấn Biên', description: 'Văn miếu đầu tiên ở xứ Đàng Trong (1715).', wiki: 'Văn miếu Trấn Biên' },
         { name: 'Hồ Trị An', description: 'Hồ thủy điện rộng với nhiều đảo nhỏ.', wiki: 'Hồ Trị An' },
-        { name: 'Núi Bà Rá', description: 'Ngọn núi linh thiêng của vùng Phước Long.', wiki: 'Núi Bà Rá' },
+        { name: 'Núi Bà Rá', description: 'Ngọn núi linh thiêng của vùng Phước Long.', imageSearch: 'Bà Rá mountain' },
       ],
     },
     festivals: [
@@ -84,7 +83,6 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
         name: 'Lễ hội chùa Ông Biên Hòa',
         time: 'Rằm tháng Giêng âm lịch',
         description: 'Lễ hội tại Thất Phủ cổ miếu của cộng đồng người Hoa.',
-        imageSearch: 'Thất Phủ cổ miếu',
       },
       {
         name: "Lễ mừng lúa mới của người S'tiêng",
@@ -114,7 +112,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       'Đồng bằng phù sa nằm giữa sông Tiền và sông Hậu, nhiều cù lao, cồn bãi. Bến Tre là xứ dừa với bốn dải cù lao; Trà Vinh có bờ biển dài.',
     peaks: [],
     culture: {
-      cover: { caption: 'Xứ dừa Bến Tre', imageSearch: 'Ben Tre coconut' },
+      cover: { caption: 'Xứ dừa Bến Tre', wiki: 'Dừa' },
       summary:
         'Miệt vườn sông nước với đờn ca tài tử Nam Bộ (UNESCO, 2013). Trà Vinh có cộng đồng Khmer đông đảo với hàng trăm ngôi chùa và lễ hội Ok Om Bok.',
       ethnicGroups: ['Kinh', 'Khmer', 'Hoa'],
@@ -122,7 +120,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
         { name: 'Ao Bà Om', description: 'Thắng cảnh ao vuông cổ thụ rễ lồi của Trà Vinh.', wiki: 'Ao Bà Om' },
         { name: 'Chùa Âng', description: 'Ngôi chùa Khmer cổ kính bậc nhất Nam Bộ.', wiki: 'Chùa Âng' },
         { name: 'Văn Thánh miếu Vĩnh Long', description: 'Văn miếu thờ Khổng Tử và các danh nho Nam Bộ.', wiki: 'Văn Thánh miếu Vĩnh Long' },
-        { name: 'Cù lao An Bình', description: 'Cù lao miệt vườn cây trái giữa sông Tiền.', wiki: 'Cù lao An Bình' },
+        { name: 'Cù lao An Bình', description: 'Cù lao miệt vườn cây trái giữa sông Tiền.' },
       ],
     },
     festivals: [
@@ -148,12 +146,12 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Bún nước lèo Trà Vinh', description: 'Bún nấu mắm bò hóc, cá lóc, ăn với rau sống.', wiki: 'Bún nước lèo' },
       { name: 'Cá tai tượng chiên xù', description: 'Cá chiên giòn dựng đứng, cuốn bánh tráng.', imageSearch: 'cá tai tượng chiên xù' },
-      { name: 'Bánh tráng Mỹ Lồng', description: 'Bánh tráng nước dừa nướng giòn.', imageSearch: 'bánh tráng Mỹ Lồng' },
+      { name: 'Bánh tráng Mỹ Lồng', description: 'Bánh tráng nước dừa nướng giòn.' },
     ],
     specialties: [
-      { name: 'Kẹo dừa Bến Tre', description: 'Kẹo làm từ nước cốt dừa và mạch nha.', wiki: 'Kẹo dừa' },
+      { name: 'Kẹo dừa Bến Tre', description: 'Kẹo làm từ nước cốt dừa và mạch nha.', imageSearch: 'kẹo dừa Bến Tre' },
       { name: 'Bưởi Năm Roi', description: 'Bưởi múi ráo, ngọt mát của Bình Minh.', wiki: 'Bưởi Năm Roi' },
-      { name: 'Gốm đỏ Vĩnh Long', description: 'Gạch gốm nung đỏ ven sông Cổ Chiên.', imageSearch: 'Vinh Long pottery' },
+      { name: 'Gốm đỏ Vĩnh Long', description: 'Gạch gốm nung đỏ ven sông Cổ Chiên.' },
     ],
   },
 
@@ -206,7 +204,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     specialties: [
       { name: 'Sen Đồng Tháp', description: 'Hạt sen, ngó sen, trà tim sen từ đầm sen.', wiki: 'Sen' },
       { name: 'Xoài Cao Lãnh', description: 'Xoài cát chu, cát Hòa Lộc thơm ngọt.', wiki: 'Xoài' },
-      { name: 'Vú sữa Lò Rèn', description: 'Vú sữa Vĩnh Kim nổi tiếng của Tiền Giang.', imageSearch: 'star apple Vietnam' },
+      { name: 'Vú sữa Lò Rèn', description: 'Vú sữa Vĩnh Kim nổi tiếng của Tiền Giang.' },
     ],
   },
 
@@ -259,7 +257,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     specialties: [
       { name: 'Nước mắm Phú Quốc', description: 'Nước mắm cá cơm ủ thùng gỗ, có chỉ dẫn địa lý châu Âu.', wiki: 'Nước mắm Phú Quốc' },
       { name: 'Mắm Châu Đốc', description: 'Thủ phủ mắm miền Tây: mắm thái, mắm sặc, mắm linh.', imageSearch: 'mắm Châu Đốc' },
-      { name: 'Đường thốt nốt', description: 'Đường nấu từ nhựa hoa thốt nốt vùng Bảy Núi.', wiki: 'Thốt nốt' },
+      { name: 'Đường thốt nốt', description: 'Đường nấu từ nhựa hoa thốt nốt vùng Bảy Núi.', imageSearch: 'Borassus flabellifer' },
     ],
   },
 
@@ -299,12 +297,12 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Lẩu mắm', description: 'Lẩu nấu từ mắm cá linh, cá sặc, ăn với rau đồng.', imageSearch: 'lẩu mắm' },
+      { name: 'Lẩu mắm', description: 'Lẩu nấu từ mắm cá linh, cá sặc, ăn với rau đồng.' },
       { name: 'Bánh cống Sóc Trăng', description: 'Bánh chiên giòn với đậu xanh, tôm tươi.', imageSearch: 'bánh cống' },
       { name: 'Bánh xèo miền Tây', description: 'Bánh xèo to giòn, nhân giá, tôm, thịt.', wiki: 'Bánh xèo' },
     ],
     specialties: [
-      { name: 'Bánh pía Sóc Trăng', description: 'Bánh nhân đậu xanh, sầu riêng, trứng muối.', wiki: 'Bánh pía' },
+      { name: 'Bánh pía Sóc Trăng', description: 'Bánh nhân đậu xanh, sầu riêng, trứng muối.', imageSearch: 'bánh pía Sóc Trăng' },
       { name: 'Gạo ST25', description: 'Từng đạt danh hiệu "Gạo ngon nhất thế giới".', imageSearch: 'ST25 rice' },
       { name: 'Khóm Cầu Đúc', description: 'Khóm (dứa) ngọt thanh của Hậu Giang.', wiki: 'Dứa' },
     ],
@@ -326,7 +324,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       ethnicGroups: ['Kinh', 'Khmer', 'Hoa'],
       heritage: [
         { name: 'Vườn quốc gia Mũi Cà Mau', description: 'Điểm cực Nam, khu dự trữ sinh quyển thế giới.', wiki: 'Vườn quốc gia Mũi Cà Mau' },
-        { name: 'Rừng U Minh Hạ', description: 'Rừng tràm ngập nước đặc trưng Nam Bộ.', wiki: 'Vườn quốc gia U Minh Hạ' },
+        { name: 'Rừng U Minh Hạ', description: 'Rừng tràm ngập nước đặc trưng Nam Bộ.' },
         { name: 'Nhà Công tử Bạc Liêu', description: 'Dinh thự của "công tử" nổi tiếng ăn chơi.', imageSearch: 'Công tử Bạc Liêu' },
         { name: 'Cánh đồng điện gió Bạc Liêu', description: 'Hàng trăm trụ điện gió trên bãi bồi ven biển.', imageSearch: 'Bac Lieu wind farm' },
       ],

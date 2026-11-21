@@ -19,7 +19,8 @@ export const REGIONS: Region[] = [
   { id: 'tdmnbb', name: 'Trung du và miền núi Bắc Bộ', fill: '#cfe8d8', strong: '#9fd0b1' },
   { id: 'dbsh', name: 'Đồng bằng sông Hồng', fill: '#f6e2b3', strong: '#ecc76f' },
   { id: 'btb', name: 'Bắc Trung Bộ', fill: '#f8d3c5', strong: '#f0a68b' },
-  { id: 'dhntb', name: 'Duyên hải Nam Trung Bộ', fill: '#c8e0f2', strong: '#8dbfe3' },
+  // Xanh ngọc (không dùng xanh dương nhạt để khỏi lẫn với màu biển)
+  { id: 'dhntb', name: 'Duyên hải Nam Trung Bộ', fill: '#bfe5df', strong: '#7fcbbf' },
   { id: 'tn', name: 'Tây Nguyên', fill: '#e2d3ee', strong: '#c2a5dc' },
   { id: 'dnb', name: 'Đông Nam Bộ', fill: '#f5d0df', strong: '#e99fbd' },
   { id: 'dbscl', name: 'Đồng bằng sông Cửu Long', fill: '#d8ebc4', strong: '#b0d68b' },

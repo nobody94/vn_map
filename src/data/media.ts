@@ -28,7 +28,10 @@ export function resolveImage(ref: MediaRef): ResolvedImage | undefined {
     ref.imageFile ??
     (ref.wiki ? data.articles[ref.wiki]?.image : null) ??
     (ref.imageSearch ? data.searches[ref.imageSearch] : null)
-  const info = file ? data.images[file] : undefined
+  // Tên file Commons có thể viết bằng dấu cách hoặc gạch dưới — thử cả hai
+  const info = file
+    ? (data.images[file] ?? data.images[file.replace(/ /g, '_')] ?? data.images[file.replace(/_/g, ' ')])
+    : undefined
   if (!info) return undefined
   return { ...info, credit: `Ảnh: ${info.artist}${info.license ? ` · ${info.license}` : ''}` }
 }

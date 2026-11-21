@@ -1,0 +1,13 @@
+.tooltip {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--sans);
+  font-size: 12px;
+  color: #0b4f8a;
+}
+
+.tooltip::before {
+  display: none;
+}

@@ -18,12 +18,12 @@ export function RegionLegend({ colorByRegion, onToggle, onHighlight, hiddenOnMob
   return (
     <section className={styles.legend} aria-label="Chú giải vùng" data-hidden-mobile={hiddenOnMobile ? 'true' : undefined}>
       <header className={styles.header}>
-        <label className={styles.switch}>
+        {/* <label className={styles.switch}>
           <input type="checkbox" checked={colorByRegion} onChange={(e) => onToggle(e.target.checked)} />
           <span className={styles.track} aria-hidden="true" />
           <span className={styles.switchLabel}>Tô màu 7 vùng</span>
-        </label>
-        {colorByRegion && (
+        </label> */}
+        {/* {colorByRegion && (
           <button
             className={styles.collapse}
             onClick={() => setCollapsed((c) => !c)}
@@ -34,7 +34,7 @@ export function RegionLegend({ colorByRegion, onToggle, onHighlight, hiddenOnMob
               <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
-        )}
+        )} */}
       </header>
 
       {colorByRegion && !collapsed && (

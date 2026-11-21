@@ -8,11 +8,16 @@
  * - `imageFile`: dùng đúng file chỉ định
  * Thông tin tác giả / giấy phép lấy từ Commons để hiển thị ghi nguồn.
  *
+ * Mặc định chạy TĂNG DẦN: dùng lại bài / kết quả tìm / thông tin ảnh đã có trong file kết quả,
+ * chỉ tra những mục mới. Tra lại toàn bộ:  npm run media -- --full
+ *
  * Chạy bằng Node ≥ 22.18 (tự bỏ kiểu TypeScript).
  */
-import { writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { PROVINCE_DETAILS } from '../src/data/provinceDetails.ts'
+import { MOUNTAINS } from '../src/data/mountains.ts'
+import { RIVERS } from '../src/data/rivers.ts'
 import type { MediaRef } from '../src/types/province.ts'
 
 const OUT = fileURLToPath(new URL('../src/data/media.generated.json', import.meta.url))
@@ -22,6 +27,14 @@ const THUMB_WIDTH = 640
 
 const BAD_FILE = /(map|bản[_ ]đồ|location|flag|cờ|logo|icon|symbol|coat[_ ]of[_ ]arms|huy[_ ]hiệu|signature|chữ[_ ]ký|seal|emblem|diagram|wiki)/i
 const GOOD_EXT = /\.(jpe?g|png|webp)$/i
+
+type Article = { url: string; image: string | null; imageChecked?: boolean }
+type ImageInfo = { src: string; page: string; artist: string; license: string }
+type MediaFile = { articles: Record<string, Article>; searches: Record<string, string | null>; images: Record<string, ImageInfo> }
+
+const FULL = process.argv.includes('--full')
+const prev: MediaFile =
+  !FULL && existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : { articles: {}, searches: {}, images: {} }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
@@ -62,15 +75,19 @@ for (const d of Object.values(PROVINCE_DETAILS)) {
   if (d.culture.cover) refs.push(d.culture.cover)
   refs.push(...d.culture.heritage, ...d.festivals, ...d.foods, ...d.specialties)
 }
+refs.push(...MOUNTAINS, ...RIVERS)
 const wikiTitles = [...new Set(refs.map((r) => r.wiki).filter((t): t is string => !!t))]
 const searches = [...new Set(refs.map((r) => r.imageSearch).filter((t): t is string => !!t))]
 
 // ─── 2. Bài Wikipedia: URL + ảnh ───────────────────────────────────
-type Article = { url: string; image: string | null }
 const articles: Record<string, Article> = {}
-console.log(`Bài Wikipedia: ${wikiTitles.length}`)
-for (let i = 0; i < wikiTitles.length; i += 50) {
-  const batch = wikiTitles.slice(i, i + 50)
+const newTitles = wikiTitles.filter((t) => {
+  if (prev.articles[t]) articles[t] = { ...prev.articles[t] }
+  return !prev.articles[t]
+})
+console.log(`Bài Wikipedia: ${wikiTitles.length} (mới: ${newTitles.length})`)
+for (let i = 0; i < newTitles.length; i += 50) {
+  const batch = newTitles.slice(i, i + 50)
   const j = await api('vi.wikipedia.org', { action: 'query', titles: batch.join('|'), prop: 'info', inprop: 'url', redirects: '1' })
   const alias = new Map<string, string>()
   for (const r of [...(j.query.normalized ?? []), ...(j.query.redirects ?? [])]) alias.set(r.from, r.to)
@@ -89,30 +106,38 @@ for (let i = 0; i < wikiTitles.length; i += 50) {
 // Chỉ cần tìm ảnh trong bài khi có mục dùng bài đó mà không chỉ định imageFile
 const needImage = new Set(refs.filter((r) => r.wiki && !r.imageFile).map((r) => r.wiki))
 for (const [title, a] of Object.entries(articles)) {
-  if (!needImage.has(title)) continue
+  if (!needImage.has(title) || a.image || a.imageChecked) continue
   const j = await api('vi.wikipedia.org', { action: 'parse', page: title, prop: 'images', redirects: '1' })
   a.image = pickFile(j.parse?.images ?? []) ?? null
+  a.imageChecked = true
   console.log(`  ${a.image ? '✓' : '·'} ${title}${a.image ? ` → ${a.image}` : ' (không có ảnh phù hợp)'}`)
 }
 
 // ─── 3. Tìm ảnh trên Commons ───────────────────────────────────────
 const searchResults: Record<string, string | null> = {}
-console.log(`Tìm ảnh Commons: ${searches.length}`)
-for (const q of searches) {
+const newSearches = searches.filter((q) => {
+  if (q in prev.searches) searchResults[q] = prev.searches[q]
+  return !(q in prev.searches)
+})
+console.log(`Tìm ảnh Commons: ${searches.length} (mới: ${newSearches.length})`)
+for (const q of newSearches) {
   const j = await api('commons.wikimedia.org', { action: 'query', list: 'search', srsearch: q, srnamespace: '6', srlimit: '10' })
   searchResults[q] = pickFile(j.query.search.map((s: any) => s.title)) ?? null
   console.log(`  ${searchResults[q] ? '✓' : '✗'} "${q}"${searchResults[q] ? ` → ${searchResults[q]}` : ''}`)
 }
 
 // ─── 4. Thông tin ảnh: thumbnail, tác giả, giấy phép ───────────────
-type ImageInfo = { src: string; page: string; artist: string; license: string }
 const files = new Set<string>()
 for (const r of refs) {
   const f = r.imageFile ?? (r.wiki ? articles[r.wiki]?.image : null) ?? (r.imageSearch ? searchResults[r.imageSearch] : null)
   if (f) files.add(f)
 }
 const images: Record<string, ImageInfo> = {}
-const fileList = [...files]
+const fileList = [...files].filter((f) => {
+  if (prev.images[f]) images[f] = prev.images[f]
+  return !prev.images[f]
+})
+console.log(`Thông tin ảnh: ${files.size} (mới: ${fileList.length})`)
 for (let i = 0; i < fileList.length; i += 50) {
   const batch = fileList.slice(i, i + 50)
   // Hỏi qua vi.wikipedia để nhận cả file Commons lẫn file cục bộ

@@ -6,6 +6,7 @@ import type { PathOptions } from 'leaflet'
 import { PROVINCE_BY_CODE } from '../../data/provinceMeta'
 import { PROVINCE_REGION, regionOf, type RegionId } from '../../data/regions'
 import type { ProvinceCollection, ProvinceFeatureProps } from '../../types/province'
+import { panelPadding } from '../../utils/mapPadding'
 import styles from './ProvinceLayer.module.css'
 
 type ProvinceFeature = Feature<MultiPolygon, ProvinceFeatureProps>
@@ -17,12 +18,15 @@ interface Props {
   colorByRegion: boolean
   /** Vùng được làm nổi (rê chuột trên chú giải); các vùng khác mờ đi */
   highlightRegion: RegionId | null
+  /** Đang bật nền địa hình → làm nền tỉnh trong suốt để thấy đồi núi */
+  terrain: boolean
 }
 
 interface ViewState {
   selected: number | null
   colorByRegion: boolean
   highlight: RegionId | null
+  terrain: boolean
 }
 
 const ACCENT = '#0f766e'
@@ -38,20 +42,22 @@ function styleFor(code: number, v: ViewState, hovered = false): PathOptions {
   const dimmed = v.highlight != null && PROVINCE_REGION[code] !== v.highlight
   const selected = code === v.selected
   const fill = region ? (selected || hovered ? region.strong : region.fill) : selected ? '#a7dcd4' : hovered ? '#d5efeb' : '#ffffff'
+  if (v.terrain) {
+    return {
+      color: selected || hovered ? ACCENT : '#475569',
+      weight: selected ? 2.5 : hovered ? 1.8 : 0.8,
+      opacity: selected || hovered ? 1 : 0.55,
+      fillColor: region ? region.strong : ACCENT,
+      fillOpacity: dimmed ? 0 : selected ? 0.4 : hovered ? 0.3 : region ? 0.22 : 0,
+    }
+  }
   return {
     color: selected || hovered ? ACCENT : region ? '#ffffff' : BORDER,
     weight: selected ? 2 : hovered ? 1.5 : region ? 1 : 0.8,
+    opacity: 1,
     fillColor: fill,
     fillOpacity: dimmed ? 0.3 : 1,
   }
-}
-
-/** Chừa chỗ cho ProvincePanel: bên phải trên desktop, phía dưới trên điện thoại */
-function panelPadding(): L.FitBoundsOptions {
-  const w = window.innerWidth
-  // 150px phía trên: chừa chỗ cho khung tiêu đề + ô tìm kiếm
-  if (w <= 768) return { paddingTopLeft: [24, 150], paddingBottomRight: [24, window.innerHeight * 0.62 + 16] }
-  return { paddingTopLeft: [48, 150], paddingBottomRight: [Math.min(400, w - 32) + 48, 48] }
 }
 
 /**
@@ -77,10 +83,10 @@ function tooltipHtml(code: number): string {
   return `<div class="${styles.tooltipKind}">${meta.kind}${region ? ` · ${region.name}` : ''}</div><div class="${styles.tooltipName}">${meta.name}</div>${merged}`
 }
 
-export function ProvinceLayer({ data, selectedCode, onSelect, colorByRegion, highlightRegion }: Props) {
+export function ProvinceLayer({ data, selectedCode, onSelect, colorByRegion, highlightRegion, terrain }: Props) {
   const map = useMap()
   const geoRef = useRef<L.GeoJSON | null>(null)
-  const viewRef = useRef<ViewState>({ selected: selectedCode, colorByRegion, highlight: highlightRegion })
+  const viewRef = useRef<ViewState>({ selected: selectedCode, colorByRegion, highlight: highlightRegion, terrain })
   const onSelectRef = useRef(onSelect)
 
   useEffect(() => {
@@ -89,14 +95,14 @@ export function ProvinceLayer({ data, selectedCode, onSelect, colorByRegion, hig
 
   // Tô lại toàn bộ khi đổi tỉnh chọn / bật tắt màu vùng / làm nổi vùng
   useEffect(() => {
-    const v: ViewState = { selected: selectedCode, colorByRegion, highlight: highlightRegion }
+    const v: ViewState = { selected: selectedCode, colorByRegion, highlight: highlightRegion, terrain }
     viewRef.current = v
     geoRef.current?.eachLayer((layer) => {
       const path = layer as L.Path & { feature?: ProvinceFeature }
       const code = path.feature?.properties.code
       if (code != null) path.setStyle(styleFor(code, v))
     })
-  }, [selectedCode, colorByRegion, highlightRegion])
+  }, [selectedCode, colorByRegion, highlightRegion, terrain])
 
   // Zoom tới tỉnh vừa chọn
   useEffect(() => {

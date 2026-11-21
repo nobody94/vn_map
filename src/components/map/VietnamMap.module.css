@@ -27,3 +27,11 @@
 .error {
   color: #b91c1c;
 }
+
+/*
+ * Leaflet 1.9 đặt mix-blend-mode: plus-lighter cho ô ảnh nền; chỗ ô của hai mức zoom chồng nhau
+ * bị cộng sáng thành đường viền trắng. Lớp địa hình dùng chế độ trộn bình thường.
+ */
+:global(.leaflet-container) .relief img {
+  mix-blend-mode: normal;
+}

@@ -1,0 +1,124 @@
+/* Đỉnh núi: tam giác nâu + nhãn */
+.peak {
+  overflow: visible;
+  cursor: pointer;
+}
+
+.peak svg {
+  display: block;
+  width: 12px;
+  height: 10px;
+  fill: #8a5a35;
+  stroke: #fff;
+  stroke-width: 1.2;
+  paint-order: stroke;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+
+.major svg {
+  width: 14px;
+  height: 12px;
+  margin: -2px 0 0 -1px;
+  fill: #6b3f1f;
+}
+
+.label {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  display: none;
+  transform: translateX(-50%);
+  font-size: 11px;
+  line-height: 1.2;
+  color: #5b3a21;
+  white-space: nowrap;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 2px #fff;
+  pointer-events: none;
+}
+
+.label b {
+  font-weight: 600;
+}
+
+/* Đỉnh tiêu biểu luôn hiện nhãn; các đỉnh khác hiện khi zoom đủ gần */
+.featured .label,
+.showLabels .label {
+  display: block;
+}
+
+/* Nhãn dãy núi / cao nguyên */
+.terrain {
+  overflow: visible;
+  pointer-events: none;
+}
+
+.terrain span {
+  position: absolute;
+  white-space: nowrap;
+  font-style: italic;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff;
+}
+
+.range span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: rgba(107, 63, 31, 0.75);
+  text-transform: uppercase;
+}
+
+/* Nhãn cao nguyên chỉ hiện khi zoom gần hơn mức toàn quốc */
+.plateau {
+  display: none;
+}
+
+.showPlateaus .plateau {
+  display: block;
+}
+
+.plateau span {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(107, 63, 31, 0.7);
+}
+
+.hideTerrainLabels .terrain {
+  display: none;
+}
+
+.tooltip {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--text-strong);
+}
+
+.tooltip span {
+  color: var(--text-muted);
+}
+
+.tooltip::before {
+  display: none;
+}
+
+/* Đỉnh đang chọn: tam giác lớn màu nhấn, luôn hiện nhãn */
+.selected svg {
+  width: 18px;
+  height: 15px;
+  margin: -5px 0 0 -3px;
+  fill: var(--accent);
+  stroke-width: 1.5;
+}
+
+.selected .label {
+  display: block;
+  top: 13px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  text-shadow: none;
+}

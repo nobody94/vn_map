@@ -1,0 +1,85 @@
+.hero {
+  position: relative;
+  flex: none;
+}
+
+/* Ảnh bìa sát mép trên của panel */
+.hero > figure,
+.hero > div:first-child {
+  border-radius: 0;
+}
+
+.closeOnImage {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-sm);
+}
+
+.noImage {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.header {
+  padding: 16px 20px 4px;
+}
+
+.note {
+  margin-top: 4px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.coord {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.provinceBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.provinceBtn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.provinceLabel {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.provinceName {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.arrow {
+  font-size: 18px;
+  color: var(--accent);
+}
