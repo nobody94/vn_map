@@ -1,0 +1,32 @@
+.app {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm);
+  width: min(260px, calc(100vw - 32px));
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}

@@ -1,0 +1,135 @@
+.legend {
+  position: absolute;
+  left: 16px;
+  bottom: 28px;
+  z-index: 1000;
+  width: 240px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Công tắc */
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.track {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: background 0.15s;
+}
+
+.track::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
+  transition: transform 0.15s;
+}
+
+.switch input:checked + .track {
+  background: var(--accent);
+}
+
+.switch input:checked + .track::after {
+  transform: translateX(12px);
+}
+
+.switch input:focus-visible + .track {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.switchLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.collapse {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.collapse:hover {
+  background: var(--hover);
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.list {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text);
+  cursor: default;
+}
+
+.item:hover {
+  background: var(--hover);
+}
+
+.swatch {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid;
+  border-radius: 4px;
+}
+
+/* Điện thoại: ẩn chú giải khi panel thông tin đang mở để khỏi chồng lên nhau */
+@media (max-width: 768px) {
+  .legend {
+    bottom: 24px;
+    width: 210px;
+  }
+
+  .legend[data-hidden-mobile='true'] {
+    display: none;
+  }
+}

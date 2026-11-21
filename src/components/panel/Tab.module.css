@@ -1,0 +1,216 @@
+/* Style dùng chung cho nội dung các tab */
+
+.section + .section {
+  margin-top: 24px;
+}
+
+.heading {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.text {
+  margin: 0;
+  color: var(--text);
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.stat {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--hover);
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.statValue {
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.statUnit {
+  margin-left: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.statHint {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.source {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.peaks {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.peak {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+
+.peakName {
+  color: var(--text-strong);
+}
+
+.badge {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.peakHeight {
+  flex: none;
+  font-weight: 600;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list > li {
+  position: relative;
+  padding: 6px 0 6px 16px;
+}
+
+.list > li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 14px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.cardTitle {
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.cardMeta {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.cardText {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Ảnh bìa mục Văn hóa */
+.cover {
+  margin-bottom: 12px;
+}
+
+.caption {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Thẻ có ảnh phía trên (di sản, lễ hội) */
+.mediaCard {
+  padding: 0;
+  overflow: hidden;
+}
+
+.cardBody {
+  padding: 10px 14px 12px;
+}
+
+/* Thẻ có ảnh vuông bên trái (ẩm thực, đặc sản) */
+.rowCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px;
+}
+
+.rowBody {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.rowBody .cardText {
+  margin-top: 2px;
+}
+
+.credit {
+  margin-top: 4px;
+  overflow: hidden;
+  font-size: 10px;
+  color: #94a3b8;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

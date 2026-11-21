@@ -1,0 +1,808 @@
+{
+  "articles": {
+    "Hồ Hoàn Kiếm": {
+      "url": "https://vi.wikipedia.org/wiki/H%E1%BB%93_Ho%C3%A0n_Ki%E1%BA%BFm",
+      "image": "Cổng_đền_Ngọc_Sơn.jpg"
+    },
+    "Hoàng thành Thăng Long": {
+      "url": "https://vi.wikipedia.org/wiki/Ho%C3%A0ng_th%C3%A0nh_Th%C4%83ng_Long",
+      "image": "Hanoi_citadel.jpg"
+    },
+    "Văn Miếu – Quốc Tử Giám": {
+      "url": "https://vi.wikipedia.org/wiki/V%C4%83n_Mi%E1%BA%BFu_%E2%80%93_Qu%E1%BB%91c_T%E1%BB%AD_Gi%C3%A1m",
+      "image": "Hanoi_Temple_of_Literature_(cropped).jpg"
+    },
+    "Khu phố cổ Hà Nội": {
+      "url": "https://vi.wikipedia.org/wiki/Khu_ph%E1%BB%91_c%E1%BB%95_H%C3%A0_N%E1%BB%99i",
+      "image": "Hanoï_-_Les_Halles.jpg"
+    },
+    "Chùa Một Cột": {
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_M%E1%BB%99t_C%E1%BB%99t",
+      "image": "One_Pillar_Pagoda_Hanoi.jpg"
+    },
+    "Gốm Bát Tràng": {
+      "url": "https://vi.wikipedia.org/wiki/G%E1%BB%91m_B%C3%A1t_Tr%C3%A0ng",
+      "image": "Gom_Bat_Trang-Lu_Huong.jpeg"
+    },
+    "Hội Gióng": {
+      "url": "https://vi.wikipedia.org/wiki/H%E1%BB%99i_Gi%C3%B3ng",
+      "image": "Hội_Gióng1.jpg"
+    },
+    "Chùa Hương": {
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%B9a_H%C6%B0%C6%A1ng",
+      "image": "Chua_Huong_008.jpg"
+    },
+    "Gò Đống Đa": {
+      "url": "https://vi.wikipedia.org/wiki/G%C3%B2_%C4%90%E1%BB%91ng_%C4%90a",
+      "image": "Go_Dong_Da.JPG"
+    },
+    "Phở": {
+      "url": "https://vi.wikipedia.org/wiki/Ph%E1%BB%9F",
+      "image": "Phở_bò,_Cầu_Giấy,_Hà_Nội.jpg"
+    },
+    "Bún chả": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%BAn_ch%E1%BA%A3",
+      "image": "Bún_chả_Thụy_Khuê.jpg"
+    },
+    "Bún thang": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%BAn_thang",
+      "image": null
+    },
+    "Chả cá Lã Vọng": {
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BA%A3_c%C3%A1_L%C3%A3_V%E1%BB%8Dng",
+      "image": "Chả_cá_Lã_Vọng.jpg"
+    },
+    "Bánh cuốn": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A1nh_cu%E1%BB%91n",
+      "image": "Banh_cuon.jpg"
+    },
+    "Cốm": {
+      "url": "https://vi.wikipedia.org/wiki/C%E1%BB%91m",
+      "image": "Cốm_Mễ_Trì_-_NKS.jpg"
+    },
+    "Ô mai": {
+      "url": "https://vi.wikipedia.org/wiki/%C3%94_mai",
+      "image": "O_mai_chanh_com.JPG"
+    },
+    "Làng lụa Vạn Phúc": {
+      "url": "https://vi.wikipedia.org/wiki/L%C3%A0ng_l%E1%BB%A5a_V%E1%BA%A1n_Ph%C3%BAc",
+      "image": "LụaVạnPhúc-2198867187_a0d4cdce3b_o.jpg"
+    },
+    "Ruộng bậc thang Mù Cang Chải": {
+      "url": "https://vi.wikipedia.org/wiki/Ru%E1%BB%99ng_b%E1%BA%ADc_thang_M%C3%B9_Cang_Ch%E1%BA%A3i",
+      "image": "BỨC_HỌA_ĐỒNG_QUÊ_-_panoramio.jpg"
+    },
+    "Sa Pa": {
+      "url": "https://vi.wikipedia.org/wiki/Sa_Pa",
+      "image": "Fansipan_Cable_Car_and_Sa_Pa.jpg"
+    },
+    "Fansipan": {
+      "url": "https://vi.wikipedia.org/wiki/Fansipan",
+      "image": "Fansipan.png"
+    },
+    "Chợ phiên Bắc Hà": {
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_phi%C3%AAn_B%E1%BA%AFc_H%C3%A0",
+      "image": "MarketInNorthernVietnam.jpg"
+    },
+    "Đền Bảo Hà": {
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_B%E1%BA%A3o_H%C3%A0",
+      "image": "Bao_Ha_Temple_-_P1380679.JPG"
+    },
+    "Hồ Thác Bà": {
+      "url": "https://vi.wikipedia.org/wiki/H%E1%BB%93_Th%C3%A1c_B%C3%A0",
+      "image": null
+    },
+    "Đèo Khau Phạ": {
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%A8o_Khau_Ph%E1%BA%A1",
+      "image": null
+    },
+    "Thắng cố": {
+      "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%AFng_c%E1%BB%91",
+      "image": "Thắng_cố.jpg"
+    },
+    "Lợn cắp nách": {
+      "url": "https://vi.wikipedia.org/wiki/L%E1%BB%A3n_c%E1%BA%AFp_n%C3%A1ch",
+      "image": "Sapa-pig.jpg"
+    },
+    "Xôi": {
+      "url": "https://vi.wikipedia.org/wiki/X%C3%B4i",
+      "image": null
+    },
+    "Mận": {
+      "url": "https://vi.wikipedia.org/wiki/M%E1%BA%ADn",
+      "image": "Damson_plum_fruit.jpg"
+    },
+    "Chè Shan tuyết": {
+      "url": "https://vi.wikipedia.org/wiki/Ch%C3%A8_Shan_tuy%E1%BA%BFt",
+      "image": "Che_Shan_tuyet.JPG"
+    },
+    "Quế": {
+      "url": "https://vi.wikipedia.org/wiki/Qu%E1%BA%BF",
+      "image": "Baton_de_cannelle.jpg"
+    },
+    "Rượu ngô Bản Phố": {
+      "url": "https://vi.wikipedia.org/wiki/R%C6%B0%E1%BB%A3u_ng%C3%B4_B%E1%BA%A3n_Ph%E1%BB%91",
+      "image": null
+    },
+    "Phố cổ Hội An": {
+      "url": "https://vi.wikipedia.org/wiki/Ph%E1%BB%91_c%E1%BB%95_H%E1%BB%99i_An",
+      "image": "PhoCoHoiAn.jpg"
+    },
+    "Thánh địa Mỹ Sơn": {
+      "url": "https://vi.wikipedia.org/wiki/Th%C3%A1nh_%C4%91%E1%BB%8Ba_M%E1%BB%B9_S%C6%A1n",
+      "image": "2024_-_Mỹ_Sơn_Group_B,_C_and_D_-_img_23.jpg"
+    },
+    "Cù lao Chàm": {
+      "url": "https://vi.wikipedia.org/wiki/C%C3%B9_lao_Ch%C3%A0m",
+      "image": "Culaocham0001.JPG"
+    },
+    "Ngũ Hành Sơn": {
+      "url": "https://vi.wikipedia.org/wiki/Ng%C5%A9_H%C3%A0nh_S%C6%A1n",
+      "image": "Chùa_Tam_Thai.jpg"
+    },
+    "Cầu Vàng": {
+      "url": "https://vi.wikipedia.org/wiki/C%E1%BA%A7u_V%C3%A0ng",
+      "image": "Golden_Bridge_Da-Nang_(48951166538).jpg"
+    },
+    "Lễ hội pháo hoa quốc tế Đà Nẵng": {
+      "url": "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_ph%C3%A1o_hoa_qu%E1%BB%91c_t%E1%BA%BF_%C4%90%C3%A0_N%E1%BA%B5ng",
+      "image": null
+    },
+    "Tục thờ cá Ông": {
+      "url": "https://vi.wikipedia.org/wiki/T%E1%BB%A5c_th%E1%BB%9D_c%C3%A1_%C3%94ng",
+      "image": "Bộ_xương_cá_voi.jpg"
+    },
+    "Sông Hoài": {
+      "url": "https://vi.wikipedia.org/wiki/S%C3%B4ng_Ho%C3%A0i",
+      "image": null
+    },
+    "Mì Quảng": {
+      "url": "https://vi.wikipedia.org/wiki/M%C3%AC_Qu%E1%BA%A3ng",
+      "image": "Mi_Quang_1A_Danang.jpg"
+    },
+    "Cao lầu": {
+      "url": "https://vi.wikipedia.org/wiki/Cao_l%E1%BA%A7u",
+      "image": "Cao_lầu_(144854_994).jpg"
+    },
+    "Sâm Ngọc Linh": {
+      "url": "https://vi.wikipedia.org/wiki/S%C3%A2m_Ng%E1%BB%8Dc_Linh",
+      "image": "Bảo_tàng_sâm_Ngọc_Linh_ở_đường_Nguyễn_Sơn_tại_Tân_Phú_(1).jpg"
+    },
+    "Nước mắm": {
+      "url": "https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm",
+      "image": "Nước_mắm_Gio_Hải_của_chú_Trong,_tết_2018.jpg"
+    },
+    "Đà Lạt": {
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%A0_L%E1%BA%A1t",
+      "image": "Da_Lat_-_Viet_Nam.jpg"
+    },
+    "Không gian văn hóa Cồng chiêng Tây Nguyên": {
+      "url": "https://vi.wikipedia.org/wiki/Kh%C3%B4ng_gian_v%C4%83n_h%C3%B3a_C%E1%BB%93ng_chi%C3%AAng_T%C3%A2y_Nguy%C3%AAn",
+      "image": "Congchieng01.JPG"
+    },
+    "Công viên địa chất Đắk Nông": {
+      "url": "https://vi.wikipedia.org/wiki/C%C3%B4ng_vi%C3%AAn_%C4%91%E1%BB%8Ba_ch%E1%BA%A5t_%C4%90%E1%BA%AFk_N%C3%B4ng",
+      "image": "Draysap02.JPG"
+    },
+    "Núi Langbiang": {
+      "url": "https://vi.wikipedia.org/wiki/N%C3%BAi_Langbiang",
+      "image": "Đỉnh_Langbiang.JPG"
+    },
+    "Mũi Né": {
+      "url": "https://vi.wikipedia.org/wiki/M%C5%A9i_N%C3%A9",
+      "image": "Phan_Thiet.jpg"
+    },
+    "Festival Hoa Đà Lạt": {
+      "url": "https://vi.wikipedia.org/wiki/Festival_Hoa_%C4%90%C3%A0_L%E1%BA%A1t",
+      "image": "Hồ_Xuân_Hương,_Đà_Lạt.jpg"
+    },
+    "Lễ hội Katé": {
+      "url": "https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Kat%C3%A9",
+      "image": null
+    },
+    "Bánh tráng": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A1nh_tr%C3%A1ng",
+      "image": null
+    },
+    "Bánh căn": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A1nh_c%C4%83n",
+      "image": "Bánh_căn_1.jpg"
+    },
+    "Bánh canh": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A1nh_canh",
+      "image": "Banh-Canh-Noodle-Soup.jpg"
+    },
+    "Nhông cát": {
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%B4ng_c%C3%A1t",
+      "image": null
+    },
+    "Dâu tây": {
+      "url": "https://vi.wikipedia.org/wiki/D%C3%A2u_t%C3%A2y",
+      "image": "Dülmen,_Kirchspiel,_Erdbeerfeld_--_2015_--_6492-6.jpg"
+    },
+    "Atisô": {
+      "url": "https://vi.wikipedia.org/wiki/Atis%C3%B4",
+      "image": "Artichokes.jpg"
+    },
+    "Cà phê chè": {
+      "url": "https://vi.wikipedia.org/wiki/C%C3%A0_ph%C3%AA_ch%C3%A8",
+      "image": "Coffee_tree_arabica.jpg"
+    },
+    "Thanh long": {
+      "url": "https://vi.wikipedia.org/wiki/Thanh_long",
+      "image": "Thanh_Long_ở_Ninh_Thuận.jpg"
+    },
+    "Nước mắm Phan Thiết": {
+      "url": "https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Phan_Thi%E1%BA%BFt",
+      "image": null
+    },
+    "Chợ Bến Thành": {
+      "url": "https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_B%E1%BA%BFn_Th%C3%A0nh",
+      "image": "Ben_Thanh_market_at_night.JPG"
+    },
+    "Dinh Độc Lập": {
+      "url": "https://vi.wikipedia.org/wiki/Dinh_%C4%90%E1%BB%99c_L%E1%BA%ADp",
+      "image": null
+    },
+    "Nhà thờ chính tòa Đức Bà Sài Gòn": {
+      "url": "https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_t%C3%B2a_%C4%90%E1%BB%A9c_B%C3%A0_S%C3%A0i_G%C3%B2n",
+      "image": "HCMC_Notre_Dame_Cathedral.jpg"
+    },
+    "Bưu điện Sài Gòn": {
+      "url": "https://vi.wikipedia.org/wiki/B%C6%B0u_%C4%91i%E1%BB%87n_S%C3%A0i_G%C3%B2n",
+      "image": null
+    },
+    "Địa đạo Củ Chi": {
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Ba_%C4%91%E1%BA%A1o_C%E1%BB%A7_Chi",
+      "image": "Địa_đạo_Củ_Chi.jpg"
+    },
+    "Khu dự trữ sinh quyển rừng ngập mặn Cần Giờ": {
+      "url": "https://vi.wikipedia.org/wiki/Khu_d%E1%BB%B1_tr%E1%BB%AF_sinh_quy%E1%BB%83n_r%E1%BB%ABng_ng%E1%BA%ADp_m%E1%BA%B7n_C%E1%BA%A7n_Gi%E1%BB%9D",
+      "image": "Rừng_Sác_-_2.jpg"
+    },
+    "Côn Đảo": {
+      "url": "https://vi.wikipedia.org/wiki/C%C3%B4n_%C4%90%E1%BA%A3o",
+      "image": "Côn_Đảo,_Bà_Rịa_-_Vũng_Tàu,_Vietnam_-_panoramio_(33).jpg"
+    },
+    "Đường hoa Nguyễn Huệ": {
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%C6%B0%E1%BB%9Dng_hoa_Nguy%E1%BB%85n_Hu%E1%BB%87",
+      "image": "Ảnh_tác_phẩm_Đường_hoa_Nguyễn_Huệ.JPG"
+    },
+    "Đình thần Thắng Tam": {
+      "url": "https://vi.wikipedia.org/wiki/%C4%90%C3%ACnh_th%E1%BA%A7n_Th%E1%BA%AFng_Tam",
+      "image": "Dinh_Thang_Tam,_Hoang_Hoa_Tham_,_Vung_tau_Vietnam_-_panoramio.jpg"
+    },
+    "Cơm tấm": {
+      "url": "https://vi.wikipedia.org/wiki/C%C6%A1m_t%E1%BA%A5m",
+      "image": "Cơm_Tấm,_Da_Nang,_Vietnam.jpg"
+    },
+    "Bánh mì Việt Nam": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A1nh_m%C3%AC_Vi%E1%BB%87t_Nam",
+      "image": "Bánh_mì_thịt_nướng.png"
+    },
+    "Hủ tiếu Nam Vang": {
+      "url": "https://vi.wikipedia.org/wiki/H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang",
+      "image": null
+    },
+    "Bánh khọt": {
+      "url": "https://vi.wikipedia.org/wiki/B%C3%A1nh_kh%E1%BB%8Dt",
+      "image": "Bánh_khọt.jpg"
+    },
+    "Măng cụt": {
+      "url": "https://vi.wikipedia.org/wiki/M%C4%83ng_c%E1%BB%A5t",
+      "image": "Quả_măng_cụt_(Garcinia_mangostana).jpg"
+    },
+    "Sơn mài": {
+      "url": "https://vi.wikipedia.org/wiki/S%C6%A1n_m%C3%A0i",
+      "image": null
+    },
+    "Mực khô": {
+      "url": "https://vi.wikipedia.org/wiki/M%E1%BB%B1c_kh%C3%B4",
+      "image": "Dried_squid_3.png"
+    }
+  },
+  "searches": {
+    "Ta Van Sapa": "Sapa Ta Van hike near Sapa and bridge Ta Van.Lao Chai. Cau May.jpg",
+    "Hoi An lanterns night": "Hoi An lanterns at night.jpg",
+    "bánh tráng cuốn thịt heo": "Bánh tráng cuốn thịt heo (18521).jpg",
+    "bê thui": "Bê thui.JPG",
+    "Hoi An lanterns": "Hoi An lanterns at night.jpg",
+    "Po Sah Inu": "Tháp Po Sah Inu, Phan Thiết, Bình Thuận.JPG",
+    "Thiên Hậu Bình Dương": "Chùa Bà Thiên hậu-Thủ Dầu Một- Bình dương- Vietnam - panoramio.jpg",
+    "Lái Thiêu ceramics": "Lai Thieu Ceramics (9997439653).jpg"
+  },
+  "images": {
+    "Đỉnh_Langbiang.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/%C4%90%E1%BB%89nh_Langbiang.JPG/960px-%C4%90%E1%BB%89nh_Langbiang.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:%C4%90%E1%BB%89nh_Langbiang.JPG",
+      "artist": "Liftold (thảo luận)",
+      "license": "CC BY-SA 3.0"
+    },
+    "Draysap02.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Draysap02.JPG/960px-Draysap02.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Draysap02.JPG",
+      "artist": "Dotuanhungdaklak tại Wikipedia Tiếng Việt",
+      "license": "CC BY-SA 3.0"
+    },
+    "Congchieng01.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Congchieng01.JPG/960px-Congchieng01.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Congchieng01.JPG",
+      "artist": "Đỗ Tuấn Hưng",
+      "license": "CC BY-SA 3.0"
+    },
+    "Da_Lat_-_Viet_Nam.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Da_Lat_-_Viet_Nam.jpg/960px-Da_Lat_-_Viet_Nam.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Da_Lat_-_Viet_Nam.jpg",
+      "artist": "Tuong Lam Photos",
+      "license": "CC BY-SA 4.0"
+    },
+    "Nước_mắm_Gio_Hải_của_chú_Trong,_tết_2018.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Gio_H%E1%BA%A3i_c%E1%BB%A7a_ch%C3%BA_Trong%2C_t%E1%BA%BFt_2018.jpg/960px-N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Gio_H%E1%BA%A3i_c%E1%BB%A7a_ch%C3%BA_Trong%2C_t%E1%BA%BFt_2018.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Gio_H%E1%BA%A3i_c%E1%BB%A7a_ch%C3%BA_Trong,_t%E1%BA%BFt_2018.jpg",
+      "artist": "Phương Huy (thảo luận)",
+      "license": "Public domain"
+    },
+    "Bảo_tàng_sâm_Ngọc_Linh_ở_đường_Nguyễn_Sơn_tại_Tân_Phú_(1).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/B%E1%BA%A3o_t%C3%A0ng_s%C3%A2m_Ng%E1%BB%8Dc_Linh_%E1%BB%9F_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n_t%E1%BA%A1i_T%C3%A2n_Ph%C3%BA_%281%29.jpg/960px-B%E1%BA%A3o_t%C3%A0ng_s%C3%A2m_Ng%E1%BB%8Dc_Linh_%E1%BB%9F_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n_t%E1%BA%A1i_T%C3%A2n_Ph%C3%BA_%281%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%E1%BA%A3o_t%C3%A0ng_s%C3%A2m_Ng%E1%BB%8Dc_Linh_%E1%BB%9F_%C4%91%C6%B0%E1%BB%9Dng_Nguy%E1%BB%85n_S%C6%A1n_t%E1%BA%A1i_T%C3%A2n_Ph%C3%BA_(1).jpg",
+      "artist": "Phương Huy",
+      "license": "CC BY-SA 4.0"
+    },
+    "Bê thui.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/B%C3%AA_thui.JPG/960px-B%C3%AA_thui.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%AA_thui.JPG",
+      "artist": "Memberofc1",
+      "license": "CC BY-SA 3.0"
+    },
+    "Cơm gà Tam Kỳ, Quảng Nam.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/C%C6%A1m_g%C3%A0_Tam_K%E1%BB%B3%2C_Qu%E1%BA%A3ng_Nam.JPG/960px-C%C6%A1m_g%C3%A0_Tam_K%E1%BB%B3%2C_Qu%E1%BA%A3ng_Nam.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:C%C6%A1m_g%C3%A0_Tam_K%E1%BB%B3,_Qu%E1%BA%A3ng_Nam.JPG",
+      "artist": "Đông Sơn (thảo luận)",
+      "license": "CC BY-SA 3.0"
+    },
+    "Bánh tráng cuốn thịt heo (18521).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/B%C3%A1nh_tr%C3%A1ng_cu%E1%BB%91n_th%E1%BB%8Bt_heo_%2818521%29.jpg/960px-B%C3%A1nh_tr%C3%A1ng_cu%E1%BB%91n_th%E1%BB%8Bt_heo_%2818521%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_tr%C3%A1ng_cu%E1%BB%91n_th%E1%BB%8Bt_heo_(18521).jpg",
+      "artist": "Lê Huỳnh Bộ",
+      "license": "CC BY-SA 4.0"
+    },
+    "Cao_lầu_(144854_994).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Cao_l%E1%BA%A7u_%28144854_994%29.jpg/960px-Cao_l%E1%BA%A7u_%28144854_994%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Cao_l%E1%BA%A7u_(144854_994).jpg",
+      "artist": "Baoothersks",
+      "license": "CC BY-SA 4.0"
+    },
+    "Mi_Quang_1A_Danang.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Mi_Quang_1A_Danang.jpg/960px-Mi_Quang_1A_Danang.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Mi_Quang_1A_Danang.jpg",
+      "artist": "Jpatokal",
+      "license": "CC BY-SA 4.0"
+    },
+    "Hoi An lanterns at night.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/28/Hoi_An_lanterns_at_night.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:Hoi_An_lanterns_at_night.jpg",
+      "artist": "www.viajar24h.com",
+      "license": "CC BY 2.0"
+    },
+    "Bộ_xương_cá_voi.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/B%E1%BB%99_x%C6%B0%C6%A1ng_c%C3%A1_voi.jpg/960px-B%E1%BB%99_x%C6%B0%C6%A1ng_c%C3%A1_voi.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%E1%BB%99_x%C6%B0%C6%A1ng_c%C3%A1_voi.jpg",
+      "artist": "Bùi Thụy Đào Nguyên",
+      "license": "CC BY-SA 3.0"
+    },
+    "Da Nang International Fireworks Festival.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Da_Nang_International_Fireworks_Festival.jpg/960px-Da_Nang_International_Fireworks_Festival.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Da_Nang_International_Fireworks_Festival.jpg",
+      "artist": "Vivu Vietnam",
+      "license": "CC BY-SA 4.0"
+    },
+    "Golden_Bridge_Da-Nang_(48951166538).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Golden_Bridge_Da-Nang_%2848951166538%29.jpg/960px-Golden_Bridge_Da-Nang_%2848951166538%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Golden_Bridge_Da-Nang_(48951166538).jpg",
+      "artist": "xiquinhosilva from Cacau",
+      "license": "CC BY 2.0"
+    },
+    "Chùa_Tam_Thai.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Ch%C3%B9a_Tam_Thai.jpg/960px-Ch%C3%B9a_Tam_Thai.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%B9a_Tam_Thai.jpg",
+      "artist": "Thuydaonguyen",
+      "license": "CC BY-SA 3.0"
+    },
+    "Culaocham0001.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Culaocham0001.JPG/960px-Culaocham0001.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Culaocham0001.JPG",
+      "artist": "User:Blon",
+      "license": "CC BY-SA 3.0"
+    },
+    "2024_-_Mỹ_Sơn_Group_B,_C_and_D_-_img_23.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg/960px-2024_-_M%E1%BB%B9_S%C6%A1n_Group_B%2C_C_and_D_-_img_23.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:2024_-_M%E1%BB%B9_S%C6%A1n_Group_B,_C_and_D_-_img_23.jpg",
+      "artist": "Chainwit.",
+      "license": "CC BY 4.0"
+    },
+    "PhoCoHoiAn.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/PhoCoHoiAn.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:PhoCoHoiAn.jpg",
+      "artist": "Crazy3108",
+      "license": "CC BY-SA 3.0"
+    },
+    "Baton_de_cannelle.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Baton_de_cannelle.jpg/960px-Baton_de_cannelle.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Baton_de_cannelle.jpg",
+      "artist": "Thiry",
+      "license": "CC BY-SA 3.0"
+    },
+    "Che_Shan_tuyet.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Che_Shan_tuyet.JPG/960px-Che_Shan_tuyet.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Che_Shan_tuyet.JPG",
+      "artist": "VuThiAnh",
+      "license": "Public domain"
+    },
+    "Damson_plum_fruit.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Damson_plum_fruit.jpg/960px-Damson_plum_fruit.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Damson_plum_fruit.jpg",
+      "artist": "Jonathan Billinger",
+      "license": "CC BY-SA 2.0"
+    },
+    "Xôi ngũ sắc.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG/960px-X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG",
+      "artist": "Khương Việt Hà",
+      "license": "Public domain"
+    },
+    "Sapa-pig.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Sapa-pig.jpg/960px-Sapa-pig.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Sapa-pig.jpg",
+      "artist": "Ross Huggett",
+      "license": "CC BY 2.0"
+    },
+    "Thắng_cố.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Th%E1%BA%AFng_c%E1%BB%91.jpg/960px-Th%E1%BA%AFng_c%E1%BB%91.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Th%E1%BA%AFng_c%E1%BB%91.jpg",
+      "artist": "Alpha",
+      "license": "CC BY-SA 2.0"
+    },
+    "Paraglider above the top of Khau Pha Pass, Mu Cang Chai.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Paraglider_above_the_top_of_Khau_Pha_Pass%2C_Mu_Cang_Chai.jpg/960px-Paraglider_above_the_top_of_Khau_Pha_Pass%2C_Mu_Cang_Chai.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Paraglider_above_the_top_of_Khau_Pha_Pass,_Mu_Cang_Chai.jpg",
+      "artist": "Mebayluon Paragliding",
+      "license": "CC BY-SA 4.0"
+    },
+    "Sapa Ta Van hike near Sapa and bridge Ta Van.Lao Chai. Cau May.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Sapa_Ta_Van_hike_near_Sapa_and_bridge_Ta_Van.Lao_Chai._Cau_May.jpg/960px-Sapa_Ta_Van_hike_near_Sapa_and_bridge_Ta_Van.Lao_Chai._Cau_May.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Sapa_Ta_Van_hike_near_Sapa_and_bridge_Ta_Van.Lao_Chai._Cau_May.jpg",
+      "artist": "JakobHosp",
+      "license": "CC BY 4.0"
+    },
+    "Thác Bà Lake.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Th%C3%A1c_B%C3%A0_Lake.jpg/960px-Th%C3%A1c_B%C3%A0_Lake.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Th%C3%A1c_B%C3%A0_Lake.jpg",
+      "artist": "Viethavvh",
+      "license": "CC BY-SA 3.0"
+    },
+    "Bao_Ha_Temple_-_P1380679.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Bao_Ha_Temple_-_P1380679.JPG/960px-Bao_Ha_Temple_-_P1380679.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Bao_Ha_Temple_-_P1380679.JPG",
+      "artist": "User:Vmenkov",
+      "license": "CC BY-SA 3.0"
+    },
+    "MarketInNorthernVietnam.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/MarketInNorthernVietnam.jpg/960px-MarketInNorthernVietnam.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:MarketInNorthernVietnam.jpg",
+      "artist": "No machine-readable author provided. AlfredBoc assumed (based on copyright claim",
+      "license": "Public domain"
+    },
+    "Fansipan.png": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Fansipan.png/960px-Fansipan.png?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Fansipan.png",
+      "artist": "MrSlither",
+      "license": "CC BY-SA 4.0"
+    },
+    "Fansipan_Cable_Car_and_Sa_Pa.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Fansipan_Cable_Car_and_Sa_Pa.jpg/960px-Fansipan_Cable_Car_and_Sa_Pa.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Fansipan_Cable_Car_and_Sa_Pa.jpg",
+      "artist": "Christophe95",
+      "license": "CC BY-SA 4.0"
+    },
+    "BỨC_HỌA_ĐỒNG_QUÊ_-_panoramio.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/B%E1%BB%A8C_H%E1%BB%8CA_%C4%90%E1%BB%92NG_QU%C3%8A_-_panoramio.jpg/960px-B%E1%BB%A8C_H%E1%BB%8CA_%C4%90%E1%BB%92NG_QU%C3%8A_-_panoramio.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%E1%BB%A8C_H%E1%BB%8CA_%C4%90%E1%BB%92NG_QU%C3%8A_-_panoramio.jpg",
+      "artist": "VŨ HÙNG",
+      "license": "CC BY-SA 3.0"
+    },
+    "LụaVạnPhúc-2198867187_a0d4cdce3b_o.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/c/ce/L%E1%BB%A5aV%E1%BA%A1nPh%C3%BAc-2198867187_a0d4cdce3b_o.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:L%E1%BB%A5aV%E1%BA%A1nPh%C3%BAc-2198867187_a0d4cdce3b_o.jpg",
+      "artist": "NTLam",
+      "license": "CC BY 2.0"
+    },
+    "O_mai_chanh_com.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/O_mai_chanh_com.JPG/960px-O_mai_chanh_com.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:O_mai_chanh_com.JPG",
+      "artist": "VuThiAnh",
+      "license": "Public domain"
+    },
+    "Cốm_Mễ_Trì_-_NKS.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/C%E1%BB%91m_M%E1%BB%85_Tr%C3%AC_-_NKS.jpg/960px-C%E1%BB%91m_M%E1%BB%85_Tr%C3%AC_-_NKS.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:C%E1%BB%91m_M%E1%BB%85_Tr%C3%AC_-_NKS.jpg",
+      "artist": "NKSTTSSHNVN",
+      "license": "CC BY-SA 4.0"
+    },
+    "Banh_cuon.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Banh_cuon.jpg/960px-Banh_cuon.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Banh_cuon.jpg",
+      "artist": "Lưu Ly",
+      "license": "Public domain"
+    },
+    "Chả_cá_Lã_Vọng.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Ch%E1%BA%A3_c%C3%A1_L%C3%A3_V%E1%BB%8Dng.jpg/960px-Ch%E1%BA%A3_c%C3%A1_L%C3%A3_V%E1%BB%8Dng.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Ch%E1%BA%A3_c%C3%A1_L%C3%A3_V%E1%BB%8Dng.jpg",
+      "artist": "Lionel Ng from Singapore",
+      "license": "CC BY-SA 2.0"
+    },
+    "Bún thang.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/B%C3%BAn_thang.JPG/960px-B%C3%BAn_thang.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%BAn_thang.JPG",
+      "artist": "Nguyễn Thanh Quang",
+      "license": "CC BY-SA 3.0"
+    },
+    "Bún_chả_Thụy_Khuê.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg/960px-B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg",
+      "artist": "Viethavvh",
+      "license": "CC BY-SA 4.0"
+    },
+    "Phở_bò,_Cầu_Giấy,_Hà_Nội.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg/960px-Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Ph%E1%BB%9F_b%C3%B2,_C%E1%BA%A7u_Gi%E1%BA%A5y,_H%C3%A0_N%E1%BB%99i.jpg",
+      "artist": "Codename5281",
+      "license": "CC BY-SA 3.0"
+    },
+    "Go_Dong_Da.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Go_Dong_Da.JPG/960px-Go_Dong_Da.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Go_Dong_Da.JPG",
+      "artist": "Bình Giang",
+      "license": "Public domain"
+    },
+    "Chua_Huong_008.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Chua_Huong_008.jpg/960px-Chua_Huong_008.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Chua_Huong_008.jpg",
+      "artist": "Hoàng Việt at vi.wikipedia",
+      "license": "Public domain"
+    },
+    "Hội_Gióng1.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/H%E1%BB%99i_Gi%C3%B3ng1.jpg/960px-H%E1%BB%99i_Gi%C3%B3ng1.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_Gi%C3%B3ng1.jpg",
+      "artist": "Hoangvantoanajc",
+      "license": "CC BY-SA 3.0"
+    },
+    "Gom_Bat_Trang-Lu_Huong.jpeg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Gom_Bat_Trang-Lu_Huong.jpeg/960px-Gom_Bat_Trang-Lu_Huong.jpeg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Gom_Bat_Trang-Lu_Huong.jpeg",
+      "artist": "vi:User:Lưu Ly",
+      "license": "CC BY-SA 3.0"
+    },
+    "One_Pillar_Pagoda_Hanoi.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/90/One_Pillar_Pagoda_Hanoi.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:One_Pillar_Pagoda_Hanoi.jpg",
+      "artist": "Staffan Scherz",
+      "license": "CC BY 2.0"
+    },
+    "Hanoï_-_Les_Halles.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Hano%C3%AF_-_Les_Halles.jpg/960px-Hano%C3%AF_-_Les_Halles.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Hano%C3%AF_-_Les_Halles.jpg",
+      "artist": "Pierre Dieulefils",
+      "license": "Public domain"
+    },
+    "Hanoi_Temple_of_Literature_(cropped).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Hanoi_Temple_of_Literature_%28cropped%29.jpg/960px-Hanoi_Temple_of_Literature_%28cropped%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Hanoi_Temple_of_Literature_(cropped).jpg",
+      "artist": "The original uploader was Chuoibk tại Wikipedia Tiếng Anh.",
+      "license": "CC BY-SA 3.0"
+    },
+    "Hanoi_citadel.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Hanoi_citadel.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:Hanoi_citadel.jpg",
+      "artist": "Charles-Edouard Hocquard",
+      "license": "Public domain"
+    },
+    "Cổng_đền_Ngọc_Sơn.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/C%E1%BB%95ng_%C4%91%E1%BB%81n_Ng%E1%BB%8Dc_S%C6%A1n.jpg/960px-C%E1%BB%95ng_%C4%91%E1%BB%81n_Ng%E1%BB%8Dc_S%C6%A1n.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:C%E1%BB%95ng_%C4%91%E1%BB%81n_Ng%E1%BB%8Dc_S%C6%A1n.jpg",
+      "artist": "Bùi Thụy Đào Nguyên",
+      "license": "CC BY-SA 3.0"
+    },
+    "Dried_squid_3.png": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Dried_squid_3.png?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:Dried_squid_3.png",
+      "artist": "Binh Giang",
+      "license": "Public domain"
+    },
+    "Lai Thieu Ceramics (9997439653).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Lai_Thieu_Ceramics_%289997439653%29.jpg/960px-Lai_Thieu_Ceramics_%289997439653%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Lai_Thieu_Ceramics_(9997439653).jpg",
+      "artist": "Gary Todd from Xinzheng, China",
+      "license": "CC0"
+    },
+    "Painting Thieu nu va phong canh of Nguyen Gia Tri (front side).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Painting_Thieu_nu_va_phong_canh_of_Nguyen_Gia_Tri_%28front_side%29.jpg/960px-Painting_Thieu_nu_va_phong_canh_of_Nguyen_Gia_Tri_%28front_side%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Painting_Thieu_nu_va_phong_canh_of_Nguyen_Gia_Tri_(front_side).jpg",
+      "artist": "Hoangkid",
+      "license": "Public domain"
+    },
+    "Quả_măng_cụt_(Garcinia_mangostana).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Qu%E1%BA%A3_m%C4%83ng_c%E1%BB%A5t_%28Garcinia_mangostana%29.jpg/960px-Qu%E1%BA%A3_m%C4%83ng_c%E1%BB%A5t_%28Garcinia_mangostana%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Qu%E1%BA%A3_m%C4%83ng_c%E1%BB%A5t_(Garcinia_mangostana).jpg",
+      "artist": "Prenn",
+      "license": "CC BY-SA 3.0"
+    },
+    "Bánh_khọt.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/B%C3%A1nh_kh%E1%BB%8Dt.jpg/960px-B%C3%A1nh_kh%E1%BB%8Dt.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_kh%E1%BB%8Dt.jpg",
+      "artist": "terence from Singapore",
+      "license": "CC BY 2.0"
+    },
+    "Hủ tiếu Nam Vang Sài Gòn.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg/960px-H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg",
+      "artist": "Tonbi ko",
+      "license": "CC BY-SA 4.0"
+    },
+    "Bánh_mì_thịt_nướng.png": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/B%C3%A1nh_m%C3%AC_th%E1%BB%8Bt_n%C6%B0%E1%BB%9Bng.png?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_m%C3%AC_th%E1%BB%8Bt_n%C6%B0%E1%BB%9Bng.png",
+      "artist": "nsaum75¡שיחת!‎",
+      "license": "CC BY-SA 3.0"
+    },
+    "Cơm_Tấm,_Da_Nang,_Vietnam.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg/960px-C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:C%C6%A1m_T%E1%BA%A5m,_Da_Nang,_Vietnam.jpg",
+      "artist": "Christopher Crouzet",
+      "license": "CC BY-SA 4.0"
+    },
+    "Chùa Bà Thiên hậu-Thủ Dầu Một- Bình dương- Vietnam - panoramio.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Ch%C3%B9a_B%C3%A0_Thi%C3%AAn_h%E1%BA%ADu-Th%E1%BB%A7_D%E1%BA%A7u_M%E1%BB%99t-_B%C3%ACnh_d%C6%B0%C6%A1ng-_Vietnam_-_panoramio.jpg/960px-Ch%C3%B9a_B%C3%A0_Thi%C3%AAn_h%E1%BA%ADu-Th%E1%BB%A7_D%E1%BA%A7u_M%E1%BB%99t-_B%C3%ACnh_d%C6%B0%C6%A1ng-_Vietnam_-_panoramio.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Ch%C3%B9a_B%C3%A0_Thi%C3%AAn_h%E1%BA%ADu-Th%E1%BB%A7_D%E1%BA%A7u_M%E1%BB%99t-_B%C3%ACnh_d%C6%B0%C6%A1ng-_Vietnam_-_panoramio.jpg",
+      "artist": "trungydang",
+      "license": "CC BY 3.0"
+    },
+    "Dinh_Thang_Tam,_Hoang_Hoa_Tham_,_Vung_tau_Vietnam_-_panoramio.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Dinh_Thang_Tam%2C_Hoang_Hoa_Tham_%2C_Vung_tau_Vietnam_-_panoramio.jpg/960px-Dinh_Thang_Tam%2C_Hoang_Hoa_Tham_%2C_Vung_tau_Vietnam_-_panoramio.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Dinh_Thang_Tam,_Hoang_Hoa_Tham_,_Vung_tau_Vietnam_-_panoramio.jpg",
+      "artist": "trungydang",
+      "license": "CC BY 3.0"
+    },
+    "Ảnh_tác_phẩm_Đường_hoa_Nguyễn_Huệ.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/%E1%BA%A2nh_t%C3%A1c_ph%E1%BA%A9m_%C4%90%C6%B0%E1%BB%9Dng_hoa_Nguy%E1%BB%85n_Hu%E1%BB%87.JPG/960px-%E1%BA%A2nh_t%C3%A1c_ph%E1%BA%A9m_%C4%90%C6%B0%E1%BB%9Dng_hoa_Nguy%E1%BB%85n_Hu%E1%BB%87.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:%E1%BA%A2nh_t%C3%A1c_ph%E1%BA%A9m_%C4%90%C6%B0%E1%BB%9Dng_hoa_Nguy%E1%BB%85n_Hu%E1%BB%87.JPG",
+      "artist": "Ngô Trung",
+      "license": "CC BY 3.0"
+    },
+    "Côn_Đảo,_Bà_Rịa_-_Vũng_Tàu,_Vietnam_-_panoramio_(33).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/C%C3%B4n_%C4%90%E1%BA%A3o%2C_B%C3%A0_R%E1%BB%8Ba_-_V%C5%A9ng_T%C3%A0u%2C_Vietnam_-_panoramio_%2833%29.jpg/960px-C%C3%B4n_%C4%90%E1%BA%A3o%2C_B%C3%A0_R%E1%BB%8Ba_-_V%C5%A9ng_T%C3%A0u%2C_Vietnam_-_panoramio_%2833%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:C%C3%B4n_%C4%90%E1%BA%A3o,_B%C3%A0_R%E1%BB%8Ba_-_V%C5%A9ng_T%C3%A0u,_Vietnam_-_panoramio_(33).jpg",
+      "artist": "Lam Tr Th",
+      "license": "CC BY-SA 3.0"
+    },
+    "Rừng_Sác_-_2.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/R%E1%BB%ABng_S%C3%A1c_-_2.jpg/960px-R%E1%BB%ABng_S%C3%A1c_-_2.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:R%E1%BB%ABng_S%C3%A1c_-_2.jpg",
+      "artist": "Lưu Ly (thảo luận)",
+      "license": "CC BY 3.0"
+    },
+    "Địa_đạo_Củ_Chi.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/%C4%90%E1%BB%8Ba_%C4%91%E1%BA%A1o_C%E1%BB%A7_Chi.jpg/960px-%C4%90%E1%BB%8Ba_%C4%91%E1%BA%A1o_C%E1%BB%A7_Chi.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:%C4%90%E1%BB%8Ba_%C4%91%E1%BA%A1o_C%E1%BB%A7_Chi.jpg",
+      "artist": "Lưu Ly (thảo luận)",
+      "license": "Public domain"
+    },
+    "Clock and exterior of Saigon Central Post Office.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Clock_and_exterior_of_Saigon_Central_Post_Office.JPG/960px-Clock_and_exterior_of_Saigon_Central_Post_Office.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Clock_and_exterior_of_Saigon_Central_Post_Office.JPG",
+      "artist": "Prenn",
+      "license": "CC BY-SA 3.0"
+    },
+    "HCMC_Notre_Dame_Cathedral.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/HCMC_Notre_Dame_Cathedral.jpg/960px-HCMC_Notre_Dame_Cathedral.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:HCMC_Notre_Dame_Cathedral.jpg",
+      "artist": "Eustaquio Santimano from Singapore",
+      "license": "CC BY 2.0"
+    },
+    "Independence Palace, Ho Chi Minh (LRM 20230823 093633).jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Independence_Palace%2C_Ho_Chi_Minh_%28LRM_20230823_093633%29.jpg/960px-Independence_Palace%2C_Ho_Chi_Minh_%28LRM_20230823_093633%29.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Independence_Palace,_Ho_Chi_Minh_(LRM_20230823_093633).jpg",
+      "artist": "Matti Blume",
+      "license": "CC BY-SA 4.0"
+    },
+    "Ben_Thanh_market_at_night.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Ben_Thanh_market_at_night.JPG/960px-Ben_Thanh_market_at_night.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Ben_Thanh_market_at_night.JPG",
+      "artist": "Ngô Trung",
+      "license": "CC BY 3.0"
+    },
+    "Nước mắm Gio Hải của chú Trong, tết 2018.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Gio_H%E1%BA%A3i_c%E1%BB%A7a_ch%C3%BA_Trong%2C_t%E1%BA%BFt_2018.jpg/960px-N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Gio_H%E1%BA%A3i_c%E1%BB%A7a_ch%C3%BA_Trong%2C_t%E1%BA%BFt_2018.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:N%C6%B0%E1%BB%9Bc_m%E1%BA%AFm_Gio_H%E1%BA%A3i_c%E1%BB%A7a_ch%C3%BA_Trong,_t%E1%BA%BFt_2018.jpg",
+      "artist": "Phương Huy (thảo luận)",
+      "license": "Public domain"
+    },
+    "Coffee_tree_arabica.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Coffee_tree_arabica.jpg/960px-Coffee_tree_arabica.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Coffee_tree_arabica.jpg",
+      "artist": "DXLINH",
+      "license": "CC BY-SA 3.0"
+    },
+    "Artichokes.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/21/Artichokes.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:Artichokes.jpg",
+      "artist": "The original Uploader was Quadell at English Wikipedia",
+      "license": "Public domain"
+    },
+    "Dülmen,_Kirchspiel,_Erdbeerfeld_--_2015_--_6492-6.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/D%C3%BClmen%2C_Kirchspiel%2C_Erdbeerfeld_--_2015_--_6492-6.jpg/960px-D%C3%BClmen%2C_Kirchspiel%2C_Erdbeerfeld_--_2015_--_6492-6.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Kirchspiel,_Erdbeerfeld_--_2015_--_6492-6.jpg",
+      "artist": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0"
+    },
+    "Leiolepis.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Leiolepis.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:Leiolepis.jpg",
+      "artist": "TheReptilarium",
+      "license": "CC BY 2.0"
+    },
+    "Banh-Canh-Noodle-Soup.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Banh-Canh-Noodle-Soup.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:Banh-Canh-Noodle-Soup.jpg",
+      "artist": "Kham Tran - www.khamtran.com",
+      "license": "CC BY 3.0"
+    },
+    "Bánh_căn_1.jpg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/a/a3/B%C3%A1nh_c%C4%83n_1.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_c%C4%83n_1.jpg",
+      "artist": "Memberofc1",
+      "license": "CC BY-SA 3.0"
+    },
+    "Newone - lẩu gà, sườn và rượu đinh lăng.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Newone_-_l%E1%BA%A9u_g%C3%A0%2C_s%C6%B0%E1%BB%9Dn_v%C3%A0_r%C6%B0%E1%BB%A3u_%C4%91inh_l%C4%83ng.jpg/960px-Newone_-_l%E1%BA%A9u_g%C3%A0%2C_s%C6%B0%E1%BB%9Dn_v%C3%A0_r%C6%B0%E1%BB%A3u_%C4%91inh_l%C4%83ng.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Newone_-_l%E1%BA%A9u_g%C3%A0,_s%C6%B0%E1%BB%9Dn_v%C3%A0_r%C6%B0%E1%BB%A3u_%C4%91inh_l%C4%83ng.jpg",
+      "artist": "Newone",
+      "license": "CC BY-SA 4.0"
+    },
+    "Bánh tráng nướng TP. Hồ Chí Minh - street food in Ho Chi Minh City, Vietnam.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/B%C3%A1nh_tr%C3%A1ng_n%C6%B0%E1%BB%9Bng_TP._H%E1%BB%93_Ch%C3%AD_Minh_-_street_food_in_Ho_Chi_Minh_City%2C_Vietnam.jpg/960px-B%C3%A1nh_tr%C3%A1ng_n%C6%B0%E1%BB%9Bng_TP._H%E1%BB%93_Ch%C3%AD_Minh_-_street_food_in_Ho_Chi_Minh_City%2C_Vietnam.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:B%C3%A1nh_tr%C3%A1ng_n%C6%B0%E1%BB%9Bng_TP._H%E1%BB%93_Ch%C3%AD_Minh_-_street_food_in_Ho_Chi_Minh_City,_Vietnam.jpg",
+      "artist": "Light Write",
+      "license": "CC BY-SA 2.0"
+    },
+    "Parade from \"Kate\" festival of Cham people, Central Vietnam.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Parade_from_%22Kate%22_festival_of_Cham_people%2C_Central_Vietnam.jpg/960px-Parade_from_%22Kate%22_festival_of_Cham_people%2C_Central_Vietnam.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Parade_from_%22Kate%22_festival_of_Cham_people,_Central_Vietnam.jpg",
+      "artist": "DTH-BD-NVT",
+      "license": "CC BY-SA 4.0"
+    },
+    "Hồ_Xuân_Hương,_Đà_Lạt.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/H%E1%BB%93_Xu%C3%A2n_H%C6%B0%C6%A1ng%2C_%C4%90%C3%A0_L%E1%BA%A1t.jpg/960px-H%E1%BB%93_Xu%C3%A2n_H%C6%B0%C6%A1ng%2C_%C4%90%C3%A0_L%E1%BA%A1t.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:H%E1%BB%93_Xu%C3%A2n_H%C6%B0%C6%A1ng,_%C4%90%C3%A0_L%E1%BA%A1t.jpg",
+      "artist": "Original uploader was Dongson.vmvn at vi.wikipedia",
+      "license": "CC BY-SA 3.0"
+    },
+    "Phan_Thiet.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Phan_Thiet.jpg/960px-Phan_Thiet.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Phan_Thiet.jpg",
+      "artist": "Tuong Lam Photos",
+      "license": "CC BY-SA 4.0"
+    },
+    "Tháp Po Sah Inu, Phan Thiết, Bình Thuận.JPG": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Th%C3%A1p_Po_Sah_Inu%2C_Phan_Thi%E1%BA%BFt%2C_B%C3%ACnh_Thu%E1%BA%ADn.JPG/960px-Th%C3%A1p_Po_Sah_Inu%2C_Phan_Thi%E1%BA%BFt%2C_B%C3%ACnh_Thu%E1%BA%ADn.JPG?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Th%C3%A1p_Po_Sah_Inu,_Phan_Thi%E1%BA%BFt,_B%C3%ACnh_Thu%E1%BA%ADn.JPG",
+      "artist": "Dongson*vmvn tại Wikipedia Tiếng Việt",
+      "license": "CC BY-SA 3.0"
+    },
+    "Thanh_Long_ở_Ninh_Thuận.jpg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Thanh_Long_%E1%BB%9F_Ninh_Thu%E1%BA%ADn.jpg/960px-Thanh_Long_%E1%BB%9F_Ninh_Thu%E1%BA%ADn.jpg?utm_source=vi.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Thanh_Long_%E1%BB%9F_Ninh_Thu%E1%BA%ADn.jpg",
+      "artist": "Bùi Thụy Đào Nguyên",
+      "license": "CC BY-SA 3.0"
+    }
+  }
+}

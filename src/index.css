@@ -1,0 +1,50 @@
+:root {
+  --text: #334155;
+  --text-strong: #0f172a;
+  --text-muted: #64748b;
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  --hover: #f1f5f9;
+  --border: #e2e8f0;
+  --panel-width: min(400px, calc(100vw - 32px));
+  --sheet-height: 62vh;
+  --sea: #e8f0f4;
+  --accent: #0f766e;
+  --accent-soft: rgba(15, 118, 110, 0.1);
+  --radius: 14px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08), 0 12px 32px rgba(15, 23, 42, 0.1);
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  font: 14px/1.5 var(--sans);
+  color: var(--text);
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Tinh chỉnh control mặc định của Leaflet cho hợp phong cách tối giản */
+.leaflet-container {
+  font-family: var(--sans);
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.leaflet-interactive:focus {
+  outline: none;
+}
