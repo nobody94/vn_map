@@ -63,7 +63,6 @@ function App() {
       </header>
 
       <RegionLegend
-        colorByRegion={colorByRegion}
         onHighlight={setHighlightRegion}
         hiddenOnMobile={panelOpen}
       />

@@ -1,8 +1,7 @@
 import { REGIONS, type RegionId } from '../../data/regions'
 import styles from './RegionLegend.module.css'
 
-interface Props {
-  colorByRegion: boolean
+interface Props { 
   /** Vùng đang được rê chuột trên chú giải (để làm nổi trên bản đồ) */
   onHighlight: (id: RegionId | null) => void
   /** Ẩn trên điện thoại (khi panel thông tin đang mở) */
@@ -10,12 +9,11 @@ interface Props {
 }
 
 /** Chú giải 7 vùng + công tắc bật/tắt tô màu theo vùng */
-export function RegionLegend({ colorByRegion, onHighlight, hiddenOnMobile }: Props) {
+export function RegionLegend({ onHighlight, hiddenOnMobile }: Props) {
  
   return (
     <section className={styles.legend} aria-label="Chú giải vùng" data-hidden-mobile={hiddenOnMobile ? 'true' : undefined}>
-      {colorByRegion && (
-        <ul className={styles.list}>
+      <ul className={styles.list}>
           {REGIONS.map((r) => (
             <li
               key={r.id}
@@ -28,7 +26,6 @@ export function RegionLegend({ colorByRegion, onHighlight, hiddenOnMobile }: Pro
             </li>
           ))}
         </ul>
-      )}
     </section>
   )
 }

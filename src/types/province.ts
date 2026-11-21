@@ -24,9 +24,17 @@ export interface Peak {
  * Tham chiếu ảnh. Ảnh được tra sẵn bằng `npm run media` (scripts/fetch-media.ts)
  * và lưu ở src/data/media.generated.json.
  *
- * Thứ tự ưu tiên: imageFile → ảnh trong bài `wiki` → kết quả tìm `imageSearch` trên Commons
+ * Thứ tự ưu tiên: imageUrl (ảnh tự tìm) → imageFile → ảnh trong bài `wiki` → kết quả tìm `imageSearch` trên Commons
+ * → ảnh dự phòng Openverse theo tên mục
  */
 export interface MediaRef {
+  /**
+   * Ảnh tự tìm, ưu tiên cao nhất: đường dẫn trong thư mục public (vd. 'images/lang-son/vit-quay.jpg')
+   * hoặc URL đầy đủ https://…
+   */
+  imageUrl?: string
+  /** Ghi nguồn cho imageUrl, vd. 'Nguyễn Văn A · CC BY 4.0' hoặc 'Ảnh tự chụp' */
+  imageCredit?: string
   /** Tiêu đề bài Wikipedia tiếng Việt, dùng để lấy ảnh tự động */
   wiki?: string
   /** Tên file trên Wikimedia Commons (không kèm "File:"), dùng khi ảnh tự chọn chưa đẹp */

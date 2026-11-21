@@ -145,36 +145,41 @@ const fileList = [...files].filter((f) => {
   return !prev.images[f]
 })
 console.log(`Thông tin ảnh: ${files.size} (mới: ${fileList.length})`)
-for (let i = 0; i < fileList.length; i += 50) {
-  const batch = fileList.slice(i, i + 50)
-  // Hỏi qua vi.wikipedia để nhận cả file Commons lẫn file cục bộ
-  const j = await api('vi.wikipedia.org', {
-    action: 'query',
-    titles: batch.map((f) => `File:${f}`).join('|'),
-    prop: 'imageinfo',
-    iiprop: 'url|extmetadata',
-    iiurlwidth: String(THUMB_WIDTH),
-    iiextmetadatafilter: 'Artist|LicenseShortName',
-  })
-  const norm = new Map<string, string>((j.query.normalized ?? []).map((n: any) => [n.to, n.from]))
-  for (const p of j.query.pages) {
-    const ii = p.imageinfo?.[0]
-    if (!ii) continue
-    const key = (norm.get(p.title) ?? p.title).replace(/^File:/, '')
-    images[key] = {
-      src: ii.thumburl ?? ii.url,
-      page: ii.descriptionurl,
-      artist: stripHtml(ii.extmetadata?.Artist?.value) || 'Không rõ',
-      license: stripHtml(ii.extmetadata?.LicenseShortName?.value) || '',
+await fetchImageInfo(fileList)
+
+/** Thumbnail THUMB_WIDTH px + tác giả + giấy phép cho các file Commons / Wikipedia, ghi vào `images` */
+async function fetchImageInfo(fileList: string[]) {
+  for (let i = 0; i < fileList.length; i += 50) {
+    const batch = fileList.slice(i, i + 50)
+    // Hỏi qua vi.wikipedia để nhận cả file Commons lẫn file cục bộ
+    const j = await api('vi.wikipedia.org', {
+      action: 'query',
+      titles: batch.map((f) => `File:${f}`).join('|'),
+      prop: 'imageinfo',
+      iiprop: 'url|extmetadata',
+      iiurlwidth: String(THUMB_WIDTH),
+      iiextmetadatafilter: 'Artist|LicenseShortName',
+    })
+    const norm = new Map<string, string>((j.query.normalized ?? []).map((n: any) => [n.to, n.from]))
+    for (const p of j.query.pages) {
+      const ii = p.imageinfo?.[0]
+      if (!ii) continue
+      const key = (norm.get(p.title) ?? p.title).replace(/^File:/, '')
+      images[key] = {
+        src: ii.thumburl ?? ii.url,
+        page: ii.descriptionurl,
+        artist: stripHtml(ii.extmetadata?.Artist?.value) || 'Không rõ',
+        license: stripHtml(ii.extmetadata?.LicenseShortName?.value) || '',
+      }
     }
   }
-}
-// Khóa ảnh có thể khác cách viết (dấu cách / gạch dưới) — chuẩn hóa thêm một bản
-for (const f of fileList) {
-  if (images[f]) continue
-  const alt = Object.keys(images).find((k) => k.replace(/ /g, '_') === f.replace(/ /g, '_'))
-  if (alt) images[f] = images[alt]
-  else console.warn(`  ✗ Không lấy được thông tin ảnh: ${f}`)
+  // Khóa ảnh có thể khác cách viết (dấu cách / gạch dưới) — chuẩn hóa thêm một bản
+  for (const f of fileList) {
+    if (images[f]) continue
+    const alt = Object.keys(images).find((k) => k.replace(/ /g, '_') === f.replace(/ /g, '_'))
+    if (alt) images[f] = images[alt]
+    else console.warn(`  ✗ Không lấy được thông tin ảnh: ${f}`)
+  }
 }
 
 // ─── 5. Dự phòng: mục vẫn chưa có ảnh → tìm trên Openverse (ảnh CC từ Flickr, Commons…) ───
@@ -182,8 +187,21 @@ const hasWikiImage = (r: MediaRef) => {
   const f = r.imageFile ?? (r.wiki ? articles[r.wiki]?.image : null) ?? (r.imageSearch ? searchResults[r.imageSearch] : null)
   return !!f && !!(images[f] ?? images[f.replace(/ /g, '_')] ?? images[f.replace(/_/g, ' ')])
 }
+/** Mục đã xem và thấy Openverse chọn sai ảnh — không dùng ảnh dự phòng */
+const NO_FALLBACK = new Set([
+  'Chè Tam Đường', // ảnh tin giao thông
+  'Don Quảng Ngãi', // ảnh đường phố 1971
+  'Lẩu mắm', // ảnh quảng cáo bếp
+  'Kon Ka Kinh', // ảnh côn trùng
+  'Rượu Kim Sơn', // rượu sim Thung Nham
+  'Cù lao An Bình', // cù lao khác
+  'Rừng U Minh Hạ', // ảnh cây chuối
+  'Mỳ Chũ', // ảnh căn phòng
+  'Động Tiên Sơn', // ảnh bàn thờ, không phải hang
+])
+
 const fallback: Record<string, string | null> = {}
-const fallbackRefs = refs.filter((r) => !hasWikiImage(r) && fallbackKey(r))
+const fallbackRefs = refs.filter((r) => !hasWikiImage(r) && fallbackKey(r) && !NO_FALLBACK.has(fallbackKey(r)!))
 const fallbackKeys = [...new Set(fallbackRefs.map((r) => fallbackKey(r)!))]
 const fallbackQueries = new Map<string, string[]>()
 for (const r of fallbackRefs) {
@@ -206,6 +224,19 @@ function relevant(title: string, query: string): boolean {
   return q.filter((w) => t.has(w)).length >= Math.ceil(q.length * 0.75)
 }
 
+/** Ảnh Flickr lấy cỡ "_z" (~640px); thumbnail của Openverse hay lỗi nên không dùng */
+function directSrc(x: any): string {
+  const url: string = x.url ?? ''
+  if (/staticflickr\.com/.test(url)) return url.replace(/(_[a-z])?\.(jpe?g|png)$/i, '_z.$2')
+  return url
+}
+
+/** Tên file nếu ảnh nằm trên Commons — khi đó lấy thumbnail + giấy phép qua API Commons như các ảnh khác */
+function commonsFile(x: any): string | null {
+  const m = (x.url ?? '').match(/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/\w\/\w\w\/([^/]+)$/)
+  return m ? decodeURIComponent(m[1]) : null
+}
+
 const LICENSE_NAME = (l: string, v: string) => (l === 'cc0' ? 'CC0' : l === 'pdm' ? 'Public domain' : `CC ${l.toUpperCase()} ${v}`.trim())
 
 async function openverse(q: string): Promise<any[] | null> {
@@ -225,13 +256,14 @@ async function openverse(q: string): Promise<any[] | null> {
 
 const newFallback = fallbackKeys.filter((k) => {
   const old = prev.fallback?.[k]
-  if (old !== undefined && (old === null || prev.images[old])) {
+  if (old !== undefined && (old === null || (prev.images[old] && !(old.startsWith('ov:') && /openverse.org|wikimedia.org/.test(prev.images[old].src))))) {
     fallback[k] = old
     if (old) images[old] = prev.images[old]
     return false
   }
   return true
 })
+const commonsFallback: string[] = []
 console.log(`Tìm ảnh dự phòng Openverse: ${fallbackKeys.length} (mới: ${newFallback.length})`)
 for (const k of newFallback) {
   let found: any = null
@@ -250,11 +282,16 @@ for (const k of newFallback) {
     console.warn('  ! Openverse từ chối liên tục, dừng; chạy lại sau để tra tiếp')
     break
   }
-  if (found) {
+  const file = found && commonsFile(found)
+  if (file) {
+    fallback[k] = file
+    if (!images[file]) commonsFallback.push(file)
+    console.log(`  ✓ ${k} → Commons "${file}"`)
+  } else if (found) {
     const key = `ov:${found.id}`
     fallback[k] = key
     images[key] = {
-      src: found.thumbnail ?? found.url,
+      src: directSrc(found),
       page: found.foreign_landing_url ?? found.url,
       artist: stripHtml(found.creator) || 'Không rõ',
       license: LICENSE_NAME(found.license ?? '', found.license_version ?? ''),
@@ -265,6 +302,10 @@ for (const k of newFallback) {
     console.log(`  ✗ ${k}`)
   }
 }
+
+await fetchImageInfo(commonsFallback)
+// File Commons đã bị xóa / không truy cập được → coi như không có ảnh
+for (const [k, v] of Object.entries(fallback)) if (v && !images[v]) fallback[k] = null
 
 writeFileSync(OUT, JSON.stringify({ articles, searches: searchResults, images, fallback }, null, 2) + '\n')
 const noImage = refs.filter((r) => {

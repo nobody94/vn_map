@@ -20,26 +20,28 @@ export function MountainPanel({ mountain: m, onClose, onOpenProvince }: Props) {
 
   return (
     <aside className={panel.panel} aria-label={`Thông tin núi ${m.name}`}>
-      {/* key: ảnh lỗi ở núi này không ảnh hưởng núi khác */}
-      <div className={styles.hero}>
-        <MediaImage key={m.id} media={m} alt={m.name} variant="cover" />
-        <button className={`${panel.close} ${styles.closeOnImage}`} onClick={onClose} aria-label="Đóng">
+      <header className={panel.header}>
+        <div>
+          <div className={panel.kind}>
+            Núi{m.range && <span className={panel.region}> · Dãy {m.range}</span>}
+          </div>
+          <h2 className={panel.name}>{m.name}</h2>
+          {m.note && <div className={styles.note}>{m.note}</div>}
+        </div>
+        <button className={panel.close} onClick={onClose} aria-label="Đóng">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
             <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </button>
-        {!hasImage && <div className={styles.noImage}>Chưa có ảnh</div>}
-      </div>
-
-      <header className={styles.header}>
-        <div className={panel.kind}>
-          Núi{m.range && <span className={panel.region}> · Dãy {m.range}</span>}
-        </div>
-        <h2 className={panel.name}>{m.name}</h2>
-        {m.note && <div className={styles.note}>{m.note}</div>}
       </header>
 
       <div className={panel.body}>
+        {/* key: ảnh lỗi ở núi này không ảnh hưởng núi khác */}
+        <div className={styles.hero}>
+          <MediaImage key={m.id} media={m} alt={m.name} variant="cover" />
+          {!hasImage && <div className={styles.noImage}>Chưa có ảnh</div>}
+        </div>
+
         <section className={tab.section}>
           <div className={tab.statGrid}>
             <div className={tab.stat}>

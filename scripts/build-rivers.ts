@@ -5,9 +5,11 @@
  *
  * - Mỗi sông một truy vấn (way + relation waterway có `name` khớp `osmName`), trong khung Việt Nam.
  * - Thử lại với độ trễ tăng dần, xoay vòng giữa các máy chủ Overpass (máy chủ hay quá tải).
+ * - Bỏ đoạn của sông trùng tên ở nơi khác bằng khung CLIP riêng từng sông.
+ * - Chỉ áp lại CLIP lên file đã có (không gọi Overpass):  node scripts/build-rivers.ts --clip
  * - Đơn giản hóa Douglas–Peucker, làm tròn 4 chữ số. Dữ liệu © OpenStreetMap contributors (ODbL).
  */
-import { writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { RIVERS } from '../src/data/rivers.ts'
 
@@ -71,35 +73,66 @@ function dp(pts: Pt[], tol: number): Pt[] {
 }
 const round = (p: Pt): Pt => [Math.round(p[0] * 1e4) / 1e4, Math.round(p[1] * 1e4) / 1e4]
 
-const features = []
-for (const r of RIVERS) {
-  const names = [r.osmName, ...(r.osmAltNames ?? [])].map((n) => `"${n}"`)
-  const q = `[out:json][timeout:120];(${names
-    .map((n) => `way["waterway"~"river|canal"]["name"=${n}](${BBOX});relation["waterway"]["name"=${n}](${BBOX});`)
-    .join('')});out geom;`
-  console.log(`→ ${r.name}`)
-  const j = await overpass(q)
-  const seen = new Set<number>()
-  const lines: Pt[][] = []
-  for (const el of j.elements) {
-    const ways = el.type === 'way' ? [el] : (el.members ?? []).filter((m: any) => m.type === 'way' && m.geometry)
-    for (const w of ways) {
-      const id = w.id ?? w.ref
-      if (seen.has(id) || !w.geometry) continue
-      seen.add(id)
-      lines.push(w.geometry.map((g: any) => [g.lon, g.lat] as Pt))
-    }
-  }
-  const simplified = lines.map((l) => dp(l, TOL).map(round)).filter((l) => l.length >= 2)
-  const pts = simplified.reduce((n, l) => n + l.length, 0)
-  console.log(`  ${lines.length} đoạn → ${pts} điểm`)
-  if (!simplified.length) {
-    console.warn(`  ✗ Không có dữ liệu cho ${r.name}`)
-    continue
-  }
-  features.push({ type: 'Feature', properties: { id: r.id }, geometry: { type: 'MultiLineString', coordinates: simplified } })
-  await sleep(2000)
+/**
+ * Khung giữ lại [nam, tây, bắc, đông] cho sông có tên trùng sông khác trong OSM.
+ * Đoạn có điểm giữa nằm ngoài khung bị bỏ.
+ */
+const CLIP: Record<string, [number, number, number, number]> = {
+  lo: [21, 103, 24, 106], // "Sông Lô" ở miền Nam
+  cau: [20.5, 105, 22.5, 107], // sông Cầu ở Khánh Hòa / Phú Yên
+  huong: [15.9, 107, 16.8, 108], // sông Hương khác ở miền Bắc
 }
 
-writeFileSync(OUT, JSON.stringify({ type: 'FeatureCollection', features }))
-console.log(`\nĐã ghi ${OUT}: ${features.length}/${RIVERS.length} sông`)
+function clip(id: string, lines: Pt[][]): Pt[][] {
+  const box = CLIP[id]
+  if (!box) return lines
+  const [s, w, n, e] = box
+  return lines.filter((l) => {
+    const [x, y] = l[Math.floor(l.length / 2)]
+    return y >= s && y <= n && x >= w && x <= e
+  })
+}
+
+const CLIP_ONLY = process.argv.includes('--clip')
+if (CLIP_ONLY) {
+  const g = JSON.parse(readFileSync(OUT, 'utf8'))
+  for (const f of g.features) {
+    const before = f.geometry.coordinates.length
+    f.geometry.coordinates = clip(f.properties.id, f.geometry.coordinates)
+    if (before !== f.geometry.coordinates.length) console.log(`${f.properties.id}: ${before} → ${f.geometry.coordinates.length} đoạn`)
+  }
+  writeFileSync(OUT, JSON.stringify(g))
+} else {
+  const features = []
+  for (const r of RIVERS) {
+    const names = [r.osmName, ...(r.osmAltNames ?? [])].map((n) => `"${n}"`)
+    const q = `[out:json][timeout:120];(${names
+      .map((n) => `way["waterway"~"river|canal"]["name"=${n}](${BBOX});relation["waterway"]["name"=${n}](${BBOX});`)
+      .join('')});out geom;`
+    console.log(`→ ${r.name}`)
+    const j = await overpass(q)
+    const seen = new Set<number>()
+    const lines: Pt[][] = []
+    for (const el of j.elements) {
+      const ways = el.type === 'way' ? [el] : (el.members ?? []).filter((m: any) => m.type === 'way' && m.geometry)
+      for (const w of ways) {
+        const id = w.id ?? w.ref
+        if (seen.has(id) || !w.geometry) continue
+        seen.add(id)
+        lines.push(w.geometry.map((g: any) => [g.lon, g.lat] as Pt))
+      }
+    }
+    const simplified = clip(r.id, lines.map((l) => dp(l, TOL).map(round)).filter((l) => l.length >= 2))
+    const pts = simplified.reduce((n, l) => n + l.length, 0)
+    console.log(`  ${lines.length} đoạn → ${pts} điểm`)
+    if (!simplified.length) {
+      console.warn(`  ✗ Không có dữ liệu cho ${r.name}`)
+      continue
+    }
+    features.push({ type: 'Feature', properties: { id: r.id }, geometry: { type: 'MultiLineString', coordinates: simplified } })
+    await sleep(2000)
+  }
+
+  writeFileSync(OUT, JSON.stringify({ type: 'FeatureCollection', features }))
+  console.log(`\nĐã ghi ${OUT}: ${features.length}/${RIVERS.length} sông`)
+}

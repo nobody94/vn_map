@@ -24,8 +24,13 @@ export interface ResolvedImage extends ImageInfo {
   credit: string
 }
 
-/** Ảnh cho một MediaRef: imageFile → ảnh trong bài wiki → kết quả tìm Commons → Openverse */
+/** Ảnh cho một MediaRef: imageUrl → imageFile → ảnh trong bài wiki → kết quả tìm Commons → Openverse */
 export function resolveImage(ref: MediaRef): ResolvedImage | undefined {
+  if (ref.imageUrl) {
+    const src = /^https?:\/\//.test(ref.imageUrl) ? ref.imageUrl : import.meta.env.BASE_URL + ref.imageUrl.replace(/^\//, '')
+    const credit = ref.imageCredit ?? ''
+    return { src, page: '', artist: credit, license: '', credit: credit ? `Ảnh: ${credit}` : '' }
+  }
   const file =
     ref.imageFile ??
     (ref.wiki ? data.articles[ref.wiki]?.image : null) ??

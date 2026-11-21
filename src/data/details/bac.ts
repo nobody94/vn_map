@@ -49,14 +49,14 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     ],
     foods: [
       { name: 'Phở chua', description: 'Bánh phở trộn nước sốt chua ngọt, thịt quay, gan, lạc rang.' },
-      { name: 'Bánh cuốn canh', description: 'Bánh cuốn chan nước dùng xương nóng, ăn kèm chả.', imageSearch: 'bánh cuốn Cao Bằng' },
+      { name: 'Bánh cuốn canh', description: 'Bánh cuốn chan nước dùng xương nóng, ăn kèm chả.', imageSearch: 'bánh cuốn Cao Bằng',imageUrl:'',imageCredit:'' },
       { name: 'Bánh trứng kiến', description: 'Bánh lá ngải nhân trứng kiến, chỉ có vào mùa xuân.' },
       { name: 'Lạp sườn hun khói', description: 'Lạp sườn treo gác bếp, thơm mùi khói củi.', imageSearch: 'lạp sườn Cao Bằng' },
     ],
     specialties: [
-      { name: 'Hạt dẻ Trùng Khánh', description: 'Hạt dẻ bùi, thơm, thu hoạch vào mùa thu.' },
+      { name: 'Hạt dẻ Trùng Khánh', description: 'Hạt dẻ bùi, thơm, thu hoạch vào mùa thu.',imageUrl:'public/images/cao-bang/hat de trung khanh.jpg',imageCredit:'PxHere(https://pxhere.com/vi/photo/1007091) - CC0' },
       { name: 'Miến dong Nguyên Bình', description: 'Miến làm từ củ dong riềng, sợi dai, trong.', wiki: 'Miến' },
-      { name: 'Trà xanh Thạch An', description: 'Chè xanh vùng núi cao, nước xanh, vị đậm.', imageSearch: 'tea plantation Cao Bang' },
+      { name: 'Trà xanh Thạch An', description: 'Chè xanh vùng núi cao, nước xanh, vị đậm.', imageSearch: 'tea plantation Cao Bang',imageUrl:'public/images/cao-bang/tra xanh.jpg',imageCredit:'PxHere(https://pxhere.com/vi/photo/1285572) - CC0'  },
     ],
   },
 

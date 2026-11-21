@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "media": "node scripts/fetch-media.ts"
+    "media": "node scripts/fetch-media.ts",
+    "media:missing": "node scripts/list-missing-images.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

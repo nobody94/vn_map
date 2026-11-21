@@ -1,20 +1,12 @@
+/* Ảnh nằm dưới tên, đầu phần nội dung cuộn */
 .hero {
   position: relative;
-  flex: none;
+  margin-bottom: 20px;
 }
 
-/* Ảnh bìa sát mép trên của panel */
 .hero > figure,
 .hero > div:first-child {
-  border-radius: 0;
-}
-
-.closeOnImage {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow-sm);
+  border-radius: 10px;
 }
 
 .noImage {
@@ -24,10 +16,6 @@
   transform: translateX(-50%);
   font-size: 12px;
   color: var(--text-muted);
-}
-
-.header {
-  padding: 16px 20px 4px;
 }
 
 .note {

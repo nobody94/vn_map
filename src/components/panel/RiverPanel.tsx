@@ -17,59 +17,50 @@ interface Props {
 /** Khung thông tin một con sông: ảnh, chiều dài, nguồn – cửa sông, tỉnh chảy qua */
 export function RiverPanel({ river: r, onClose, onOpenProvince }: Props) {
   const hasImage = resolveImage(r) != null
+  // Chỉ hiện số liệu có thật (sông nhánh / chi lưu như sông Tiền, Hậu không có số thống nhất)
+  const stats: [string, number][] = []
+  if (r.lengthKm) stats.push(['Chiều dài', r.lengthKm])
+  if (r.lengthVnKm) stats.push(['Đoạn chảy ở Việt Nam', r.lengthVnKm])
 
   return (
     <aside className={panel.panel} aria-label={`Thông tin ${r.name}`}>
-      <div className={feature.hero}>
-        <MediaImage key={r.id} media={r} alt={r.name} variant="cover" />
-        <button className={`${panel.close} ${feature.closeOnImage}`} onClick={onClose} aria-label="Đóng">
+      <header className={panel.header}>
+        <div>
+          <div className={`${panel.kind} ${styles.kind}`}>
+            Sông<span className={panel.region}> · {RIVER_SYSTEMS[r.system].name}</span>
+          </div>
+          <h2 className={panel.name}>{r.name}</h2>
+          {r.aka && <div className={feature.note}>Tên khác: {r.aka}</div>}
+        </div>
+        <button className={panel.close} onClick={onClose} aria-label="Đóng">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
             <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </button>
-        {!hasImage && <div className={feature.noImage}>Chưa có ảnh</div>}
-      </div>
-
-      <header className={feature.header}>
-        <div className={`${panel.kind} ${styles.kind}`}>
-          Sông<span className={panel.region}> · {RIVER_SYSTEMS[r.system].name}</span>
-        </div>
-        <h2 className={panel.name}>{r.name}</h2>
-        {r.aka && <div className={feature.note}>Tên khác: {r.aka}</div>}
       </header>
 
       <div className={panel.body}>
-        <section className={tab.section}>
-          <div className={tab.statGrid}>
-            <div className={tab.stat}>
-              <div className={tab.statLabel}>Chiều dài</div>
-              <div className={tab.statValue}>
-                {r.lengthKm ? (
-                  <>
-                    {formatInt(r.lengthKm)}
+        <div className={feature.hero}>
+          <MediaImage key={r.id} media={r} alt={r.name} variant="cover" />
+          {!hasImage && <div className={feature.noImage}>Chưa có ảnh</div>}
+        </div>
+
+        {stats.length > 0 && (
+          <section className={tab.section}>
+            <div className={tab.statGrid}>
+              {stats.map(([label, km]) => (
+                <div key={label} className={tab.stat}>
+                  <div className={tab.statLabel}>{label}</div>
+                  <div className={tab.statValue}>
+                    {formatInt(km)}
                     <span className={tab.statUnit}>km</span>
-                  </>
-                ) : (
-                  '—'
-                )}
-              </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className={tab.stat}>
-              <div className={tab.statLabel}>Đoạn chảy ở Việt Nam</div>
-              <div className={tab.statValue}>
-                {r.lengthVnKm ? (
-                  <>
-                    {formatInt(r.lengthVnKm)}
-                    <span className={tab.statUnit}>km</span>
-                  </>
-                ) : (
-                  '—'
-                )}
-              </div>
-            </div>
-          </div>
-          <div className={tab.source}>Chiều dài theo số liệu phổ biến, mang tính tham khảo.</div>
-        </section>
+            <div className={tab.source}>Chiều dài theo số liệu phổ biến, mang tính tham khảo.</div>
+          </section>
+        )}
 
         <section className={tab.section}>
           <dl className={styles.flow}>

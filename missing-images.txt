@@ -1,0 +1,172 @@
+DANH SÁCH MỤC CHƯA CÓ ẢNH — 98/545 mục
+Tạo bởi: npm run media:missing  (2026-11-21)
+
+Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
+  1. Lưu ảnh vào đường dẫn gợi ý bên phải (thư mục public/images/...), nên là JPG ngang ~1200px, < 300 KB.
+  2. Trong file dữ liệu (src/data/details/*.ts, mountains.ts, rivers.ts), thêm vào mục tương ứng:
+       imageUrl: 'images/<tỉnh>/<tên>.jpg', imageCredit: 'Tác giả · Giấy phép'
+     (hoặc imageUrl là URL https://… nếu ảnh được phép nhúng trực tiếp)
+  3. Chỉ dùng ảnh tự chụp hoặc ảnh có giấy phép cho phép dùng lại (CC, public domain), ghi rõ nguồn.
+  4. Chạy lại npm run media:missing để cập nhật danh sách này.
+
+■ 2. Cao Bằng
+  [ ] Lễ hội     Lễ hội Lồng tồng (Xuống đồng)              → public/images/cao-bang/le-hoi-long-tong-xuong-dong.jpg
+  [ ] Lễ hội     Lễ hội đền Kỳ Sầm                          → public/images/cao-bang/le-hoi-den-ky-sam.jpg
+  [ ] Lễ hội     Lễ hội Nàng Hai                            → public/images/cao-bang/le-hoi-nang-hai.jpg
+  [ ] Món ăn     Bánh cuốn canh                             → public/images/cao-bang/banh-cuon-canh.jpg
+  [ ] Món ăn     Bánh trứng kiến                            → public/images/cao-bang/banh-trung-kien.jpg
+  [ ] Món ăn     Lạp sườn hun khói                          → public/images/cao-bang/lap-suon-hun-khoi.jpg
+  [ ] Đặc sản    Hạt dẻ Trùng Khánh                         → public/images/cao-bang/hat-de-trung-khanh.jpg
+  [ ] Đặc sản    Trà xanh Thạch An                          → public/images/cao-bang/tra-xanh-thach-an.jpg
+
+■ 3. Tuyên Quang
+  [ ] Lễ hội     Lễ hội Thành Tuyên                         → public/images/tuyen-quang/le-hoi-thanh-tuyen.jpg
+  [ ] Lễ hội     Lễ hội hoa Tam giác mạch                   → public/images/tuyen-quang/le-hoi-hoa-tam-giac-mach.jpg
+  [ ] Món ăn     Cháo ấu tẩu                                → public/images/tuyen-quang/chao-au-tau.jpg
+  [ ] Đặc sản    Mật ong bạc hà                             → public/images/tuyen-quang/mat-ong-bac-ha.jpg
+
+■ 4. Lào Cai
+  [ ] Lễ hội     Lễ hội Gầu Tào                             → public/images/lao-cai/le-hoi-gau-tao.jpg
+  [ ] Món ăn     Cá hồi Sa Pa                               → public/images/lao-cai/ca-hoi-sa-pa.jpg
+  [ ] Đặc sản    Rượu ngô Bắc Hà                            → public/images/lao-cai/ruou-ngo-bac-ha.jpg
+
+■ 5. Điện Biên
+  [ ] Di sản     Cột mốc A Pa Chải                          → public/images/dien-bien/cot-moc-a-pa-chai.jpg
+  [ ] Lễ hội     Lễ hội Xên bản, Xên mường                  → public/images/dien-bien/le-hoi-xen-ban-xen-muong.jpg
+  [ ] Món ăn     Nậm pịa                                    → public/images/dien-bien/nam-pia.jpg
+  [ ] Đặc sản    Gạo Điện Biên                              → public/images/dien-bien/gao-dien-bien.jpg
+
+■ 6. Lai Châu
+  [ ] Di sản     Cao nguyên Sìn Hồ                          → public/images/lai-chau/cao-nguyen-sin-ho.jpg
+  [ ] Di sản     Động Tiên Sơn                              → public/images/lai-chau/dong-tien-son.jpg
+  [ ] Lễ hội     Lễ hội Then Kin Pang                       → public/images/lai-chau/le-hoi-then-kin-pang.jpg
+  [ ] Lễ hội     Lễ hội Gầu Tào                             → public/images/lai-chau/le-hoi-gau-tao.jpg
+  [ ] Món ăn     Cá suối nướng                              → public/images/lai-chau/ca-suoi-nuong.jpg
+  [ ] Đặc sản    Chè Tam Đường                              → public/images/lai-chau/che-tam-duong.jpg
+
+■ 7. Sơn La
+  [ ] Lễ hội     Lễ hội Hết Chá                             → public/images/son-la/le-hoi-het-cha.jpg
+  [ ] Lễ hội     Mùa hoa mận Mộc Châu                       → public/images/son-la/mua-hoa-man-moc-chau.jpg
+  [ ] Lễ hội     Ngày hội Xòe Thái                          → public/images/son-la/ngay-hoi-xoe-thai.jpg
+  [ ] Món ăn     Bê chao Mộc Châu                           → public/images/son-la/be-chao-moc-chau.jpg
+  [ ] Món ăn     Nộm hoa ban                                → public/images/son-la/nom-hoa-ban.jpg
+  [ ] Đặc sản    Sữa Mộc Châu                               → public/images/son-la/sua-moc-chau.jpg
+  [ ] Đặc sản    Xoài Yên Châu                              → public/images/son-la/xoai-yen-chau.jpg
+
+■ 8. Thái Nguyên
+  [ ] Món ăn     Cá nướng hồ Ba Bể                          → public/images/thai-nguyen/ca-nuong-ho-ba-be.jpg
+  [ ] Món ăn     Bánh coóc mò                               → public/images/thai-nguyen/banh-cooc-mo.jpg
+  [ ] Đặc sản    Quýt Bắc Kạn                               → public/images/thai-nguyen/quyt-bac-kan.jpg
+
+■ 9. Lạng Sơn
+  [ ] Món ăn     Lợn quay lá mắc mật                        → public/images/lang-son/lon-quay-la-mac-mat.jpg
+  [ ] Đặc sản    Đào Mẫu Sơn                                → public/images/lang-son/dao-mau-son.jpg
+
+■ 10. Quảng Ninh
+  [ ] Lễ hội     Carnaval Hạ Long                           → public/images/quang-ninh/carnaval-ha-long.jpg
+  [ ] Đặc sản    Gà Tiên Yên                                → public/images/quang-ninh/ga-tien-yen.jpg
+
+■ 11. Phú Thọ
+  [ ] Di sản     Thung lũng Mai Châu                        → public/images/phu-tho/thung-lung-mai-chau.jpg
+  [ ] Món ăn     Cá thính Lập Thạch                         → public/images/phu-tho/ca-thinh-lap-thach.jpg
+  [ ] Đặc sản    Bưởi Đoan Hùng                             → public/images/phu-tho/buoi-doan-hung.jpg
+  [ ] Đặc sản    Cam Cao Phong                              → public/images/phu-tho/cam-cao-phong.jpg
+
+■ 12. Bắc Ninh
+  [ ] Món ăn     Bánh đa Kế                                 → public/images/bac-ninh/banh-da-ke.jpg
+  [ ] Món ăn     Mỳ Chũ                                     → public/images/bac-ninh/my-chu.jpg
+  [ ] Đặc sản    Vải thiều Lục Ngạn                         → public/images/bac-ninh/vai-thieu-luc-ngan.jpg
+
+■ 13. Hải Phòng
+  [ ] Lễ hội     Lễ hội chọi trâu Đồ Sơn                    → public/images/hai-phong/le-hoi-choi-trau-do-son.jpg
+
+■ 14. Hưng Yên
+  [ ] Món ăn     Canh cá Quỳnh Côi                          → public/images/hung-yen/canh-ca-quynh-coi.jpg
+  [ ] Đặc sản    Nhãn lồng Hưng Yên                         → public/images/hung-yen/nhan-long-hung-yen.jpg
+
+■ 15. Ninh Bình
+  [ ] Món ăn     Phở bò Nam Định                            → public/images/ninh-binh/pho-bo-nam-dinh.jpg
+  [ ] Món ăn     Gỏi cá nhệch Kim Sơn                       → public/images/ninh-binh/goi-ca-nhech-kim-son.jpg
+  [ ] Đặc sản    Cá kho làng Vũ Đại                         → public/images/ninh-binh/ca-kho-lang-vu-dai.jpg
+  [ ] Đặc sản    Rượu Kim Sơn                               → public/images/ninh-binh/ruou-kim-son.jpg
+  [ ] Đặc sản    Kẹo Sìu Châu                               → public/images/ninh-binh/keo-siu-chau.jpg
+
+■ 16. Thanh Hóa
+  [ ] Lễ hội     Lễ hội Pôồn Pôông                          → public/images/thanh-hoa/le-hoi-poon-poong.jpg
+  [ ] Đặc sản    Chiếu cói Nga Sơn                          → public/images/thanh-hoa/chieu-coi-nga-son.jpg
+  [ ] Đặc sản    Mắm tép Hà Yên                             → public/images/thanh-hoa/mam-tep-ha-yen.jpg
+
+■ 17. Nghệ An
+  [ ] Món ăn     Cháo lươn Vinh                             → public/images/nghe-an/chao-luon-vinh.jpg
+  [ ] Món ăn     Nhút Thanh Chương                          → public/images/nghe-an/nhut-thanh-chuong.jpg
+  [ ] Đặc sản    Tương Nam Đàn                              → public/images/nghe-an/tuong-nam-dan.jpg
+  [ ] Đặc sản    Chè xanh xứ Nghệ                           → public/images/nghe-an/che-xanh-xu-nghe.jpg
+
+■ 18. Hà Tĩnh
+  [ ] Món ăn     Ram bánh mướt                              → public/images/ha-tinh/ram-banh-muot.jpg
+  [ ] Món ăn     Mực nhảy Vũng Áng                          → public/images/ha-tinh/muc-nhay-vung-ang.jpg
+  [ ] Món ăn     Bánh đa vừng                               → public/images/ha-tinh/banh-da-vung.jpg
+  [ ] Đặc sản    Bưởi Phúc Trạch                            → public/images/ha-tinh/buoi-phuc-trach.jpg
+
+■ 19. Quảng Trị
+  [ ] Lễ hội     Lễ hội đua thuyền sông Kiến Giang          → public/images/quang-tri/le-hoi-dua-thuyen-song-kien-giang.jpg
+  [ ] Món ăn     Cháo canh Quảng Bình                       → public/images/quang-tri/chao-canh-quang-binh.jpg
+
+■ 20. Huế
+  [ ] Lễ hội     Lễ tế Nam Giao                             → public/images/hue/le-te-nam-giao.jpg
+  [ ] Đặc sản    Nón bài thơ                                → public/images/hue/non-bai-tho.jpg
+
+■ 21. Đà Nẵng
+  [ ] Đặc sản    Chả bò Đà Nẵng                             → public/images/da-nang/cha-bo-da-nang.jpg
+
+■ 22. Quảng Ngãi
+  [ ] Lễ hội     Đua thuyền Tứ linh Lý Sơn                  → public/images/quang-ngai/dua-thuyen-tu-linh-ly-son.jpg
+  [ ] Món ăn     Don Quảng Ngãi                             → public/images/quang-ngai/don-quang-ngai.jpg
+  [ ] Đặc sản    Mạch nha Thi Phổ                           → public/images/quang-ngai/mach-nha-thi-pho.jpg
+
+■ 23. Khánh Hòa
+  [ ] Đặc sản    Tỏi Phan Rang                              → public/images/khanh-hoa/toi-phan-rang.jpg
+
+■ 24. Gia Lai
+  [ ] Lễ hội     Lễ Pơ Thi (bỏ mả)                          → public/images/gia-lai/le-po-thi-bo-ma.jpg
+  [ ] Đặc sản    Rượu Bàu Đá                                → public/images/gia-lai/ruou-bau-da.jpg
+
+■ 25. Đắk Lắk
+  [ ] Lễ hội     Hội đua voi Buôn Đôn                       → public/images/dak-lak/hoi-dua-voi-buon-don.jpg
+  [ ] Lễ hội     Hội đua ngựa Gò Thì Thùng                  → public/images/dak-lak/hoi-dua-ngua-go-thi-thung.jpg
+  [ ] Món ăn     Bún đỏ Buôn Ma Thuột                       → public/images/dak-lak/bun-do-buon-ma-thuot.jpg
+  [ ] Đặc sản    Bánh tráng Hòa Đa                          → public/images/dak-lak/banh-trang-hoa-da.jpg
+
+■ 27. Tây Ninh
+  [ ] Di sản     Căn cứ Trung ương Cục miền Nam             → public/images/tay-ninh/can-cu-trung-uong-cuc-mien-nam.jpg
+  [ ] Đặc sản    Gạo nàng thơm Chợ Đào                      → public/images/tay-ninh/gao-nang-thom-cho-dao.jpg
+
+■ 28. Đồng Nai
+  [ ] Lễ hội     Lễ hội chùa Ông Biên Hòa                   → public/images/dong-nai/le-hoi-chua-ong-bien-hoa.jpg
+
+■ 30. Vĩnh Long
+  [ ] Di sản     Cù lao An Bình                             → public/images/vinh-long/cu-lao-an-binh.jpg
+  [ ] Lễ hội     Lễ hội Ok Om Bok                           → public/images/vinh-long/le-hoi-ok-om-bok.jpg
+  [ ] Món ăn     Bánh tráng Mỹ Lồng                         → public/images/vinh-long/banh-trang-my-long.jpg
+  [ ] Đặc sản    Gốm đỏ Vĩnh Long                           → public/images/vinh-long/gom-do-vinh-long.jpg
+
+■ 31. Đồng Tháp
+  [ ] Di sản     Làng hoa Sa Đéc                            → public/images/dong-thap/lang-hoa-sa-dec.jpg
+  [ ] Lễ hội     Mùa hoa Sa Đéc                             → public/images/dong-thap/mua-hoa-sa-dec.jpg
+
+■ 32. An Giang
+  [ ] Món ăn     Bún cá Châu Đốc                            → public/images/an-giang/bun-ca-chau-doc.jpg
+  [ ] Món ăn     Bánh bò thốt nốt                           → public/images/an-giang/banh-bo-thot-not.jpg
+
+■ 33. Cần Thơ
+  [ ] Lễ hội     Lễ hội đua ghe Ngo                         → public/images/can-tho/le-hoi-dua-ghe-ngo.jpg
+  [ ] Món ăn     Lẩu mắm                                    → public/images/can-tho/lau-mam.jpg
+
+■ 34. Cà Mau
+  [ ] Di sản     Rừng U Minh Hạ                             → public/images/ca-mau/rung-u-minh-ha.jpg
+  [ ] Đặc sản    Mật ong U Minh                             → public/images/ca-mau/mat-ong-u-minh.jpg
+  [ ] Đặc sản    Muối Bạc Liêu                              → public/images/ca-mau/muoi-bac-lieu.jpg
+
+■ Núi
+  [ ] Núi        Pu Xai Lai Leng                            → public/images/nui/pu-xai-lai-leng.jpg
+  [ ] Núi        Kon Ka Kinh                                → public/images/nui/kon-ka-kinh.jpg

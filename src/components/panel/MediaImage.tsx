@@ -12,7 +12,7 @@ interface Props {
   showCredit?: boolean
 }
 
-/** Ảnh từ Wikimedia Commons kèm ghi nguồn; nếu không có ảnh thì hiện khung giữ chỗ */
+/** Ảnh (Commons, Openverse hoặc ảnh tự tìm) kèm ghi nguồn; nếu không có ảnh thì hiện khung giữ chỗ */
 export function MediaImage({ media, alt, variant, showCredit = variant !== 'square' }: Props) {
   const image = resolveImage(media)
   const [failed, setFailed] = useState(false)
@@ -35,13 +35,14 @@ export function MediaImage({ media, alt, variant, showCredit = variant !== 'squa
   }
 
   return (
-    <figure className={className} title={image.credit}>
+    <figure className={className} title={image.credit || undefined}>
       <img src={image.src} alt={alt} loading="lazy" decoding="async" onError={() => setFailed(true)} />
-      {showCredit && (
+      {showCredit && image.credit && image.page && (
         <a className={styles.credit} href={image.page} target="_blank" rel="noreferrer">
           {image.credit}
         </a>
       )}
+      {showCredit && image.credit && !image.page && <span className={styles.credit}>{image.credit}</span>}
     </figure>
   )
 }

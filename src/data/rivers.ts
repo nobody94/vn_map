@@ -73,6 +73,7 @@ export const RIVERS: River[] = [
     provinces: [3, 4, 11],
     description: 'Phụ lưu của sông Lô, chảy qua Bắc Hà, Lục Yên. Trên sông có hồ thủy điện Thác Bà, một trong những hồ nhân tạo lớn nhất Việt Nam.',
     wiki: 'Sông Chảy',
+    imageFile: 'Thác Bà Lake.jpg', // hồ Thác Bà trên sông Chảy
   },
   {
     id: 'duong', name: 'Sông Đuống', osmName: 'Sông Đuống', system: 'hong',
@@ -91,6 +92,7 @@ export const RIVERS: River[] = [
     provinces: [8, 12],
     description: 'Dòng sông của dân ca Quan họ, chảy qua Thái Nguyên, Bắc Ninh. "Sông Cầu nước chảy lơ thơ…" là hình ảnh quen thuộc của vùng Kinh Bắc.',
     wiki: 'Sông Cầu',
+    imageFile: 'Sông Cầu, đoạn qua Bắc Giang.JPG',
   },
   {
     id: 'ky-cung', name: 'Sông Kỳ Cùng', osmName: 'Sông Kỳ Cùng', system: 'thaibinh',
@@ -117,6 +119,7 @@ export const RIVERS: River[] = [
     provinces: [17, 18],
     description: 'Con sông lớn nhất xứ Nghệ, đoạn hạ lưu gọi là sông Lam. Cùng núi Hồng Lĩnh làm nên biểu tượng "núi Hồng sông Lam" của Nghệ Tĩnh.',
     wiki: 'Sông Lam',
+    imageFile: 'Sông Lam, đoạn qua Nghi Xuân, Hà Tĩnh.JPG',
   },
   {
     id: 'gianh', name: 'Sông Gianh', osmName: 'Sông Gianh', system: 'bactrung',
