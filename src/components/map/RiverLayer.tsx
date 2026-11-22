@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
-import { GeoJSON, useMap } from 'react-leaflet'
+import { GeoJSON, Pane, useMap } from 'react-leaflet'
 import L from 'leaflet'
-import type { Feature, FeatureCollection, MultiLineString } from 'geojson'
+import type { Feature, FeatureCollection, MultiLineString, MultiPolygon } from 'geojson'
 import { useGeoData } from '../../hooks/useGeoData'
 import { RIVER_BY_ID } from '../../data/rivers'
 import { formatInt } from '../../utils/format'
 import { panelPadding } from '../../utils/mapPadding'
+import { clipLinesToArea } from '../../utils/clipLines'
 import styles from './RiverLayer.module.css'
 
 type RiverFeature = Feature<MultiLineString, { id: string }>
@@ -14,6 +15,8 @@ type RiverCollection = FeatureCollection<MultiLineString, { id: string }>
 interface Props {
   selectedId: string | null
   onSelect: (id: string) => void
+  /** Tỉnh đang chọn: chỉ vẽ phần sông nằm trong tỉnh này */
+  area: { code: number; geometry: MultiPolygon } | null
 }
 
 /** Sông chính vẽ đậm hơn */
@@ -42,7 +45,7 @@ function tooltipHtml(id: string): string {
 }
 
 /** Lớp sông ngòi: đường nhìn thấy + đường trong suốt rộng để dễ bấm */
-export function RiverLayer({ selectedId, onSelect }: Props) {
+export function RiverLayer({ selectedId, onSelect, area }: Props) {
   const map = useMap()
   const geo = useGeoData<RiverCollection>('geo/rivers.geojson')
   const visualRef = useRef<L.GeoJSON | null>(null)
@@ -78,17 +81,33 @@ export function RiverLayer({ selectedId, onSelect }: Props) {
 
   if (geo.status !== 'ready') return null
 
+  // Đang chọn tỉnh → cắt sông theo ranh giới tỉnh, bỏ sông không chảy qua
+  const data: RiverCollection = area
+    ? {
+        type: 'FeatureCollection',
+        features: geo.data.features.flatMap((f) => {
+          const geometry = clipLinesToArea(f.geometry, area.geometry)
+          return geometry ? [{ ...f, geometry }] : []
+        }),
+      }
+    : geo.data
+  // GeoJSON của react-leaflet không tự cập nhật khi đổi data → dựng lại theo key
+  const key = area ? `p${area.code}` : 'all'
+
   return (
-    <>
+    // Pane riêng nằm trên lớp tỉnh (overlayPane 400), để tỉnh đang chọn không che sông
+    <Pane name="rivers" style={{ zIndex: 450 }}>
       <GeoJSON
+        key={`v-${key}`}
         ref={visualRef}
-        data={geo.data}
+        data={data}
         attribution={ATTRIBUTION}
         interactive={false}
         style={(f) => lineStyle((f as RiverFeature).properties.id, selectedRef.current, false)}
       />
       <GeoJSON
-        data={geo.data}
+        key={`h-${key}`}
+        data={data}
         style={{ color: '#000', opacity: 0, weight: 14 }}
         onEachFeature={(feature: RiverFeature, layer) => {
           const id = feature.properties.id
@@ -104,6 +123,6 @@ export function RiverLayer({ selectedId, onSelect }: Props) {
           })
         }}
       />
-    </>
+    </Pane>
   )
 }

@@ -46,6 +46,9 @@ export function VietnamMap({
   onSelectRiver,
 }: Props) {
   const geo = useGeoData<ProvinceCollection>('geo/provinces.geojson')
+  const selectedFeature =
+    selectedCode != null && geo.status === 'ready' ? geo.data.features.find((f) => f.properties.code === selectedCode) : undefined
+  const riverArea = selectedFeature ? { code: selectedCode!, geometry: selectedFeature.geometry } : null
 
   return (
     <div className={styles.wrap}>
@@ -69,7 +72,7 @@ export function VietnamMap({
             terrain={layers.terrain}
           />
         )}
-        {layers.rivers && <RiverLayer selectedId={selectedRiverId} onSelect={onSelectRiver} />}
+        {layers.rivers && <RiverLayer selectedId={selectedRiverId} onSelect={onSelectRiver} area={riverArea} />}
         <IslandsLayer onSelect={onSelect} />
         {layers.peaks && <MountainLayer selectedId={selectedMountainId} onSelect={onSelectMountain} />}
       </MapContainer>

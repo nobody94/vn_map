@@ -68,7 +68,7 @@ scripts/                    # fetch-media, list-missing-images, resize-images.ps
 - Lớp địa hình ghi đè `mix-blend-mode: normal` để tránh viền trắng giữa các ô ảnh.
 - `ProvinceLayer` cập nhật style kiểu imperative qua ref và hàm thuần `styleFor()`; tỉnh luôn tô màu theo vùng. Click polygon phải `stopPropagation` (click biển = bỏ chọn).
 - Bật/tắt lớp dùng `setLayers((l) => …)`. Thêm loại đối tượng chọn mới → thêm nhánh vào `Selection`.
-- Sông: hai lớp (lớp nhìn thấy + lớp trong suốt 14px để bấm). `build-rivers.ts` tra theo tên nên dễ lẫn sông trùng tên → thêm khung `CLIP`.
+- Sông: hai lớp (lớp nhìn thấy + lớp trong suốt 14px để bấm), nằm trong pane `rivers` (z 450, trên lớp tỉnh vì tỉnh chọn được `bringToFront`). Đang chọn tỉnh thì chỉ vẽ phần sông trong tỉnh đó (`clipLinesToArea` trong `utils/clipLines.ts`, dựng lại GeoJSON theo `key`). `build-rivers.ts` tra theo tên nên dễ lẫn sông trùng tên → thêm khung `CLIP`.
 - `panelPadding()` / `focusBounds()` chừa chỗ cho panel; đổi `--panel-width` / `--sheet-height` thì sửa cả hai.
 - Giữ ghi nguồn ranh giới (vietnamese-provinces-database, MIT) và OSM (ODbL).
 - Script Node trên Windows: tránh `process.exit()` sau khi ghi file. File `.ps1` lưu UTF-8 có BOM.

@@ -79,7 +79,7 @@ export const RIVERS: River[] = [
     id: 'duong', name: 'Sông Đuống', osmName: 'Sông Đuống', system: 'hong',
     lengthKm: 68,
     source: 'Tách từ sông Hồng (Hà Nội)', mouth: 'Đổ vào sông Thái Bình (Phả Lại)',
-    provinces: [1, 12],
+    provinces: [1, 12, 13],
     description:
       'Con sông nối sông Hồng với sông Thái Bình, chảy qua vùng Kinh Bắc. Hai bên bờ là các làng tranh Đông Hồ, làng gốm Phù Lãng; đi vào thơ "Bên kia sông Đuống" của Hoàng Cầm.',
     wiki: 'Sông Đuống',
@@ -89,7 +89,7 @@ export const RIVERS: River[] = [
     id: 'cau', name: 'Sông Cầu', osmName: 'Sông Cầu', system: 'thaibinh',
     lengthKm: 288,
     source: 'Bắc Kạn cũ', mouth: 'Hợp với sông Thương thành sông Thái Bình (Phả Lại)',
-    provinces: [8, 12],
+    provinces: [8, 12, 1, 13],
     description: 'Dòng sông của dân ca Quan họ, chảy qua Thái Nguyên, Bắc Ninh. "Sông Cầu nước chảy lơ thơ…" là hình ảnh quen thuộc của vùng Kinh Bắc.',
     wiki: 'Sông Cầu',
     imageFile: 'Sông Cầu, đoạn qua Bắc Giang.JPG',
@@ -218,7 +218,7 @@ export const RIVERS: River[] = [
   {
     id: 'hau', name: 'Sông Hậu', osmName: 'Sông Hậu', system: 'mekong', aka: 'Sông Bassac',
     source: 'Nhánh sông Mê Kông, chảy vào Việt Nam tại Khánh An (An Giang)', mouth: 'Biển Đông qua các cửa Định An, Trần Đề',
-    provinces: [32, 33, 30],
+    provinces: [32, 31, 33, 30],
     description:
       'Nhánh còn lại của sông Mê Kông ở Việt Nam, chảy qua Châu Đốc, Long Xuyên, Cần Thơ. Bên sông là chợ nổi Cái Răng và cầu Cần Thơ.',
     wiki: 'Sông Hậu',

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { splitUnitName, useAdminUnits } from '../../data/adminUnits'
 import type { UnitMatch } from '../../utils/search'
 import { formatInt } from '../../utils/format'
@@ -13,6 +13,8 @@ interface Props {
 
 /** Loại đơn vị hiện thành danh sách (xã quá nhiều nên chỉ đếm, vẫn tìm được ở ô tìm kiếm) */
 const LISTED_TYPES = ['Phường', 'Đặc khu'] as const
+/** Chiều cao khi thu gọn (px), khớp với .collapsed trong CSS */
+const COLLAPSED_HEIGHT = 150
 const ALL_TYPES = ['Phường', 'Xã', 'Đặc khu'] as const
 
 /** Mục "Đơn vị hành chính" trong tab Tổng quan: phường, đặc khu hiện nay + huyện/quận cũ */
@@ -20,6 +22,19 @@ export function AdminUnits({ code, focus }: Props) {
   const data = useAdminUnits()
   const [expanded, setExpanded] = useState(focus?.kind === 'ward')
   const chipRef = useRef<HTMLLIElement>(null)
+  const listRef = useRef<HTMLDivElement>(null)
+  // Chỉ thu gọn (mờ đáy + nút xem thêm) khi danh sách cao hơn khung thu gọn
+  const [overflows, setOverflows] = useState(false)
+
+  useLayoutEffect(() => {
+    const el = listRef.current
+    if (!el) return
+    const check = () => setOverflows(el.scrollHeight > COLLAPSED_HEIGHT + 24)
+    check()
+    const ro = new ResizeObserver(check)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [data])
 
   useEffect(() => {
     chipRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' })
@@ -64,7 +79,7 @@ export function AdminUnits({ code, focus }: Props) {
 
       {groups.length > 0 && (
         <>
-          <div className={`${styles.list} ${expanded ? '' : styles.collapsed}`}>
+          <div ref={listRef} className={`${styles.list} ${overflows && !expanded ? styles.collapsed : ''}`}>
             {groups.map((g) => (
               <div key={g.type} className={styles.group}>
                 <div className={styles.groupTitle}>
@@ -74,7 +89,7 @@ export function AdminUnits({ code, focus }: Props) {
               </div>
             ))}
           </div>
-          {listedTotal > 20 && (
+          {overflows && (
             <button className={styles.more} onClick={() => setExpanded((v) => !v)}>
               {expanded ? 'Thu gọn' : `Xem tất cả ${formatInt(listedTotal)} phường${groups.length > 1 ? ', đặc khu' : ''}`}
             </button>
