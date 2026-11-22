@@ -17,7 +17,7 @@ interface Props {
   onSelect: (code: number | null) => void
   /** Vùng được làm nổi (rê chuột trên chú giải); các vùng khác mờ đi */
   highlightRegion: RegionId | null
-  /** Đang bật nền địa hình → làm nền tỉnh trong suốt để thấy đồi núi */
+  /** Đang bật địa hình → nền tỉnh trong suốt để thấy màu độ cao */
   terrain: boolean
 }
 
@@ -45,8 +45,9 @@ function styleFor(code: number, v: ViewState, hovered = false): PathOptions {
       color: selected || hovered ? ACCENT : '#475569',
       weight: selected ? 2.5 : hovered ? 1.8 : 0.8,
       opacity: selected || hovered ? 1 : 0.55,
-      fillColor: region ? region.strong : ACCENT,
-      fillOpacity: dimmed ? 0 : selected ? 0.4 : hovered ? 0.3 : region ? 0.22 : 0,
+      // Không tô màu vùng để khỏi lẫn với màu độ cao; vùng bị làm mờ thì phủ trắng
+      fillColor: dimmed ? '#ffffff' : ACCENT,
+      fillOpacity: dimmed ? 0.6 : selected ? 0.14 : hovered ? 0.1 : 0,
     }
   }
   return {

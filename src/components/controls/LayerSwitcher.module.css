@@ -51,6 +51,49 @@
   color: var(--accent);
 }
 
+/* Chú giải độ cao (hiện khi bật Địa hình) */
+.legend {
+  margin-top: 4px;
+  padding: 8px 8px 10px;
+  border-top: 1px solid var(--border);
+}
+
+.legendTitle {
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.scale {
+  display: flex;
+  gap: 6px;
+  height: 120px;
+}
+
+.bar {
+  flex: none;
+  width: 10px;
+  border-radius: 3px;
+}
+
+.ticks {
+  position: relative;
+  flex: 1;
+  min-width: 34px;
+}
+
+.ticks span {
+  position: absolute;
+  left: 0;
+  transform: translateY(50%);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 /* Điện thoại: chỉ hiện biểu tượng; panel nằm dưới nên không cần dời */
 @media (max-width: 768px) {
   .shifted {
@@ -64,7 +107,20 @@
     padding: 0;
   }
 
-  .label {
+  .label,
+  .legendTitle {
     display: none;
+  }
+
+  .legend {
+    padding: 6px 2px 8px;
+  }
+
+  .scale {
+    height: 96px;
+  }
+
+  .ticks {
+    min-width: 24px;
   }
 }

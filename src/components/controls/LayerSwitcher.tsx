@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react'
+import { ELEVATION_MAX, ELEVATION_TICKS, elevationGradient } from '../../data/elevation'
+import { formatInt } from '../../utils/format'
 import styles from './LayerSwitcher.module.css'
 
 export interface MapLayers {
@@ -66,6 +68,23 @@ export function LayerSwitcher({ layers, onToggle, panelOpen }: Props) {
           <span className={styles.label}>{it.label}</span>
         </button>
       ))}
+
+      {layers.terrain && (
+        <div className={styles.legend} aria-label="Chú giải độ cao">
+          <div className={styles.legendTitle}>Độ cao (m)</div>
+          <div className={styles.scale}>
+            <div className={styles.bar} style={{ background: elevationGradient() }} />
+            <div className={styles.ticks}>
+              {ELEVATION_TICKS.map((h) => (
+                <span key={h} style={{ bottom: `${(h / ELEVATION_MAX) * 100}%` }}>
+                  {formatInt(h)}
+                  {h === ELEVATION_MAX ? '+' : ''}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

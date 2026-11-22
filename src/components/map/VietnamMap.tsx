@@ -7,6 +7,7 @@ import { ProvinceLayer } from './ProvinceLayer'
 import { IslandsLayer } from './IslandsLayer'
 import { MountainLayer } from './MountainLayer'
 import { RiverLayer } from './RiverLayer'
+import { ElevationLayer } from './ElevationLayer'
 import type { MapLayers } from '../controls/LayerSwitcher'
 import styles from './VietnamMap.module.css'
 
@@ -62,7 +63,11 @@ export function VietnamMap({
         zoomControl={false}
         attributionControl
       >
-        {layers.terrain && <TileLayer url={RELIEF_URL} attribution={RELIEF_ATTRIBUTION} maxNativeZoom={13} className={styles.relief} />}
+        {/* Địa hình = màu theo độ cao (trong lãnh thổ) + đổ bóng Esri nhân lên trên để thấy khối núi */}
+        {layers.terrain && geo.status === 'ready' && <ElevationLayer provinces={geo.data} />}
+        {layers.terrain && (
+          <TileLayer url={RELIEF_URL} attribution={RELIEF_ATTRIBUTION} maxNativeZoom={13} zIndex={2} className={styles.relief} />
+        )}
         {geo.status === 'ready' && (
           <ProvinceLayer
             data={geo.data}

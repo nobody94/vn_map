@@ -18,7 +18,7 @@ Website bản đồ Việt Nam tương tác theo **34 tỉnh, thành phố sau s
   - Không cần gõ dấu, dùng được phím ↑ ↓ Enter Esc.
   - Chọn một phường sẽ mở đúng tỉnh chứa phường đó.
 - **Lớp bản đồ** (bật/tắt ở góc trên bên phải):
-  - **Địa hình:** nền đổ bóng địa hình.
+  - **Địa hình:** tô màu lãnh thổ theo độ cao (xanh lá vùng thấp → vàng → nâu → trắng trên 3.000 m), kèm bóng đổ núi và chú giải độ cao.
   - **Đỉnh núi:** 20 đỉnh núi tiêu biểu, kèm nhãn các dãy núi và cao nguyên.
   - **Sông ngòi:** 21 con sông chính. Bấm vào sông để xem chiều dài, nơi bắt nguồn, cửa sông và các tỉnh sông chảy qua. Khi đang chọn một tỉnh, bản đồ chỉ hiện phần sông nằm trong tỉnh đó.
 - **Giao diện:** tối giản, tiếng Việt, dùng tốt trên điện thoại (panel trượt lên từ phía dưới).
@@ -73,7 +73,8 @@ scripts/                # script tạo và cập nhật dữ liệu
 | Ranh giới tỉnh | [vietnamese-provinces-database](https://github.com/ThangLeQuoc/vietnamese-provinces-database) (MIT) |
 | Xã, phường, huyện cũ | [provinces.open-api.vn](https://provinces.open-api.vn) |
 | Đường sông | © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (ODbL) |
-| Nền địa hình | Esri World Shaded Relief |
+| Độ cao | [AWS Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) (Mapzen; SRTM, ETOPO1…) |
+| Bóng đổ địa hình | Esri World Shaded Relief |
 | Ảnh minh họa | Wikimedia Commons, Openverse / Flickr, Pixabay |
 
 Ảnh minh họa chỉ dùng ảnh có giấy phép cho phép dùng lại (Creative Commons, public domain hoặc Pixabay License). Tác giả và giấy phép được ghi dưới mỗi ảnh. Một số ảnh minh họa đúng món ăn hoặc đúng loại cảnh, nhưng không chụp tại chính địa phương được nhắc đến.

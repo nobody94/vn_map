@@ -65,8 +65,8 @@ scripts/                    # fetch-media, list-missing-images, resize-images.ps
 ## Lưu ý quan trọng
 
 - **Luôn thể hiện Hoàng Sa (Đà Nẵng) và Trường Sa (Khánh Hòa)**, vẽ riêng ở `IslandsLayer.tsx` (không có trong GeoJSON).
-- Không có tile nền mặc định. Lớp Địa hình dùng Esri `World_Shaded_Relief` (không nhãn chữ). Không dùng OSM/OpenTopoMap vì nhãn có thể ghi sai tên Hoàng Sa, Trường Sa. Kiểm tra điều khoản Esri trước khi deploy.
-- Lớp địa hình ghi đè `mix-blend-mode: normal` để tránh viền trắng giữa các ô ảnh.
+- Không có tile nền mặc định. Không dùng OSM/OpenTopoMap vì nhãn có thể ghi sai tên Hoàng Sa, Trường Sa. Kiểm tra điều khoản Esri và AWS Terrain Tiles trước khi deploy.
+- **Lớp Địa hình** = `ElevationLayer` (GridLayer canvas: giải mã ảnh độ cao Terrarium của AWS Terrain Tiles, `h = R·256 + G + B/256 − 32768`, tô theo `ELEVATION_STOPS` trong `src/data/elevation.ts`, cắt theo ranh giới tỉnh bằng `destination-in`; ô ngoài lãnh thổ không tải) + Esri `World_Shaded_Relief` đè lên với `mix-blend-mode: multiply`. Chú giải độ cao nằm trong `LayerSwitcher`. Khi bật địa hình, tỉnh không tô màu vùng. Ô ảnh đặt `mix-blend-mode: normal` để tránh viền trắng.
 - `ProvinceLayer` cập nhật style kiểu imperative qua ref và hàm thuần `styleFor()`; tỉnh luôn tô màu theo vùng. Click polygon phải `stopPropagation` (click biển = bỏ chọn).
 - Bật/tắt lớp dùng `setLayers((l) => …)`. Thêm loại đối tượng chọn mới → thêm nhánh vào `Selection`.
 - Sông: hai lớp (lớp nhìn thấy + lớp trong suốt 14px để bấm), nằm trong pane `rivers` (z 450, trên lớp tỉnh vì tỉnh chọn được `bringToFront`). Đang chọn tỉnh thì chỉ vẽ phần sông trong tỉnh đó (`clipLinesToArea` trong `utils/clipLines.ts`, dựng lại GeoJSON theo `key`). `build-rivers.ts` tra theo tên nên dễ lẫn sông trùng tên → thêm khung `CLIP`.

@@ -35,3 +35,9 @@
 :global(.leaflet-container) .relief img {
   mix-blend-mode: normal;
 }
+
+/* Lớp đổ bóng nằm trên lớp màu độ cao: nhân (multiply) để giữ màu, chỉ thêm bóng núi */
+:global(.leaflet-container) .relief {
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+}

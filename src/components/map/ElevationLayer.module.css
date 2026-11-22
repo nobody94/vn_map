@@ -1,0 +1,4 @@
+/* Tránh viền sáng giữa các ô do Leaflet đặt mix-blend-mode: plus-lighter cho ô */
+:global(.leaflet-container) .elevation :global(.leaflet-tile) {
+  mix-blend-mode: normal;
+}
