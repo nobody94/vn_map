@@ -20,7 +20,10 @@ node scripts/river-provinces.ts [--write]   # tỉnh sông chảy qua theo hình
 React 19 + TS + Vite 8 (React Compiler), Leaflet 1.9 + react-leaflet 5, **CSS Modules**, tối giản; biến thiết kế ở `src/index.css`, màu nhấn `#0f766e`.
 
 ```
-src/App.tsx                          # Selection: province (+ unit) | mountain | river | null
+src/App.tsx                          # router hash (utils/route.ts): '' trang chủ | #/dia-ly | #/lich-su; mỗi trang lazy chunk riêng
+src/pages/HomePage.tsx               # 2 nút Địa lý / Lịch sử
+src/pages/GeoPage.tsx                # bản đồ; Selection: province (+ unit) | mountain | river | null; leaflet.css import ở đây
+src/pages/HistoryPage.tsx            # kháng chiến → trận đánh, người lãnh đạo (src/data/history.ts)
 src/data/provinceMeta.ts             # 34 tỉnh: code, slug, name, kind, mergedFrom
 src/data/details/{bac,trung,nam}.ts
 src/data/rivers.ts + riversMore.ts   # RIVERS gộp cả hai
@@ -55,9 +58,34 @@ Không sửa tay: `media.generated.json`, `admin-units.json`, `missing-images.tx
 - `ProvinceLayer` style imperative qua ref + `styleFor()`; click polygon phải `stopPropagation`.
 - Wikipedia/Commons hay chặn (429, "too many requests"): chờ ≥2–3 s giữa truy vấn. Tải ảnh: `Special:FilePath/<tên>?width=1200`.
 - Windows: tránh `process.exit()` sau ghi file; `.ps1` lưu UTF-8 có BOM; heredoc/`node -e` làm hỏng `\` trong regex → viết script ra file.
+- Chụp màn hình kiểm tra: Edge headless `--screenshot` không thu cửa sổ < ~500px (ảnh mobile bị cắt) → điều khiển Edge qua DevTools Protocol (`--remote-debugging-port`, `Emulation.setDeviceMetricsOverride` 390×844 `mobile: true`, `Runtime.evaluate` để bấm, `Page.captureScreenshot`); Node 24 có sẵn `WebSocket`, không cần cài thư viện.
 
 ## Trạng thái (22/11/2026)
 
 - Phần 1–6 ✅ (bản đồ, panel, dữ liệu, tìm kiếm, núi/địa hình, sông, đơn vị hành chính). Phần 7 deploy: Cloudflare Pages nối repo GitHub (push main → tự build; lệnh `npm run build`, thư mục `dist`). Node theo `.node-version` (22); cache trình duyệt ở `public/_headers`.
 - Ảnh 628/628. Sông Mỹ Thanh dùng ảnh minh họa chung `River_in_Soc_Trang.JPG` (người dùng đồng ý) vì Commons không có ảnh nào trong 10 km quanh sông (chỉ ảnh ISS); Pixabay, Openverse cũng không có; các sông giao (Cổ Cò, Dù Tho, Thạnh Ninh, Trà Niên, Gòi, rạch Tổng Cáng — lấy từ OSM) cũng không có ảnh (`Cầu_Cổ_Cò.jpg` là sông Cổ Cò ở Đà Nẵng, khác sông). Sông không có ảnh chính nó thì dùng ảnh cửa sông / hợp lưu, ghi rõ trong `imageCredit` (Thương → Lục Đầu Giang, Bắc Vọng → sông Bằng tại Tà Lùng, Nhuệ → ngã ba Nhuệ – Đáy ở Phủ Lý).
 - Tìm ảnh sông hiệu quả nhất: Commons `list=geosearch` dọc đường sông trong `rivers.geojson`, rồi đo khoảng cách điểm chụp tới đường sông.
+
+## Phần 8: Trang chủ + trang Lịch sử (làm dần, đánh dấu ✅ khi xong)
+
+Trang chủ chỉ có 2 nút **Địa lý** (bản đồ, như cũ) và **Lịch sử** (trang riêng, không có bản đồ). Trang Địa lý và Lịch sử có `HomeButton` về trang chủ. Trang Lịch sử chỉ về **các cuộc kháng chiến**: trận đánh và người lãnh đạo.
+
+- **8.1 ✅ Trang chủ + điều hướng** hash (`#/dia-ly`, `#/lich-su` — không cần cấu hình chuyển hướng trên Cloudflare Pages), mỗi trang một chunk, tải trước lúc rảnh.
+- **8.2 ✅ Trang Lịch sử bản đầu**: 9 cuộc kháng chiến (Hai Bà Trưng → chống Mỹ), 14 trận, 11 người lãnh đạo; tab Trận chiến (dòng thời gian) / Người lãnh đạo; bấm tên lãnh đạo → cuộn tới thẻ.
+- **8.3 Popup chi tiết trận chiến**: bấm tên trận hoặc nút "Xem chi tiết" trên thẻ → mở popup (modal; mobile: toàn màn hình hoặc sheet từ dưới lên). Nội dung: ảnh lớn (`MediaImage`, ghi tác giả + giấy phép), thời gian, địa điểm, cuộc kháng chiến, người chỉ huy (bấm → mở popup lãnh đạo), lực lượng hai bên, diễn biến, kết quả và ý nghĩa — đoạn dài hơn lấy từ vi.wikipedia (các mục Bối cảnh / Diễn biến / Kết quả), thiếu thì bỏ mục. Đóng bằng nút ✕, Esc, bấm nền; khóa cuộn trang nền; giữ link Wikipedia.
+- **8.4 ✅ Popup người lãnh đạo + ảnh trên thẻ**: thẻ có chân dung tròn (`Portrait` thumb; không có ảnh / lỗi tải → chữ cái đầu). Bấm tên, nút "Xem chi tiết" hoặc tên lãnh đạo ở dòng thời gian → `LeaderModal`: chân dung lớn (desktop 3:4 cột trái, mobile 4:3 tràn viền), năm sinh – mất, tên khác, vai trò, tiểu sử (`bio`), kháng chiến đã lãnh đạo, trận đã chỉ huy (`Battle.commanders`, `battlesOf()`). Bấm trận → tạm thời chuyển tab Trận chiến, cuộn tới và viền nổi thẻ (`battle-<id>`); khi làm 8.3 đổi thành mở popup trận.
+  - `components/history/Modal.tsx`: `<dialog>` + `showModal()` (Esc, focus, backdrop của trình duyệt), bấm nền đóng, khóa cuộn `html`; desktop hộp giữa, mobile sheet từ dưới. **Dùng lại cho 8.3.**
+  - Ảnh: `public/images/history/<id>.jpg` (Commons, ảnh đại diện bài wiki; Lý Thường Kiệt bài không có ảnh → tượng bán thân ở Bảo tàng Quân đội, CC0). `HistoryImage { url, credit: "Mô tả · Tác giả · Giấy phép", page, position }` — `position` là `object-position` để ảnh cắt tròn thấy mặt (tượng toàn thân như Lê Lợi, Quang Trung cần `50% 10–14%`). Thời cổ toàn là tượng / tranh đời sau, đã ghi trong `credit`. Văn Tiến Dũng chỉ có ảnh gốc 220×292 (mờ khi phóng to) — thay nếu tìm được ảnh tự do lớn hơn.
+- **8.5 ✅ Trang Địa lý**: nút 🏠 nằm **bên trái** chữ "Bản đồ Việt Nam". `?mode=history` đã bỏ khỏi code cùng nút gạt chế độ cũ (không còn `ModeSwitch`, `utils/mode.ts`); link cũ có `?mode=` chỉ mở trang chủ, không cần xử lý thêm.
+- **8.6 Bổ sung nội dung**: thêm trận (vd. Chi Lăng 981, Đông Bộ Đầu, Hàm Tử – Chương Dương, Vạn Tường, Đường 9 – Nam Lào, Quảng Trị 1972, Huế – Đà Nẵng 1975), thêm lãnh đạo (vd. Lê Hoàn, Trần Nhân Tông, Nguyễn Chí Thanh…), tiểu sử dài hơn.
+- **8.7 Bản đồ nhỏ** vị trí trận đánh (có thể dùng lại `provinces.geojson`, nhớ Hoàng Sa – Trường Sa), lọc theo thời kỳ.
+- **8.8 Minigame lịch sử** (trang `#/lich-su/tro-choi` hoặc tab thứ 3 "Trò chơi"; chỉ dùng dữ liệu trong `history.ts` để đáp án luôn đúng nguồn). Gợi ý, làm lần lượt từ dễ đến khó:
+  1. **Đố vui trắc nghiệm**: 10 câu ngẫu nhiên sinh tự động từ dữ liệu ("Ai chỉ huy trận Bạch Đằng 938?", "Trận Điện Biên Phủ kết thúc năm nào?", "Trận này thuộc cuộc kháng chiến nào?"); 4 đáp án, đáp án nhiễu lấy cùng loại; hiện giải thích + link popup chi tiết sau mỗi câu; điểm cao nhất lưu `localStorage`.
+  2. **Sắp xếp dòng thời gian**: kéo thả 5–6 thẻ trận đánh theo đúng thứ tự thời gian (cần trường năm dạng số `year` trong `Battle` để chấm).
+  3. **Ghép cặp**: nối người lãnh đạo ↔ trận đánh / cuộc kháng chiến (lật thẻ kiểu trí nhớ hoặc nối hai cột).
+  4. **Đoán nhân vật qua gợi ý**: lần lượt mở gợi ý (thời kỳ → vai trò → trận đánh → ảnh chân dung), đoán càng sớm càng nhiều điểm.  
+
+Quy ước cho phần này:
+- Dữ liệu ở `src/data/history.ts`. Mô tả tóm tắt theo đoạn mở đầu bài vi.wikipedia (`prop=extracts&exintro`), không viết thêm từ trí nhớ; `wiki` phải là bài thật, không phải trang định hướng (kiểm tra `prop=pageprops&ppprop=disambiguation&redirects=1`, dùng tên bài đích sau redirect).
+- Ngày tháng ghi theo bài wiki (dương lịch); địa điểm không rõ thì bỏ `place`.
+- Ghi nguồn "Wikipedia tiếng Việt (CC BY-SA 4.0)" ở cuối trang.

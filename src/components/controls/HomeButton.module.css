@@ -1,0 +1,17 @@
+.home {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--hover);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.home:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}

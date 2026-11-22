@@ -1,0 +1,68 @@
+.frame {
+  display: block;
+  overflow: hidden;
+  background: var(--accent-soft);
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--border);
+}
+
+.large {
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+}
+
+/* Không có ảnh: chữ cái đầu */
+.initial {
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.thumb.initial {
+  font-size: 20px;
+}
+
+.large.initial {
+  font-size: 64px;
+}
+
+.figure {
+  margin: 0;
+}
+
+.credit {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.credit a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  /* Popup trên điện thoại: ảnh ngang, cắt theo vị trí khuôn mặt */
+  .large {
+    aspect-ratio: 4 / 3;
+  }
+}

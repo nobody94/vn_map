@@ -1,0 +1,373 @@
+.page {
+  min-height: 100%;
+  background: var(--sea);
+}
+
+/* Thanh trên cùng: nút về trang chủ */
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px;
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.barTitle {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--text-strong);
+}
+
+.hero {
+  width: min(880px, 100%);
+  margin: 0 auto;
+  padding: 40px 16px 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.lead {
+  margin: 6px 0 24px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.tabs {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--border);
+}
+
+.tab {
+  height: 32px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text-strong);
+}
+
+.tabActive,
+.tabActive:hover {
+  background: var(--surface);
+  color: var(--accent);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.content {
+  width: min(880px, 100%);
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* Dòng thời gian các cuộc kháng chiến */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 28px;
+  list-style: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px;
+  width: 2px;
+  background: var(--border);
+}
+
+.war {
+  position: relative;
+}
+
+.war + .war {
+  margin-top: 32px;
+}
+
+.war::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -28px;
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--sea);
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.period {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.warName {
+  margin: 2px 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.warMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.leaderLink {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.leaderLink:hover {
+  text-decoration: underline;
+}
+
+.battles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.date {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.wiki {
+  flex: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.wiki:hover {
+  text-decoration: underline;
+}
+
+.cardTitle {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--text-strong);
+}
+
+.place {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.summary {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* Người lãnh đạo */
+.leaders {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.leader,
+.battle {
+  scroll-margin-top: 72px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-sm);
+}
+
+.leaderHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tên người lãnh đạo: bấm để mở popup */
+.titleBtn {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.titleBtn:hover {
+  color: var(--accent);
+}
+
+.detailBtn {
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+  background: var(--surface);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.detailBtn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.leaderHead .cardTitle {
+  margin: 0;
+}
+
+.lifespan {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.role {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.leaderFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.chip {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--hover);
+  font-size: 11.5px;
+  color: var(--text);
+}
+
+.source {
+  margin: 32px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 24px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .lead {
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+
+  .tabs {
+    display: grid;
+    grid-auto-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 22px;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .war::before {
+    left: -22px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .warName {
+    font-size: 18px;
+  }
+
+  .battles,
+  .leaders {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 14px 16px;
+  }
+}

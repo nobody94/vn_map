@@ -1,0 +1,140 @@
+.home {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  padding: 48px 16px;
+  background:
+    radial-gradient(circle at 20% 15%, var(--accent-soft), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(15, 118, 110, 0.06), transparent 40%),
+    var(--sea);
+}
+
+.inner {
+  width: min(720px, 100%);
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
+}
+
+.subtitle {
+  margin: 6px 0 36px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.entries {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.entry {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 24px 24px 28px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  text-decoration: none;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+
+.entry:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.entry:focus-visible {
+  outline: 3px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.entryTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.entryDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 20px;
+  color: var(--accent);
+  transition: transform 0.18s;
+}
+
+.entry:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 32px 16px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    margin-bottom: 24px;
+  }
+
+  .entries {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .entry {
+    padding: 18px 18px 20px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 6px;
+  }
+
+  .entryTitle {
+    font-size: 19px;
+  }
+
+  .arrow {
+    top: 18px;
+    right: 18px;
+  }
+}

@@ -17,6 +17,12 @@
   width: min(260px, calc(100vw - 32px));
 }
 
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .title {
   margin: 0;
   font-size: 18px;
