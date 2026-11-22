@@ -1,0 +1,13 @@
+# Cloudflare Pages: cache phía trình duyệt
+# File trong /assets/ có mã băm trong tên → đổi nội dung là đổi tên, cache lâu được
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=604800
+
+/geo/*
+  Cache-Control: public, max-age=86400
+
+/data/*
+  Cache-Control: public, max-age=86400
