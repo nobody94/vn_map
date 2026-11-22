@@ -31,6 +31,7 @@ src/data/mountains.ts, rivers.ts     # 20 đỉnh núi, 21 sông
 src/data/media.ts           # resolveImage(): MediaRef → ảnh + ghi nguồn
 src/data/adminUnits.ts      # useAdminUnits(): tải admin-units.json một lần
 src/utils/search.ts         # tìm tỉnh (tên mới + cũ) và phường, bỏ dấu
+src/utils/clipLines.ts      # cắt đường sông theo ranh giới tỉnh (point-in-polygon)
 src/components/map/         # VietnamMap, ProvinceLayer, IslandsLayer, MountainLayer, RiverLayer
 src/components/panel/       # ProvincePanel (3 tab), AdminUnits, MountainPanel, RiverPanel, MediaImage
 src/components/controls/    # SearchBox, RegionLegend, LayerSwitcher
@@ -49,7 +50,7 @@ scripts/                    # fetch-media, list-missing-images, resize-images.ps
 - Lễ hội ghi rõ âm lịch / dương lịch. `Peak.highest` chỉ gán khi chắc chắn.
 - Import giữa file dữ liệu dùng đuôi `.ts` (script Node import trực tiếp).
 - `wiki` phải trỏ bài thật, không phải trang định hướng.
-- **Đơn vị hành chính:** không còn cấp huyện từ 01/07/2025; tỉnh có xã/phường/đặc khu (3.321). Panel hiện số lượng, danh sách phường + đặc khu, huyện cũ (chỉ tra cứu). Ô tìm kiếm chỉ tìm tỉnh và **phường**; chọn phường → chọn tỉnh, mở tab Tổng quan, tô đậm phường. Không vẽ ranh giới xã.
+- **Đơn vị hành chính:** không còn cấp huyện từ 01/07/2025; tỉnh có xã/phường/đặc khu (3.321). Panel hiện số lượng (chỉ thu gọn + mờ đáy + nút "Xem tất cả" khi danh sách cao hơn khung 150px, đo bằng ResizeObserver), danh sách phường + đặc khu, huyện cũ (chỉ tra cứu). Ô tìm kiếm chỉ tìm tỉnh và **phường**; chọn phường → chọn tỉnh, mở tab Tổng quan, tô đậm phường. Không vẽ ranh giới xã.
 
 ## Ảnh
 

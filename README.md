@@ -20,7 +20,7 @@ Website bản đồ Việt Nam tương tác theo **34 tỉnh, thành phố sau s
 - **Lớp bản đồ** (bật/tắt ở góc trên bên phải):
   - **Địa hình:** nền đổ bóng địa hình.
   - **Đỉnh núi:** 20 đỉnh núi tiêu biểu, kèm nhãn các dãy núi và cao nguyên.
-  - **Sông ngòi:** 21 con sông chính. Bấm vào sông để xem chiều dài, nơi bắt nguồn, cửa sông và các tỉnh sông chảy qua.
+  - **Sông ngòi:** 21 con sông chính. Bấm vào sông để xem chiều dài, nơi bắt nguồn, cửa sông và các tỉnh sông chảy qua. Khi đang chọn một tỉnh, bản đồ chỉ hiện phần sông nằm trong tỉnh đó.
 - **Giao diện:** tối giản, tiếng Việt, dùng tốt trên điện thoại (panel trượt lên từ phía dưới).
 
 ## Công nghệ
@@ -57,7 +57,7 @@ src/
   components/panel/     # panel thông tin tỉnh, núi, sông
   components/controls/  # ô tìm kiếm, chú giải vùng, nút bật/tắt lớp
   data/                 # dữ liệu tỉnh, vùng, núi, sông, ảnh
-  utils/                # tìm kiếm, định dạng số
+  utils/                # tìm kiếm, cắt sông theo tỉnh, định dạng số
 public/
   geo/                  # ranh giới tỉnh, đường sông (GeoJSON)
   data/                 # danh sách đơn vị hành chính
