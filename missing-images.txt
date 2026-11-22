@@ -1,4 +1,4 @@
-DANH SÁCH MỤC CHƯA CÓ ẢNH — 1/628 mục
+DANH SÁCH MỤC CHƯA CÓ ẢNH — 0/628 mục
 Tạo bởi: npm run media:missing  (2026-11-22)
 
 Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
@@ -8,6 +8,3 @@ Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
      (hoặc imageUrl là URL https://… nếu ảnh được phép nhúng trực tiếp)
   3. Chỉ dùng ảnh tự chụp hoặc ảnh có giấy phép cho phép dùng lại (CC, public domain), ghi rõ nguồn.
   4. Chạy lại npm run media:missing để cập nhật danh sách này.
-
-■ Sông
-  [ ] Sông       Sông Mỹ Thanh                              → public/images/song/song-my-thanh.jpg

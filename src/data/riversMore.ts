@@ -562,7 +562,7 @@ export const MORE_RIVERS: River[] = [
     wiki: 'Sông Cửa Lớn', clip: [8.6, 104.7, 8.95, 105.3],
   },
   {
-    id: 'my-thanh', name: 'Sông Mỹ Thanh', osmName: 'Sông Mỹ Thanh', system: 'mekong', minor: true,
+    id: 'my-thanh', name: 'Sông Mỹ Thanh', imageUrl: 'images/song/song-my-thanh.jpg', imageCredit: 'Daniel Berthold (sông nước Sóc Trăng, ảnh minh họa) · CC BY-SA 4.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:River_in_Soc_Trang.JPG', osmName: 'Sông Mỹ Thanh', system: 'mekong', minor: true,
     lengthKm: 25,
     source: 'Sông Cổ Cò (Thạnh Thới An)', mouth: 'Biển Đông (cửa Mỹ Thanh)',
     provinces: [33],

@@ -58,5 +58,5 @@ Không sửa tay: `media.generated.json`, `admin-units.json`, `missing-images.tx
 ## Trạng thái (22/11/2026)
 
 - Phần 1–6 ✅ (bản đồ, panel, dữ liệu, tìm kiếm, núi/địa hình, sông, đơn vị hành chính). Phần 7 deploy: chỉ khi người dùng yêu cầu.
-- Ảnh 627/628. Còn thiếu sông Mỹ Thanh: Commons không có ảnh nào trong 10 km quanh sông (chỉ ảnh ISS); Pixabay, Openverse cũng không có. Sông không có ảnh chính nó thì dùng ảnh cửa sông / hợp lưu, ghi rõ trong `imageCredit` (Thương → Lục Đầu Giang, Bắc Vọng → sông Bằng tại Tà Lùng, Nhuệ → ngã ba Nhuệ – Đáy ở Phủ Lý).
+- Ảnh 628/628. Sông Mỹ Thanh dùng ảnh minh họa chung `River_in_Soc_Trang.JPG` (người dùng đồng ý) vì Commons không có ảnh nào trong 10 km quanh sông (chỉ ảnh ISS); Pixabay, Openverse cũng không có; các sông giao (Cổ Cò, Dù Tho, Thạnh Ninh, Trà Niên, Gòi, rạch Tổng Cáng — lấy từ OSM) cũng không có ảnh (`Cầu_Cổ_Cò.jpg` là sông Cổ Cò ở Đà Nẵng, khác sông). Sông không có ảnh chính nó thì dùng ảnh cửa sông / hợp lưu, ghi rõ trong `imageCredit` (Thương → Lục Đầu Giang, Bắc Vọng → sông Bằng tại Tà Lùng, Nhuệ → ngã ba Nhuệ – Đáy ở Phủ Lý).
 - Tìm ảnh sông hiệu quả nhất: Commons `list=geosearch` dọc đường sông trong `rivers.geojson`, rồi đo khoảng cách điểm chụp tới đường sông.
