@@ -9,7 +9,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { PROVINCES } from '../src/data/provinceMeta.ts'
-import { PROVINCE_DETAILS } from '../src/data/provinceDetails.ts'
+import { PROVINCE_DETAILS } from '../src/data/details/all.ts'
 import { MOUNTAINS } from '../src/data/mountains.ts'
 import { RIVERS } from '../src/data/rivers.ts'
 import { fallbackKey } from '../src/data/mediaKey.ts'

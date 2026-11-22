@@ -51,6 +51,7 @@ Không sửa tay: `media.generated.json`, `admin-units.json`, `missing-images.tx
 
 - Sông: pane `rivers` (z 450) trên lớp tỉnh; chọn tỉnh → `clipLinesToArea`. `build-rivers.ts` tìm theo tên trong khung `clip`, `dropSideChannels` bỏ lạch phụ trùng tên. Overpass chỉ overpass-api.de ổn định.
 - Địa hình: `ElevationLayer` (canvas, Terrarium, cắt theo ranh giới tỉnh) + Esri relief `multiply`.
+- Tải theo nhu cầu (chunk riêng, `use()` + `Suspense` trong App, tải trước lúc rảnh): chi tiết tỉnh theo miền qua `loadProvinceDetail(code)` (provinceDetails.ts; mã 1–15 Bắc, 16–26 Trung, 27–34 Nam) và `media.generated.json` qua `loadMedia()` (media.ts; chưa tải xong thì `resolveImage` chỉ trả `imageUrl`). Panel núi/sông fallback là chính panel chưa có ảnh. Không import tĩnh `details/*.ts` hay `media.generated.json` trong `src/`; script Node dùng `details/all.ts`.
 - `ProvinceLayer` style imperative qua ref + `styleFor()`; click polygon phải `stopPropagation`.
 - Wikipedia/Commons hay chặn (429, "too many requests"): chờ ≥2–3 s giữa truy vấn. Tải ảnh: `Special:FilePath/<tên>?width=1200`.
 - Windows: tránh `process.exit()` sau ghi file; `.ps1` lưu UTF-8 có BOM; heredoc/`node -e` làm hỏng `\` trong regex → viết script ra file.

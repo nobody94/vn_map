@@ -7,20 +7,40 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Phụ thuộc & bản build
 node_modules
 dist
 dist-ssr
+coverage
+*.tsbuildinfo
+.eslintcache
+.vite
+
+# Biến môi trường (khóa Pixabay ở .env.local) — chỉ giữ file mẫu
+.env
+.env.*
+!.env.example
 *.local
 
-# Editor directories and files
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-.env.local
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code: cấu hình cá nhân
+.claude/settings.local.json
+
+# File tạm
+*.bak
+*.orig
+*.tmp

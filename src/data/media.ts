@@ -1,6 +1,6 @@
-import generated from './media.generated.json'
 import type { MediaRef } from '../types/province'
 import { fallbackKey } from './mediaKey'
+import { track, whenIdle } from '../utils/trackedPromise'
 
 interface ImageInfo {
   src: string
@@ -17,7 +17,32 @@ interface MediaData {
   fallback?: Record<string, string | null>
 }
 
-const data = generated as MediaData
+/**
+ * media.generated.json (~270 KB) tách thành chunk riêng, chỉ tải khi mở panel.
+ * Trước khi tải xong, resolveImage chỉ trả ảnh `imageUrl` (ảnh tự tìm trong public/).
+ */
+let data: MediaData | null = null
+let pending: Promise<void> | null = null
+
+/** Tải dữ liệu ảnh; cùng một promise cho mọi lần gọi (dùng được với `use()`) */
+export function loadMedia(): Promise<void> {
+  if (!pending) {
+    pending = track(
+      import('./media.generated.json').then((m) => {
+        data = m.default as MediaData
+      }),
+    )
+    // Lỗi mạng: cho phép thử lại ở lần mở panel sau
+    pending.catch(() => {
+      pending = null
+    })
+  }
+  return pending
+}
+
+export function prefetchMedia() {
+  whenIdle(() => loadMedia().catch(() => {}))
+}
 
 export interface ResolvedImage extends ImageInfo {
   /** "Ảnh: Tác giả · CC BY-SA 4.0" */
@@ -34,6 +59,7 @@ export function resolveImage(ref: MediaRef): ResolvedImage | undefined {
     const credit = ref.imageCredit ?? ''
     return { src, page: ref.imagePage ?? '', artist: credit, license: '', credit: credit ? `Ảnh: ${credit}` : '' }
   }
+  if (!data) return undefined
   const file =
     ref.imageFile ??
     (ref.wiki ? data.articles[ref.wiki]?.image : null) ??

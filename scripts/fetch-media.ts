@@ -15,7 +15,7 @@
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { PROVINCE_DETAILS } from '../src/data/provinceDetails.ts'
+import { PROVINCE_DETAILS } from '../src/data/details/all.ts'
 import { MOUNTAINS } from '../src/data/mountains.ts'
 import { RIVERS } from '../src/data/rivers.ts'
 import type { MediaRef } from '../src/types/province.ts'

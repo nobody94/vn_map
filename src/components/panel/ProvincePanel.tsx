@@ -12,6 +12,8 @@ interface Props {
   onClose: () => void
   /** Xã/phường hoặc huyện cũ chọn từ ô tìm kiếm: chuyển sang tab Tổng quan và đánh dấu */
   focusUnit?: UnitMatch
+  /** Đang tải dữ liệu chi tiết của miền (lần đầu mở một tỉnh) */
+  loading?: boolean
 }
 
 const TABS = [
@@ -22,7 +24,7 @@ const TABS = [
 
 type TabId = (typeof TABS)[number]['id']
 
-export function ProvincePanel({ meta, detail, onClose, focusUnit }: Props) {
+export function ProvincePanel({ meta, detail, onClose, focusUnit, loading }: Props) {
   // Giữ nguyên tab khi chuyển sang tỉnh khác để tiện so sánh
   const [tab, setTab] = useState<TabId>('overview')
   // Tìm theo xã/phường → về tab Tổng quan (điều chỉnh state ngay khi render, không dùng effect)
@@ -87,7 +89,7 @@ export function ProvincePanel({ meta, detail, onClose, focusUnit }: Props) {
         </>
       ) : (
         <div className={styles.empty}>
-          <p>Thông tin chi tiết về {meta.name} đang được cập nhật.</p>
+          <p>{loading ? 'Đang tải…' : `Thông tin chi tiết về ${meta.name} đang được cập nhật.`}</p>
         </div>
       )}
     </aside>
