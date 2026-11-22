@@ -8,7 +8,8 @@ Bản đồ Việt Nam tương tác, 34 tỉnh sau sáp nhập 01/07/2025: số 
 npm run dev | build | lint          # chưa có test: lint + build + xem trình duyệt (cả mobile ≤768px)
 npm run media                       # tra ảnh Wikimedia + Openverse → media.generated.json (`-- --full` tra lại hết)
 npm run media:missing               # ghi missing-images.txt
-npm run images:resize               # thu nhỏ ảnh public/images (ghi đè)
+npm run images:resize               # thu nhỏ ảnh > 300 KB hoặc > 1200px trong public/images (ghi đè, JPEG q82)
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/resize-images.ps1 [-Dir <thư mục>] -Quality 65 [-MaxSide 1000]   # ảnh nhiều chi tiết vẫn > 300 KB
 npm run admin-units                 # tải lại public/data/admin-units.json
 node scripts/build-rivers.ts [--only id1,id2 | --clip]
 node scripts/river-provinces.ts [--write]   # tỉnh sông chảy qua theo hình học
@@ -41,6 +42,7 @@ Không sửa tay: `media.generated.json`, `admin-units.json`, `missing-images.tx
 ## Ảnh
 
 - Thứ tự: `imageUrl` → `imageFile` → ảnh bài `wiki` → `imageSearch` → Openverse. Ảnh bài wiki sai → `BAD_ARTICLE_IMAGE`, Openverse sai → `NO_FALLBACK` (fetch-media.ts).
+- Giảm dung lượng: `images:resize` (q82) trước; ảnh nhiều chi tiết (cỏ, lá, phên đan) vẫn > 300 KB thì chạy script với `-Quality 65`, còn quá thì thêm `-MaxSide 1000`. Sao lưu và nén từ bản gốc (không nén chồng nhiều lần), xem lại ảnh sau khi nén. Ảnh đã dưới 300 KB thì không nén lại.
 - Ảnh tự tìm: lưu `public/images/<slug>/` (JPG ~1200px, < 300 KB), ghi `imageUrl` + `imageCredit` (+ `imagePage`). Chỉ CC / public domain / Pixabay (key trong `.env.local`, tải về, không hotlink); không ảnh báo, blog.
 - Luôn xem ảnh và mô tả gốc trước khi dùng. Không có ảnh đúng thì ảnh **liên quan từ khóa** là đủ (lễ hội → dân tộc/vùng, sông → cầu/hợp lưu); ảnh không thấy chủ thể thì để trống.
 - Hiện tác giả + giấy phép; **không hiển thị link** ở di sản, lễ hội.
@@ -56,4 +58,5 @@ Không sửa tay: `media.generated.json`, `admin-units.json`, `missing-images.tx
 ## Trạng thái (22/11/2026)
 
 - Phần 1–6 ✅ (bản đồ, panel, dữ liệu, tìm kiếm, núi/địa hình, sông, đơn vị hành chính). Phần 7 deploy: chỉ khi người dùng yêu cầu.
-- Ảnh 621/628. Còn thiếu 7 sông: Nhuệ, Thương, Bắc Vọng, Kỳ Lộ, Ray, Dinh (Bà Rịa), Mỹ Thanh. Đã tìm Commons + Pixabay (cả ảnh cầu, thị trấn ven sông), không có ảnh dùng được; `CauVat.JPG` là cầu qua sông Cầu, không phải sông Thương.
+- Ảnh 627/628. Còn thiếu sông Mỹ Thanh: Commons không có ảnh nào trong 10 km quanh sông (chỉ ảnh ISS); Pixabay, Openverse cũng không có. Sông không có ảnh chính nó thì dùng ảnh cửa sông / hợp lưu, ghi rõ trong `imageCredit` (Thương → Lục Đầu Giang, Bắc Vọng → sông Bằng tại Tà Lùng, Nhuệ → ngã ba Nhuệ – Đáy ở Phủ Lý).
+- Tìm ảnh sông hiệu quả nhất: Commons `list=geosearch` dọc đường sông trong `rivers.geojson`, rồi đo khoảng cách điểm chụp tới đường sông.

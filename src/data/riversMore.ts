@@ -43,14 +43,14 @@ export const MORE_RIVERS: River[] = [
     wiki: 'Sông Quây Sơn', clip: [22.5, 106.3, 23.0, 106.9],
   },
   {
-    id: 'bac-vong', name: 'Sông Bắc Vọng', osmName: 'Sông Bắc Vọng', system: 'thaibinh', aka: 'Động Quế (Trung Quốc)', minor: true,
+    id: 'bac-vong', name: 'Sông Bắc Vọng', imageUrl: 'images/song/song-bac-vong.jpg', imageCredit: 'Phó Nháy (sông Bằng tại Tà Lùng, Phục Hòa, gần nơi sông Bắc Vọng đổ vào) · CC BY 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Bang_River_at_Ta_Lung_-_Suikou_border_gates_in_Vietnam_-_China_border.JPG', osmName: 'Sông Bắc Vọng', system: 'thaibinh', aka: 'Động Quế (Trung Quốc)', minor: true,
     source: 'Trung Quốc', mouth: 'Hợp lưu với sông Bằng (Phục Hòa)',
     provinces: [2],
     description: 'Chảy qua một số xã phía đông Cao Bằng rồi tạo thành biên giới tự nhiên Việt – Trung trước khi hợp lưu với sông Bằng.',
     wiki: 'Sông Bắc Vọng', clip: [22.4, 106.3, 22.9, 106.8],
   },
   {
-    id: 'thuong', name: 'Sông Thương', osmName: 'Sông Thương', system: 'thaibinh', aka: 'Sông Nhật Đức', minor: true,
+    id: 'thuong', name: 'Sông Thương', imageUrl: 'images/song/song-thuong.jpg', imageCredit: 'Viethavvh (Lục Đầu Giang, nơi sông Thương đổ vào) · Public domain (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:L%E1%BB%A5c_%C4%90%E1%BA%A7u_Giang.jpg', osmName: 'Sông Thương', system: 'thaibinh', aka: 'Sông Nhật Đức', minor: true,
     mouth: 'Đổ vào sông Thái Bình',
     provinces: [12, 9, 13],
     description: 'Phụ lưu lớn của sông Thái Bình, chảy qua Lạng Sơn, Bắc Ninh (Bắc Giang cũ) và Hải Phòng. Xưa còn gọi là sông Nam Bình, sông Lạng Giang.',
@@ -347,7 +347,7 @@ export const MORE_RIVERS: River[] = [
     wiki: 'Sông Hà Thanh', clip: [13.6, 108.9, 13.9, 109.25],
   },
   {
-    id: 'ky-lo', name: 'Sông Kỳ Lộ', osmName: 'Sông Kỳ Lộ', system: 'nam-trung', aka: 'Sông La Hiên (thượng lưu), sông Cái (hạ lưu)', minor: true,
+    id: 'ky-lo', name: 'Sông Kỳ Lộ', imageUrl: 'images/song/song-ky-lo.jpg', imageCredit: 'Tommy Japan 79 (cầu Đồng Xuân ở La Hai, 1970) · CC BY 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/97930879@N02/15640424892', osmName: 'Sông Kỳ Lộ', system: 'nam-trung', aka: 'Sông La Hiên (thượng lưu), sông Cái (hạ lưu)', minor: true,
     provinces: [25],
     description: 'Chảy qua Gia Lai và Đắk Lắk (Phú Yên cũ). Tên Kỳ Lộ được cho là người Pháp đổi từ tên cũ Cà Lố.',
     wiki: 'Sông Kỳ Lộ', clip: [13.3, 108.6, 14.0, 109.35],
@@ -451,7 +451,7 @@ export const MORE_RIVERS: River[] = [
     wiki: 'Sông Thị Vải', clip: [10.4, 106.85, 10.8, 107.1],
   },
   {
-    id: 'ray', name: 'Sông Ray', osmName: 'Sông Ray', system: 'dongnai', minor: true,
+    id: 'ray', name: 'Sông Ray', imageUrl: 'images/song/song-ray.jpg', imageCredit: 'Lam Tr Th (gần cửa sông, Lộc An – Phước Thuận) · CC BY-SA 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:%C4%90%E1%BA%A5t_%C4%90%E1%BB%8F_District,_Ba_Ria_-_Vung_Tau,_Vietnam_-_panoramio_(1).jpg', osmName: 'Sông Ray', system: 'dongnai', minor: true,
     lengthKm: 55,
     source: 'Xuân Hòa (Đồng Nai)', mouth: 'Biển Đông (Phước Hải)',
     provinces: [29, 28],
@@ -459,7 +459,7 @@ export const MORE_RIVERS: River[] = [
     wiki: 'Sông Ray', clip: [10.4, 107.2, 10.95, 107.5],
   },
   {
-    id: 'dinh-ba-ria', name: 'Sông Dinh (Bà Rịa)', osmName: 'Sông Dinh', system: 'dongnai', minor: true,
+    id: 'dinh-ba-ria', name: 'Sông Dinh (Bà Rịa)', imageUrl: 'images/song/song-dinh-ba-ria.jpg', imageCredit: 'trungydang (từ cầu Gò Găng) · CC BY 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Cau_Go_Gang,_Song_Dinh,_Vungtau,_Baria_vungtau,vn_-_panoramio.jpg', osmName: 'Sông Dinh', system: 'dongnai', minor: true,
     lengthKm: 40,
     source: 'Hồ Kim Long', mouth: 'Vịnh Gành Rái (Vũng Tàu)',
     provinces: [29],

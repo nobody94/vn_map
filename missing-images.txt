@@ -1,4 +1,4 @@
-DANH SÁCH MỤC CHƯA CÓ ẢNH — 7/628 mục
+DANH SÁCH MỤC CHƯA CÓ ẢNH — 1/628 mục
 Tạo bởi: npm run media:missing  (2026-11-22)
 
 Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
@@ -10,10 +10,4 @@ Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
   4. Chạy lại npm run media:missing để cập nhật danh sách này.
 
 ■ Sông
-  [ ] Sông       Sông Nhuệ                                  → public/images/song/song-nhue.jpg
-  [ ] Sông       Sông Bắc Vọng                              → public/images/song/song-bac-vong.jpg
-  [ ] Sông       Sông Thương                                → public/images/song/song-thuong.jpg
-  [ ] Sông       Sông Kỳ Lộ                                 → public/images/song/song-ky-lo.jpg
-  [ ] Sông       Sông Ray                                   → public/images/song/song-ray.jpg
-  [ ] Sông       Sông Dinh (Bà Rịa)                         → public/images/song/song-dinh-ba-ria.jpg
   [ ] Sông       Sông Mỹ Thanh                              → public/images/song/song-my-thanh.jpg

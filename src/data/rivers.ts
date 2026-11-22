@@ -101,7 +101,7 @@ const BASE_RIVERS: River[] = [
     wiki: 'Sông Đáy', imageFile: 'Ninh Phuc Port.jpg',
   },
   {
-    id: 'nhue', name: 'Sông Nhuệ', osmName: 'Sông Nhuệ', system: 'hong', aka: 'Nhuệ Giang', minor: true,
+    id: 'nhue', name: 'Sông Nhuệ', imageUrl: 'images/song/song-nhue.jpg', imageCredit: 'ngocchat1014 (Phủ Lý, ngã ba sông Nhuệ – sông Đáy) · CC BY 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Th%E1%BA%AFng_L%E1%BB%A3i,_tp._Ph%E1%BB%A7_L%C3%BD,_H%C3%A0_Nam_Province,_Vietnam_-_panoramio_(1).jpg', osmName: 'Sông Nhuệ', system: 'hong', aka: 'Nhuệ Giang', minor: true,
     lengthKm: 76,
     source: 'Lấy nước sông Hồng qua cống Liên Mạc (Hà Nội)', mouth: 'Đổ vào sông Đáy (Phủ Lý)',
     provinces: [1, 15],
