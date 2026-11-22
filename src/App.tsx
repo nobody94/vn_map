@@ -11,14 +11,16 @@ import { PROVINCE_DETAILS } from './data/provinceDetails'
 import type { RegionId } from './data/regions'
 import { MOUNTAIN_BY_ID } from './data/mountains'
 import { RIVER_BY_ID } from './data/rivers'
+import type { UnitMatch } from './utils/search'
 import styles from './App.module.css'
 
 /** Đối tượng đang chọn: một tỉnh, một ngọn núi hoặc một con sông (loại trừ nhau) */
-type Selection = { kind: 'province'; code: number } | { kind: 'mountain'; id: string } | { kind: 'river'; id: string } | null
+type Selection =
+  | { kind: 'province'; code: number; unit?: UnitMatch }
+  | { kind: 'mountain'; id: string } | { kind: 'river'; id: string } | null
 
 function App() {
   const [selection, setSelection] = useState<Selection>(null)
-  const [colorByRegion, setColorByRegion] = useState(true)
   const [highlightRegion, setHighlightRegion] = useState<RegionId | null>(null)
   const [layers, setLayers] = useState<MapLayers>({ terrain: false, peaks: false, rivers: false })
 
@@ -41,7 +43,6 @@ function App() {
       <VietnamMap
         selectedCode={selectedCode}
         onSelect={selectProvince}
-        colorByRegion={colorByRegion}
         highlightRegion={highlightRegion}
         layers={layers}
         selectedMountainId={selectedMountainId}
@@ -59,7 +60,7 @@ function App() {
       <header className={styles.header}>
         <h1 className={styles.title}>Bản đồ Việt Nam</h1>
         <p className={styles.subtitle}>34 tỉnh, thành phố · từ 01/07/2025</p>
-        <SearchBox onSelect={selectProvince} />
+        <SearchBox onSelect={(code, unit) => setSelection({ kind: 'province', code, unit })} />
       </header>
 
       <RegionLegend
@@ -67,7 +68,14 @@ function App() {
         hiddenOnMobile={panelOpen}
       />
 
-      {province && <ProvincePanel meta={province} detail={PROVINCE_DETAILS[province.code]} onClose={close} />}
+      {province && (
+        <ProvincePanel
+          meta={province}
+          detail={PROVINCE_DETAILS[province.code]}
+          onClose={close}
+          focusUnit={selection?.kind === 'province' ? selection.unit : undefined}
+        />
+      )}
       {mountain && <MountainPanel mountain={mountain} onClose={close} onOpenProvince={selectProvince} />}
       {river && <RiverPanel river={river} onClose={close} onOpenProvince={selectProvince} />}
     </main>

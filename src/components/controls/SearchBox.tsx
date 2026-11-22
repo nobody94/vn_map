@@ -1,24 +1,27 @@
 import { useId, useState, type KeyboardEvent } from 'react'
-import { searchProvinces } from '../../utils/search'
+import { searchAll, type UnitMatch } from '../../utils/search'
+import { useAdminUnits } from '../../data/adminUnits'
 import { regionOf } from '../../data/regions'
 import styles from './SearchBox.module.css'
 
 interface Props {
-  onSelect: (code: number) => void
+  /** unit: phường được chọn (khi tìm theo phường) */
+  onSelect: (code: number, unit?: UnitMatch) => void
 }
 
-/** Ô tìm tỉnh theo tên mới hoặc tên cũ (trước sáp nhập), không cần gõ dấu */
+/** Ô tìm tỉnh (tên mới, tên cũ) và phường, không cần gõ dấu */
 export function SearchBox({ onSelect }: Props) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(0)
   const listId = useId()
 
-  const results = searchProvinces(query)
+  const units = useAdminUnits()
+  const results = searchAll(query, units)
   const showList = open && query.trim().length > 0
 
-  const choose = (code: number) => {
-    onSelect(code)
+  const choose = (r: (typeof results)[number]) => {
+    onSelect(r.province.code, r.unit)
     setQuery('')
     setOpen(false)
     setActive(0)
@@ -32,7 +35,7 @@ export function SearchBox({ onSelect }: Props) {
       e.preventDefault()
       setActive((i) => Math.max(i - 1, 0))
     } else if (e.key === 'Enter' && results[active]) {
-      choose(results[active].province.code)
+      choose(results[active])
     } else if (e.key === 'Escape') {
       setOpen(false)
       e.currentTarget.blur()
@@ -48,7 +51,7 @@ export function SearchBox({ onSelect }: Props) {
       <input
         className={styles.input}
         type="search"
-        placeholder="Tìm tỉnh, thành (cả tên cũ)…"
+        placeholder="Tìm tỉnh, thành, phường…"
         value={query}
         onChange={(e) => {
           setQuery(e.target.value)
@@ -71,23 +74,21 @@ export function SearchBox({ onSelect }: Props) {
             const region = regionOf(r.province.code)
             return (
               <li
-                key={r.province.code}
+                key={`${r.province.code}|${r.unit?.kind ?? ''}|${r.unit?.name ?? ''}`}
                 role="option"
                 aria-selected={i === active}
                 className={`${styles.item} ${i === active ? styles.active : ''}`}
                 // onMouseDown thay vì onClick để chạy trước onBlur của input
                 onMouseDown={(e) => {
                   e.preventDefault()
-                  choose(r.province.code)
+                  choose(r)
                 }}
                 onMouseEnter={() => setActive(i)}
               >
                 <span className={styles.dot} style={{ background: region?.strong }} />
                 <span className={styles.text}>
-                  <span className={styles.name}>{r.province.name}</span>
-                  <span className={styles.sub}>
-                    {r.matchedOld ? `Gồm tỉnh cũ: ${r.matchedOld}` : region?.name}
-                  </span>
+                  <span className={styles.name}>{r.unit ? r.unit.name : r.province.name}</span>
+                  <span className={styles.sub}>{subtitle(r)}</span>
                 </span>
               </li>
             )
@@ -96,4 +97,10 @@ export function SearchBox({ onSelect }: Props) {
       )}
     </div>
   )
+}
+
+function subtitle(r: ReturnType<typeof searchAll>[number]): string {
+  if (r.unit?.kind === 'ward') return `${r.province.kind} ${r.province.name}`
+  if (r.matchedOld) return `Gồm tỉnh cũ: ${r.matchedOld}`
+  return regionOf(r.province.code)?.name ?? ''
 }

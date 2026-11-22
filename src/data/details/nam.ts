@@ -23,7 +23,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
         { name: 'Tòa Thánh Tây Ninh', description: 'Trung tâm của đạo Cao Đài, kiến trúc độc đáo.', wiki: 'Tòa Thánh Tây Ninh' },
         { name: 'Hồ Dầu Tiếng', description: 'Một trong những hồ thủy lợi lớn nhất Việt Nam.', imageSearch: 'Dau Tieng lake' },
         {
-          name: 'Căn cứ Trung ương Cục miền Nam',
+          name: 'Căn cứ Trung ương Cục miền Nam', imageFile: 'Nguyenvanlinh-twcucmiennam.png',
           description: 'Di tích quốc gia đặc biệt giữa rừng Tân Biên.',
         },
       ],
@@ -49,7 +49,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     ],
     specialties: [
       { name: 'Muối tôm Tây Ninh', description: 'Muối giã cùng tôm khô, ớt, chấm trái cây.', imageSearch: 'muối tôm Tây Ninh' },
-      { name: 'Gạo nàng thơm Chợ Đào', description: 'Loại gạo thơm nổi tiếng từng dùng tiến vua.' },
+      { name: 'Gạo nàng thơm Chợ Đào', imageUrl: 'images/tay-ninh/gao-nang-thom-cho-dao.jpg', imageCredit: 'consolersafari · Pixabay', imagePage: 'https://pixabay.com/photos/rice-grain-plant-food-harvest-7176354/', description: 'Loại gạo thơm nổi tiếng từng dùng tiến vua.' },
       { name: 'Thanh long Long An', description: 'Vùng thanh long lớn ở Châu Thành.', wiki: 'Thanh long' },
     ],
   },
@@ -80,7 +80,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     },
     festivals: [
       {
-        name: 'Lễ hội chùa Ông Biên Hòa',
+        name: 'Lễ hội chùa Ông Biên Hòa', imageUrl: 'images/dong-nai/le-hoi-chua-ong-bien-hoa.jpg', imageCredit: 'Nellynguyen · Pixabay', imagePage: 'https://pixabay.com/photos/incense-thienhau-pagoda-vietnam-2695879/',
         time: 'Rằm tháng Giêng âm lịch',
         description: 'Lễ hội tại Thất Phủ cổ miếu của cộng đồng người Hoa.',
       },
@@ -120,12 +120,12 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
         { name: 'Ao Bà Om', description: 'Thắng cảnh ao vuông cổ thụ rễ lồi của Trà Vinh.', wiki: 'Ao Bà Om' },
         { name: 'Chùa Âng', description: 'Ngôi chùa Khmer cổ kính bậc nhất Nam Bộ.', wiki: 'Chùa Âng' },
         { name: 'Văn Thánh miếu Vĩnh Long', description: 'Văn miếu thờ Khổng Tử và các danh nho Nam Bộ.', wiki: 'Văn Thánh miếu Vĩnh Long' },
-        { name: 'Cù lao An Bình', description: 'Cù lao miệt vườn cây trái giữa sông Tiền.' },
+        { name: 'Cù lao An Bình', imageFile: 'An Bình, tp. Vĩnh Long, Vĩnh Long, Vietnam - panoramio (3).jpg', description: 'Cù lao miệt vườn cây trái giữa sông Tiền.' },
       ],
     },
     festivals: [
       {
-        name: 'Lễ hội Ok Om Bok',
+        name: 'Lễ hội Ok Om Bok', imageUrl: 'https://live.staticflickr.com/1841/44536971762_e5c945e0de_z.jpg', imageCredit: 'UN Women Asia & the Pacific · CC BY-NC-ND 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/69052650@N02/44536971762',
         time: 'Rằm tháng Mười âm lịch',
         description: 'Lễ cúng Trăng của người Khmer, có đua ghe ngo, thả đèn nước.',
         wiki: 'Ok Om Bok',
@@ -146,12 +146,12 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Bún nước lèo Trà Vinh', description: 'Bún nấu mắm bò hóc, cá lóc, ăn với rau sống.', wiki: 'Bún nước lèo' },
       { name: 'Cá tai tượng chiên xù', description: 'Cá chiên giòn dựng đứng, cuốn bánh tráng.', imageSearch: 'cá tai tượng chiên xù' },
-      { name: 'Bánh tráng Mỹ Lồng', description: 'Bánh tráng nước dừa nướng giòn.' },
+      { name: 'Bánh tráng Mỹ Lồng', imageUrl: 'images/vinh-long/banh-trang-my-long.jpg', imageCredit: 'trananhtien2107 · Pixabay', imagePage: 'https://pixabay.com/photos/vietnam-handicraft-handiwork-rural-6559446/', description: 'Bánh tráng nước dừa nướng giòn.' },
     ],
     specialties: [
       { name: 'Kẹo dừa Bến Tre', description: 'Kẹo làm từ nước cốt dừa và mạch nha.', imageSearch: 'kẹo dừa Bến Tre' },
       { name: 'Bưởi Năm Roi', description: 'Bưởi múi ráo, ngọt mát của Bình Minh.', wiki: 'Bưởi Năm Roi' },
-      { name: 'Gốm đỏ Vĩnh Long', description: 'Gạch gốm nung đỏ ven sông Cổ Chiên.' },
+      { name: 'Gốm đỏ Vĩnh Long', imageFile: 'Brick kiln in Vinh Long, Vietnam.jpg', description: 'Gạch gốm nung đỏ ven sông Cổ Chiên.' },
     ],
   },
 
@@ -172,7 +172,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       heritage: [
         { name: 'Vườn quốc gia Tràm Chim', description: 'Nơi cư trú của sếu đầu đỏ, khu Ramsar quốc tế.', wiki: 'Vườn quốc gia Tràm Chim' },
         { name: 'Khu di tích Gò Tháp', description: 'Di chỉ văn hóa Óc Eo và đền thờ Thiên Hộ Dương.', wiki: 'Gò Tháp' },
-        { name: 'Làng hoa Sa Đéc', description: 'Làng hoa trăm năm tuổi bên sông Tiền.', wiki: 'Làng hoa Sa Đéc' },
+        { name: 'Làng hoa Sa Đéc', imageFile: 'Làng hoa Tân Quy Đông.jpg', description: 'Làng hoa trăm năm tuổi bên sông Tiền.', wiki: 'Làng hoa Sa Đéc' },
         { name: 'Chùa Vĩnh Tràng', description: 'Ngôi chùa kiến trúc Á – Âu ở Mỹ Tho.', wiki: 'Chùa Vĩnh Tràng' },
       ],
     },
@@ -190,7 +190,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Gò Tháp',
       },
       {
-        name: 'Mùa hoa Sa Đéc',
+        name: 'Mùa hoa Sa Đéc', imageFile: 'Hoa tại Sa Đéc (cropped).jpg',
         time: 'Dịp Tết Nguyên đán',
         description: 'Làng hoa rực rỡ phục vụ thị trường Tết khắp miền Nam.',
         wiki: 'Làng hoa Sa Đéc',
@@ -250,7 +250,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Bún cá Châu Đốc', description: 'Bún nước nghệ vàng với cá lóc, bông điên điển.', imageSearch: 'bún cá Châu Đốc' },
+      { name: 'Bún cá Châu Đốc', imageUrl: 'https://live.staticflickr.com/4035/4659181999_b71c58be6b_z.jpg', imageCredit: 'avlxyz · CC BY-SA 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/10559879@N00/4659181999', description: 'Bún nước nghệ vàng với cá lóc, bông điên điển.', imageSearch: 'bún cá Châu Đốc' },
       { name: 'Gỏi cá trích Phú Quốc', description: 'Cá trích tươi trộn dừa nạo, cuốn bánh tráng.', imageSearch: 'gỏi cá trích' },
       { name: 'Bánh bò thốt nốt', description: 'Bánh bò làm từ đường thốt nốt, vàng thơm.', imageSearch: 'bánh bò thốt nốt' },
     ],
@@ -284,7 +284,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     },
     festivals: [
       {
-        name: 'Lễ hội đua ghe Ngo',
+        name: 'Lễ hội đua ghe Ngo', imageFile: 'Đua Ghe Ngo Phước Long 2025 (3).jpg',
         time: 'Rằm tháng Mười âm lịch (lễ Ok Om Bok)',
         description: 'Đua ghe ngo sôi động trên sông Maspero, Sóc Trăng.',
         wiki: 'Ok Om Bok',
@@ -349,8 +349,8 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Bánh tằm Ngan Dừa', description: 'Sợi bánh tằm dẻo, ăn với bì, nước cốt dừa.', imageSearch: 'bánh tằm bì' },
     ],
     specialties: [
-      { name: 'Mật ong U Minh', description: 'Mật ong rừng tràm thơm đặc trưng.', imageSearch: 'honey U Minh' },
-      { name: 'Muối Bạc Liêu', description: 'Hạt muối trắng từ đồng muối ven biển.', imageSearch: 'salt field Bac Lieu' },
+      { name: 'Mật ong U Minh', imageUrl: 'images/ca-mau/mat-ong-u-minh.jpg', imageCredit: 'GabruPawPixels · Pixabay', imagePage: 'https://pixabay.com/photos/honey-honeycomb-bees-tree-forest-10453806/', description: 'Mật ong rừng tràm thơm đặc trưng.', imageSearch: 'honey U Minh' },
+      { name: 'Muối Bạc Liêu', imageFile: 'Phu Yen salt field 27-01-2018.jpg', description: 'Hạt muối trắng từ đồng muối ven biển.', imageSearch: 'salt field Bac Lieu' },
       { name: 'Tôm khô Rạch Gốc', description: 'Tôm đất phơi khô, đỏ au, ngọt thịt.', imageSearch: 'dried shrimp Vietnam' },
     ],
   },

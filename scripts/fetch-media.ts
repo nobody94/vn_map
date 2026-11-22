@@ -184,6 +184,7 @@ async function fetchImageInfo(fileList: string[]) {
 
 // ─── 5. Dự phòng: mục vẫn chưa có ảnh → tìm trên Openverse (ảnh CC từ Flickr, Commons…) ───
 const hasWikiImage = (r: MediaRef) => {
+  if (r.imageUrl) return true // ảnh tự tìm, không cần tra
   const f = r.imageFile ?? (r.wiki ? articles[r.wiki]?.image : null) ?? (r.imageSearch ? searchResults[r.imageSearch] : null)
   return !!f && !!(images[f] ?? images[f.replace(/ /g, '_')] ?? images[f.replace(/_/g, ' ')])
 }

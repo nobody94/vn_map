@@ -15,7 +15,6 @@ interface Props {
   data: ProvinceCollection
   selectedCode: number | null
   onSelect: (code: number | null) => void
-  colorByRegion: boolean
   /** Vùng được làm nổi (rê chuột trên chú giải); các vùng khác mờ đi */
   highlightRegion: RegionId | null
   /** Đang bật nền địa hình → làm nền tỉnh trong suốt để thấy đồi núi */
@@ -24,7 +23,6 @@ interface Props {
 
 interface ViewState {
   selected: number | null
-  colorByRegion: boolean
   highlight: RegionId | null
   terrain: boolean
 }
@@ -38,7 +36,7 @@ const BORDER = '#b6c2cf'
 
 /** Style của một tỉnh theo trạng thái hiện tại (chọn / rê chuột / tô màu vùng / làm nổi vùng) */
 function styleFor(code: number, v: ViewState, hovered = false): PathOptions {
-  const region = v.colorByRegion ? regionOf(code) : undefined
+  const region = regionOf(code)
   const dimmed = v.highlight != null && PROVINCE_REGION[code] !== v.highlight
   const selected = code === v.selected
   const fill = region ? (selected || hovered ? region.strong : region.fill) : selected ? '#a7dcd4' : hovered ? '#d5efeb' : '#ffffff'
@@ -83,26 +81,26 @@ function tooltipHtml(code: number): string {
   return `<div class="${styles.tooltipKind}">${meta.kind}${region ? ` · ${region.name}` : ''}</div><div class="${styles.tooltipName}">${meta.name}</div>${merged}`
 }
 
-export function ProvinceLayer({ data, selectedCode, onSelect, colorByRegion, highlightRegion, terrain }: Props) {
+export function ProvinceLayer({ data, selectedCode, onSelect, highlightRegion, terrain }: Props) {
   const map = useMap()
   const geoRef = useRef<L.GeoJSON | null>(null)
-  const viewRef = useRef<ViewState>({ selected: selectedCode, colorByRegion, highlight: highlightRegion, terrain })
+  const viewRef = useRef<ViewState>({ selected: selectedCode, highlight: highlightRegion, terrain })
   const onSelectRef = useRef(onSelect)
 
   useEffect(() => {
     onSelectRef.current = onSelect
   }, [onSelect])
 
-  // Tô lại toàn bộ khi đổi tỉnh chọn / bật tắt màu vùng / làm nổi vùng
+  // Tô lại toàn bộ khi đổi tỉnh chọn / làm nổi vùng
   useEffect(() => {
-    const v: ViewState = { selected: selectedCode, colorByRegion, highlight: highlightRegion, terrain }
+    const v: ViewState = { selected: selectedCode, highlight: highlightRegion, terrain }
     viewRef.current = v
     geoRef.current?.eachLayer((layer) => {
       const path = layer as L.Path & { feature?: ProvinceFeature }
       const code = path.feature?.properties.code
       if (code != null) path.setStyle(styleFor(code, v))
     })
-  }, [selectedCode, colorByRegion, highlightRegion, terrain])
+  }, [selectedCode, highlightRegion, terrain])
 
   // Zoom tới tỉnh vừa chọn
   useEffect(() => {

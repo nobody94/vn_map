@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { ProvinceDetail, ProvinceMeta } from '../../types/province'
+import type { UnitMatch } from '../../utils/search'
 import { OverviewTab } from './OverviewTab'
 import { CultureTab } from './CultureTab'
 import { FoodTab } from './FoodTab'
@@ -9,6 +10,8 @@ interface Props {
   meta: ProvinceMeta
   detail: ProvinceDetail | undefined
   onClose: () => void
+  /** Xã/phường hoặc huyện cũ chọn từ ô tìm kiếm: chuyển sang tab Tổng quan và đánh dấu */
+  focusUnit?: UnitMatch
 }
 
 const TABS = [
@@ -19,9 +22,15 @@ const TABS = [
 
 type TabId = (typeof TABS)[number]['id']
 
-export function ProvincePanel({ meta, detail, onClose }: Props) {
+export function ProvincePanel({ meta, detail, onClose, focusUnit }: Props) {
   // Giữ nguyên tab khi chuyển sang tỉnh khác để tiện so sánh
   const [tab, setTab] = useState<TabId>('overview')
+  // Tìm theo xã/phường → về tab Tổng quan (điều chỉnh state ngay khi render, không dùng effect)
+  const [prevFocus, setPrevFocus] = useState(focusUnit)
+  if (focusUnit !== prevFocus) {
+    setPrevFocus(focusUnit)
+    if (focusUnit) setTab('overview')
+  }
 
   return (
     <aside className={styles.panel} aria-label={`Thông tin ${meta.name}`}>
@@ -71,7 +80,7 @@ export function ProvincePanel({ meta, detail, onClose }: Props) {
             ))}
           </nav>
           <div className={styles.body} role="tabpanel">
-            {tab === 'overview' && <OverviewTab detail={detail} />}
+            {tab === 'overview' && <OverviewTab code={meta.code} detail={detail} focusUnit={focusUnit} />}
             {tab === 'culture' && <CultureTab detail={detail} />}
             {tab === 'food' && <FoodTab detail={detail} />}
           </div>

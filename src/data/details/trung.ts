@@ -51,8 +51,8 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Chè lam Phủ Quảng', description: 'Bánh làm từ bột nếp, mật mía, gừng, lạc.', wiki: 'Chè lam' },
     ],
     specialties: [
-      { name: 'Chiếu cói Nga Sơn', description: 'Chiếu dệt từ cói ven biển, bền và mát.' },
-      { name: 'Mắm tép Hà Yên', description: 'Mắm tép đồng truyền thống, đậm vị.', imageSearch: 'mắm tép' },
+      { name: 'Chiếu cói Nga Sơn', imageFile: 'Sedge mat manufacture 03.jpg', description: 'Chiếu dệt từ cói ven biển, bền và mát.' },
+      { name: 'Mắm tép Hà Yên', imageFile: 'Mắm chua Thanh Hóa - Acetes paste from Vietnam -2.JPG', description: 'Mắm tép đồng truyền thống, đậm vị.', imageSearch: 'mắm tép' },
       { name: 'Quế Ngọc Thường Xuân', description: 'Quế quý, tinh dầu cao, xưa dùng tiến vua.', wiki: 'Quế' },
     ],
   },
@@ -106,7 +106,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
     specialties: [
       { name: 'Cam Vinh', description: 'Cam xã Đoài vỏ mỏng, ngọt thơm.', imageSearch: 'Cam Vinh' },
       { name: 'Tương Nam Đàn', description: 'Tương ngô, đậu nành ủ chum truyền thống.' },
-      { name: 'Chè xanh xứ Nghệ', description: 'Nước chè xanh đặc, uống trong bát.' },
+      { name: 'Chè xanh xứ Nghệ', imageFile: 'Fresh green tea bowl Vietnam.jpg', description: 'Nước chè xanh đặc, uống trong bát.' },
     ],
   },
 
@@ -152,13 +152,13 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Ram bánh mướt', description: 'Ram chiên giòn cuốn cùng bánh mướt và rau sống.' },
-      { name: 'Mực nhảy Vũng Áng', description: 'Mực câu tươi rói, làm hấp, nướng.', imageSearch: 'fresh squid Vietnam' },
-      { name: 'Bánh đa vừng', description: 'Bánh đa nướng giòn rắc vừng đen.' },
+      { name: 'Ram bánh mướt', imageUrl: 'images/ha-tinh/ram-banh-muot.jpg', imageCredit: 'rinfoto0 · Pixabay', imagePage: 'https://pixabay.com/photos/spring-rolls-fried-spring-rolls-1755962/', description: 'Ram chiên giòn cuốn cùng bánh mướt và rau sống.' },
+      { name: 'Mực nhảy Vũng Áng', imageUrl: 'images/ha-tinh/muc-nhay-vung-ang.jpg', imageCredit: 'falco · Pixabay', imagePage: 'https://pixabay.com/photos/squid-octopus-eye-seafood-1261432/', description: 'Mực câu tươi rói, làm hấp, nướng.', imageSearch: 'fresh squid Vietnam' },
+      { name: 'Bánh đa vừng', imageFile: 'Về làng Tết 2023 (chắt chắt Mai Xá, bánh tráng hay còn gọi là bánh đa).jpg', description: 'Bánh đa nướng giòn rắc vừng đen.' },
     ],
     specialties: [
       { name: 'Kẹo cu đơ', description: 'Kẹo lạc mật mía gừng kẹp bánh đa.', wiki: 'Kẹo cu đơ' },
-      { name: 'Bưởi Phúc Trạch', description: 'Bưởi múi hồng, ngọt thanh, vỏ thơm.', imageSearch: 'Phúc Trạch pomelo' },
+      { name: 'Bưởi Phúc Trạch', imageFile: 'Pomelos am Baum Vietnam.JPG', description: 'Bưởi múi hồng, ngọt thanh, vỏ thơm.', imageSearch: 'Phúc Trạch pomelo' },
       { name: 'Cam bù Hương Sơn', description: 'Cam vỏ dày, ngọt đậm, chín dịp Tết.', imageSearch: 'cam bù Hương Sơn' },
     ],
   },
@@ -208,7 +208,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Cháo canh Quảng Bình', description: 'Bánh canh sợi bột gạo nấu với cá lóc hoặc thịt.' },
+      { name: 'Cháo canh Quảng Bình', imageFile: 'Cháo canh hàu - Đồng Hới.jpg', description: 'Bánh canh sợi bột gạo nấu với cá lóc hoặc thịt.' },
       { name: 'Bánh bột lọc', description: 'Bánh trong suốt nhân tôm thịt, gói lá chuối.', imageSearch: 'bánh bột lọc Huế' },
       { name: 'Bánh ướt thịt nướng', description: 'Bánh ướt cuốn thịt heo nướng, rau sống.', imageSearch: 'bánh ướt thịt nướng' },
     ],
@@ -258,7 +258,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Điện Hòn Chén',
       },
       {
-        name: 'Lễ tế Nam Giao',
+        name: 'Lễ tế Nam Giao', imageFile: 'Nam Giao Ceremony martial dance of Dật vũ rite.jpg',
         time: 'Tái hiện trong dịp Festival Huế',
         description: 'Nghi lễ tế trời đất quan trọng nhất của triều Nguyễn.',
         wiki: 'Đàn Nam Giao',
@@ -272,7 +272,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
     ],
     specialties: [
       { name: 'Mè xửng', description: 'Kẹo mạch nha dẻo phủ mè.', wiki: 'Mè xửng' },
-      { name: 'Nón bài thơ', description: 'Nón lá mỏng kẹp thơ, cảnh xứ Huế.' },
+      { name: 'Nón bài thơ', imageFile: 'NonBaiTho.jpg', description: 'Nón lá mỏng kẹp thơ, cảnh xứ Huế.' },
       { name: 'Tôm chua', description: 'Tôm lên men với riềng, tỏi, ớt, măng đu đủ.', imageSearch: 'tôm chua Huế' },
     ],
   },
@@ -324,7 +324,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
     ],
     specialties: [
       { name: 'Tỏi Lý Sơn', description: 'Tỏi trồng trên cát núi lửa, nhỏ, thơm, cay.', imageSearch: 'Lý Sơn garlic' },
-      { name: 'Mạch nha Thi Phổ', description: 'Mạch nha làm từ gạo nếp và mầm lúa.' },
+      { name: 'Mạch nha Thi Phổ', imageFile: 'Maltose syrup.jpg', description: 'Mạch nha làm từ gạo nếp và mầm lúa.' },
       { name: 'Sâm Ngọc Linh', description: 'Sâm quý của núi Ngọc Linh (Kon Tum).', wiki: 'Sâm Ngọc Linh' },
     ],
   },
@@ -378,7 +378,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
     specialties: [
       { name: 'Yến sào Khánh Hòa', description: 'Tổ chim yến khai thác ở các đảo ven biển.', wiki: 'Yến sào' },
       { name: 'Nho Ninh Thuận', description: 'Nho trồng trên vùng đất nắng gió.', imageSearch: 'Ninh Thuận grapes' },
-      { name: 'Tỏi Phan Rang', description: 'Tỏi tép nhỏ, cay nồng.' },
+      { name: 'Tỏi Phan Rang', imageFile: 'Garlic Farm-Vinh Hai-Ninh Thuan-VNM2011.jpg', description: 'Tỏi tép nhỏ, cay nồng.' },
     ],
   },
 
@@ -417,7 +417,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Không gian văn hóa Cồng chiêng Tây Nguyên',
       },
       {
-        name: 'Lễ Pơ Thi (bỏ mả)',
+        name: 'Lễ Pơ Thi (bỏ mả)', imageFile: 'Jarai tomb (guardian spirit sculpture).jpg',
         time: 'Mùa khô, sau thu hoạch',
         description: 'Lễ tiễn biệt người đã khuất của người Gia Rai, Ba Na, có tượng nhà mồ.',
         imageSearch: 'Jarai tomb statues',
@@ -463,7 +463,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         description: 'Tôn vinh hạt cà phê và văn hóa các dân tộc Tây Nguyên.',
       },
       {
-        name: 'Hội đua voi Buôn Đôn',
+        name: 'Hội đua voi Buôn Đôn', imageFile: 'Voi ở Bản Đôn.jpg',
         time: 'Tháng 3 dương lịch',
         description: 'Những chú voi đua tài trên bãi đất ven sông Sêrêpốk.',
       },
@@ -474,14 +474,14 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Bún đỏ Buôn Ma Thuột', description: 'Sợi bún đỏ, nước dùng cua, chả, trứng cút.' },
+      { name: 'Bún đỏ Buôn Ma Thuột', imageFile: 'BÚN ĐỎ ĐẮK LẮK.jpg', description: 'Sợi bún đỏ, nước dùng cua, chả, trứng cút.' },
       { name: 'Cá ngừ đại dương Phú Yên', description: 'Cá ngừ đánh bắt xa bờ, làm gỏi, nướng.', wiki: 'Cá ngừ đại dương' },
       { name: 'Gà nướng – cơm lam', description: 'Gà thả đồi nướng than ăn với cơm lam ống tre.', wiki: 'Cơm lam' },
     ],
     specialties: [
       { name: 'Cà phê Buôn Ma Thuột', description: 'Cà phê Robusta nổi tiếng thế giới.', wiki: 'Cà phê Buôn Ma Thuột' },
       { name: 'Sầu riêng Đắk Lắk', description: 'Sầu riêng cơm vàng, béo ngậy.', wiki: 'Sầu riêng' },
-      { name: 'Bánh tráng Hòa Đa', description: 'Bánh tráng nướng mè đen giòn thơm của Phú Yên.' },
+      { name: 'Bánh tráng Hòa Đa', imageUrl: 'https://live.staticflickr.com/2794/4144592577_6ac7a71b3f_z.jpg', imageCredit: 'Mr Chris Johnson · CC BY-NC-ND 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/45092594@N02/4144592577', description: 'Bánh tráng nướng mè đen giòn thơm của Phú Yên.' },
     ],
   },
 

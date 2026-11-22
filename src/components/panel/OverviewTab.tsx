@@ -1,8 +1,10 @@
 import type { ProvinceDetail } from '../../types/province'
 import { formatDec, formatInt, formatPopulation } from '../../utils/format'
+import type { UnitMatch } from '../../utils/search'
+import { AdminUnits } from './AdminUnits'
 import styles from './Tab.module.css'
 
-export function OverviewTab({ detail }: { detail: ProvinceDetail }) {
+export function OverviewTab({ code, detail, focusUnit }: { code: number; detail: ProvinceDetail; focusUnit?: UnitMatch }) {
   const density = detail.population / detail.areaKm2
   const highest = detail.peaks.find((p) => p.highest)
   // Không chắc điểm cao nhất thì hiện đỉnh tiêu biểu đầu tiên
@@ -66,6 +68,9 @@ export function OverviewTab({ detail }: { detail: ProvinceDetail }) {
           </ul>
         )}
       </section>
+
+      {/* key: đổi tỉnh hoặc đơn vị tìm kiếm thì dựng lại (xóa bộ lọc, cuộn tới đơn vị mới) */}
+      <AdminUnits key={`${code}|${focusUnit?.kind}|${focusUnit?.name}`} code={code} focus={focusUnit} />
     </>
   )
 }

@@ -87,7 +87,7 @@ export const MOUNTAINS: Mountain[] = [
     location: 'Kỳ Sơn (Nghệ An), biên giới Việt – Lào', range: 'Trường Sơn Bắc', featured: true,
     description:
       'Đỉnh núi cao nhất Nghệ An và dãy Trường Sơn Bắc, nằm trên biên giới Việt – Lào. Khu vực có rừng rêu nguyên sinh và là địa bàn sinh sống của người H\'Mông.',
-    imageSearch: 'Pu Xai Lai Leng',
+    imageFile: 'Mường Lống, Mường Xén, Nghệ An.jpg', // vùng núi Kỳ Sơn, chưa có ảnh chính đỉnh
   },
   {
     id: 'bach-ma', name: 'Bạch Mã', heightM: 1450, lat: 16.19, lng: 107.86, provinceCode: 20,

@@ -13,7 +13,6 @@ import styles from './VietnamMap.module.css'
 interface Props {
   selectedCode: number | null
   onSelect: (code: number | null) => void
-  colorByRegion: boolean
   highlightRegion: RegionId | null
   layers: MapLayers
   selectedMountainId: string | null
@@ -39,7 +38,6 @@ const MAX_BOUNDS: LatLngBoundsExpression = [
 export function VietnamMap({
   selectedCode,
   onSelect,
-  colorByRegion,
   highlightRegion,
   layers,
   selectedMountainId,
@@ -67,7 +65,6 @@ export function VietnamMap({
             data={geo.data}
             selectedCode={selectedCode}
             onSelect={onSelect}
-            colorByRegion={colorByRegion}
             highlightRegion={highlightRegion}
             terrain={layers.terrain}
           />

@@ -49,14 +49,14 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     ],
     foods: [
       { name: 'Phở chua', description: 'Bánh phở trộn nước sốt chua ngọt, thịt quay, gan, lạc rang.' },
-      { name: 'Bánh cuốn canh', description: 'Bánh cuốn chan nước dùng xương nóng, ăn kèm chả.', imageSearch: 'bánh cuốn Cao Bằng',imageUrl:'',imageCredit:'' },
+      { name: 'Bánh cuốn canh', imageFile: 'Bánh cuốn nhân thịt.JPG', description: 'Bánh cuốn chan nước dùng xương nóng, ăn kèm chả.', imageSearch: 'bánh cuốn Cao Bằng' },
       { name: 'Bánh trứng kiến', description: 'Bánh lá ngải nhân trứng kiến, chỉ có vào mùa xuân.' },
-      { name: 'Lạp sườn hun khói', description: 'Lạp sườn treo gác bếp, thơm mùi khói củi.', imageSearch: 'lạp sườn Cao Bằng' },
+      { name: 'Lạp sườn hun khói', imageFile: 'Ảnh lạp xưởng.jpg', description: 'Lạp sườn treo gác bếp, thơm mùi khói củi.', imageSearch: 'lạp sườn Cao Bằng' },
     ],
     specialties: [
-      { name: 'Hạt dẻ Trùng Khánh', description: 'Hạt dẻ bùi, thơm, thu hoạch vào mùa thu.',imageUrl:'public/images/cao-bang/hat de trung khanh.jpg',imageCredit:'PxHere(https://pxhere.com/vi/photo/1007091) - CC0' },
+      { name: 'Hạt dẻ Trùng Khánh', imageUrl: 'images/cao-bang/hat-de-trung-khanh.jpg', imageCredit: 'ykaiavu · Pixabay', imagePage: 'https://pixabay.com/photos/chestnuts-roasted-chestnuts-gate-7660519/', description: 'Hạt dẻ bùi, thơm, thu hoạch vào mùa thu.'},
       { name: 'Miến dong Nguyên Bình', description: 'Miến làm từ củ dong riềng, sợi dai, trong.', wiki: 'Miến' },
-      { name: 'Trà xanh Thạch An', description: 'Chè xanh vùng núi cao, nước xanh, vị đậm.', imageSearch: 'tea plantation Cao Bang',imageUrl:'public/images/cao-bang/tra xanh.jpg',imageCredit:'PxHere(https://pxhere.com/vi/photo/1285572) - CC0'  },
+      { name: 'Trà xanh Thạch An', imageUrl: 'images/cao-bang/tra-xanh-thach-an.jpg', imageCredit: 'highnesser · Pixabay', imagePage: 'https://pixabay.com/photos/tea-leaves-hands-fresh-drying-623796/', description: 'Chè xanh vùng núi cao, nước xanh, vị đậm.', imageSearch: 'tea plantation Cao Bang'},
     ],
   },
 
@@ -99,7 +99,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Khâu Vai',
       },
       {
-        name: 'Lễ hội hoa Tam giác mạch',
+        name: 'Lễ hội hoa Tam giác mạch', imageUrl: 'https://live.staticflickr.com/2875/10264119205_720a10c9cc_z.jpg', imageCredit: 'Huy.Dinh · CC BY-NC-SA 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/37530628@N04/10264119205',
         time: 'Tháng 10 – 11 dương lịch',
         description: 'Mùa hoa tam giác mạch nở hồng khắp các thung lũng cao nguyên đá.',
         imageSearch: 'buckwheat flower Ha Giang',
@@ -113,7 +113,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     specialties: [
       { name: 'Cam sành Hàm Yên', description: 'Cam vỏ sần, mọng nước, chín vào cuối năm.', imageSearch: 'cam sành' },
       { name: 'Chè Shan tuyết', description: 'Chè cổ thụ trên núi cao Hà Giang.', wiki: 'Chè Shan tuyết' },
-      { name: 'Mật ong bạc hà', description: 'Mật từ hoa bạc hà dại trên cao nguyên đá.' },
+      { name: 'Mật ong bạc hà', imageUrl: 'images/tuyen-quang/mat-ong-bac-ha.jpg', imageCredit: 'Lolame · Pixabay', imagePage: 'https://pixabay.com/photos/honey-beekeeper-beekeeping-glass-5043708/', description: 'Mật từ hoa bạc hà dại trên cao nguyên đá.' },
     ],
   },
 
@@ -135,7 +135,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         { name: 'Đồi A1', description: 'Cứ điểm then chốt của trận Điện Biên Phủ.', wiki: 'Chiến dịch Điện Biên Phủ' },
         { name: 'Cánh đồng Mường Thanh', description: 'Cánh đồng lúa lớn nhất vùng Tây Bắc.', wiki: 'Cánh đồng Mường Thanh' },
         { name: 'Đèo Pha Đin', description: 'Một trong "tứ đại đỉnh đèo" miền Bắc.' },
-        { name: 'Cột mốc A Pa Chải', description: 'Điểm cực Tây của Tổ quốc.', wiki: 'A Pa Chải' },
+        { name: 'Cột mốc A Pa Chải', imageUrl: 'https://live.staticflickr.com/3251/2463860716_10e0e30756_z.jpg', imageCredit: 'Chattiensinh · CC BY-NC-SA 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/9430878@N04/2463860716', description: 'Điểm cực Tây của Tổ quốc.', wiki: 'A Pa Chải' },
       ],
     },
     festivals: [
@@ -163,7 +163,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Nậm pịa', description: 'Món nấu từ lòng bò, dạ dày non, vị đắng đặc trưng.', wiki: 'Nậm pịa' },
     ],
     specialties: [
-      { name: 'Gạo Điện Biên', description: 'Gạo cánh đồng Mường Thanh dẻo, thơm.', imageSearch: 'Muong Thanh rice field' },
+      { name: 'Gạo Điện Biên', imageFile: 'Cánh đồng ở Điện Biên.jpg', description: 'Gạo cánh đồng Mường Thanh dẻo, thơm.', imageSearch: 'Muong Thanh rice field' },
       { name: 'Mắc khén', description: 'Gia vị hạt rừng thơm cay của vùng Tây Bắc.', wiki: 'Mắc khén' },
       { name: 'Cà phê Điện Biên', description: 'Cà phê Arabica trồng trên vùng đồi Mường Ảng.', wiki: 'Cà phê chè' },
     ],
@@ -189,7 +189,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
       heritage: [
         { name: 'Đèo Ô Quy Hồ', description: 'Con đèo dài nhất miền Bắc, nối Lai Châu với Sa Pa.', wiki: 'Đèo Ô Quy Hồ' },
         { name: 'Đỉnh Pu Si Lung', description: 'Đỉnh núi cao thứ hai Việt Nam, nằm trên biên giới.', wiki: 'Pu Si Lung' },
-        { name: 'Cao nguyên Sìn Hồ', description: 'Cao nguyên quanh năm mây phủ, nhiều bản làng cổ.', wiki: 'Sìn Hồ (huyện)' },
+        { name: 'Cao nguyên Sìn Hồ', imageFile: 'Nậm Ban, Sìn Hồ, Lai Châu, Vietnam - panoramio (3).jpg', description: 'Cao nguyên quanh năm mây phủ, nhiều bản làng cổ.', wiki: 'Sìn Hồ (huyện)' },
         { name: 'Động Tiên Sơn', description: 'Hang động thạch nhũ gần thành phố Lai Châu.', imageSearch: 'Tiên Sơn cave Lai Châu' },
       ],
     },
@@ -205,19 +205,19 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         description: 'Tưởng nhớ nữ anh hùng Nàng Han của người Thái, cầu bình yên cho bản mường.',
       },
       {
-        name: 'Lễ hội Gầu Tào',
+        name: 'Lễ hội Gầu Tào', imageFile: 'Hmong New Year - Hmoob Noj Peb Caug.jpg',
         time: 'Dịp Tết, đầu xuân',
         description: "Lễ hội cầu phúc của người H'Mông với múa khèn, ném pao.",
       },
     ],
     foods: [
       { name: 'Mèn mén', description: "Món ngô xay hấp của người H'Mông, ăn thay cơm.", wiki: 'Mèn mén' },
-      { name: 'Cá suối nướng', description: 'Cá suối kẹp tre nướng than, chấm chẩm chéo.', imageSearch: 'grilled fish bamboo Vietnam' },
+      { name: 'Cá suối nướng', imageUrl: 'images/lai-chau/ca-suoi-nuong.jpg', imageCredit: 'thanhvh · Pixabay', imagePage: 'https://pixabay.com/photos/grilled-fish-thung-nai-peace-vn-2251554/', description: 'Cá suối kẹp tre nướng than, chấm chẩm chéo.', imageSearch: 'grilled fish bamboo Vietnam' },
       { name: 'Thịt lợn gác bếp', description: 'Thịt lợn bản ướp mắc khén, hun khói nhiều ngày.', imageSearch: 'thịt lợn gác bếp' },
     ],
     specialties: [
       { name: 'Sâm Lai Châu', description: 'Loài sâm quý mọc ở vùng núi cao Mường Tè, Phong Thổ.', imageSearch: 'Panax vietnamensis' },
-      { name: 'Chè Tam Đường', description: 'Chè vùng cao, búp nhỏ, nước vàng sánh.' },
+      { name: 'Chè Tam Đường', imageUrl: 'https://live.staticflickr.com/4258/35025128523_81567d42cf_z.jpg', imageCredit: 'NguyenTrung · CC BY-NC-ND 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/52933435@N00/35025128523', description: 'Chè vùng cao, búp nhỏ, nước vàng sánh.' },
       { name: 'Thảo quả', description: 'Gia vị quý trồng dưới tán rừng già.', imageSearch: 'Amomum tsao-ko' },
     ],
   },
@@ -250,7 +250,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         description: 'Lễ tạ ơn thầy mo của người Thái, có cây hoa chá rực rỡ.',
       },
       {
-        name: 'Mùa hoa mận Mộc Châu',
+        name: 'Mùa hoa mận Mộc Châu', imageUrl: 'images/son-la/mua-hoa-man-moc-chau.jpg', imageCredit: 'HeungSoon · Pixabay', imagePage: 'https://pixabay.com/photos/plum-blossoms-white-flowers-7129214/',
         time: 'Tháng 1 – 2 dương lịch',
         description: 'Những thung lũng mận trắng xóa đón du khách dịp Tết.',
         imageSearch: 'Moc Chau plum blossom',
@@ -262,14 +262,14 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Bê chao Mộc Châu', description: 'Thịt bê non hấp rồi chao giòn, chấm tương bần.', imageSearch: 'bê chao Mộc Châu' },
-      { name: 'Nộm hoa ban', description: 'Hoa ban luộc trộn với lạc, rau thơm, vị bùi ngọt.' },
+      { name: 'Bê chao Mộc Châu', imageUrl: 'images/son-la/be-chao-moc-chau.jpg', imageCredit: 'photaubay98 · Pixabay', imagePage: 'https://pixabay.com/photos/beef-spicy-vietnamese-cuisine-meal-468171/', description: 'Thịt bê non hấp rồi chao giòn, chấm tương bần.', imageSearch: 'bê chao Mộc Châu' },
+      { name: 'Nộm hoa ban', imageFile: 'Bauhinia variegata flower.jpg', description: 'Hoa ban luộc trộn với lạc, rau thơm, vị bùi ngọt.' },
       { name: 'Cá suối nướng', description: 'Cá suối nướng than hoa, thơm mùi gia vị rừng.', wiki: 'Pa pỉnh tộp' },
     ],
     specialties: [
-      { name: 'Sữa Mộc Châu', description: 'Sữa bò từ các trang trại trên cao nguyên mát mẻ.', imageSearch: 'Moc Chau dairy cows' },
+      { name: 'Sữa Mộc Châu', imageUrl: 'images/son-la/sua-moc-chau.jpg', imageCredit: 'JACLOU-DL · Pixabay', imagePage: 'https://pixabay.com/photos/cow-norman-cow-milk-cow-ruminant-7957275/', description: 'Sữa bò từ các trang trại trên cao nguyên mát mẻ.', imageSearch: 'Moc Chau dairy cows' },
       { name: 'Mận hậu Mộc Châu', description: 'Mận chín đỏ vào tháng 5 – 6.', wiki: 'Mận' },
-      { name: 'Xoài Yên Châu', description: 'Xoài hạt nhỏ, thơm đậm, chín vào đầu hè.', imageSearch: 'Yên Châu mango' },
+      { name: 'Xoài Yên Châu', imageFile: 'Mango fruits.JPG', description: 'Xoài hạt nhỏ, thơm đậm, chín vào đầu hè.', imageSearch: 'Yên Châu mango' },
     ],
   },
 
@@ -320,13 +320,13 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     ],
     foods: [
       { name: 'Bánh chưng Bờ Đậu', description: 'Bánh chưng nếp nương, gói chặt tay, để được lâu.', wiki: 'Bánh chưng' },
-      { name: 'Cá nướng hồ Ba Bể', description: 'Cá tươi hồ Ba Bể nướng than, ăn với rau rừng.' },
+      { name: 'Cá nướng hồ Ba Bể', imageFile: 'Grilled snakeheads.jpg', description: 'Cá tươi hồ Ba Bể nướng than, ăn với rau rừng.' },
       { name: 'Bánh coóc mò', description: 'Bánh nếp hình sừng bò của người Tày.', imageSearch: 'bánh coóc mò' },
     ],
     specialties: [
       { name: 'Chè Tân Cương', description: '"Đệ nhất danh trà" với nước xanh, vị chát dịu, hậu ngọt.', imageSearch: 'Tân Cương tea' },
       { name: 'Miến dong Bắc Kạn', description: 'Miến làm thủ công từ dong riềng.', wiki: 'Miến' },
-      { name: 'Quýt Bắc Kạn', description: 'Quýt vỏ vàng, mọng nước, chín dịp Tết.', imageSearch: 'Bắc Kạn mandarin' },
+      { name: 'Quýt Bắc Kạn', imageFile: 'Mandarin Oranges (Citrus Reticulata).jpg', description: 'Quýt vỏ vàng, mọng nước, chín dịp Tết.', imageSearch: 'Bắc Kạn mandarin' },
     ],
   },
 
@@ -373,13 +373,13 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Vịt quay Lạng Sơn', description: 'Vịt nhồi lá mắc mật, quay giòn da.', imageSearch: 'vịt quay Lạng Sơn' },
       { name: 'Khâu nhục', description: 'Thịt ba chỉ hấp cách thủy với khoai môn, mềm tan.', wiki: 'Khâu nhục' },
-      { name: 'Lợn quay lá mắc mật', description: 'Lợn quay da giòn, thơm lá mắc mật.', imageSearch: 'lợn quay Lạng Sơn' },
+      { name: 'Lợn quay lá mắc mật', imageFile: 'Clausena indica (2).jpg', description: 'Lợn quay da giòn, thơm lá mắc mật.', imageSearch: 'lợn quay Lạng Sơn' },
       { name: 'Bánh áp chao', description: 'Bánh rán nhân thịt, ăn kèm nước dùng xương.', imageSearch: 'bánh áp chao' },
     ],
     specialties: [
       { name: 'Hoa hồi', description: 'Gia vị thơm, Lạng Sơn là vùng trồng hồi lớn nhất cả nước.', wiki: 'Hồi (thực vật)' },
       { name: 'Na Chi Lăng', description: 'Na dai, ngọt, trồng trên núi đá vôi.', wiki: 'Na' },
-      { name: 'Đào Mẫu Sơn', description: 'Quả đào chín vào mùa hè trên núi cao.' },
+      { name: 'Đào Mẫu Sơn', imageUrl: 'images/lang-son/dao-mau-son.jpg', imageCredit: 'kiyu_01 · Pixabay', imagePage: 'https://pixabay.com/photos/peach-fruit-food-fresh-healthy-2721852/', description: 'Quả đào chín vào mùa hè trên núi cao.' },
     ],
   },
 
@@ -437,7 +437,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     specialties: [
       { name: 'Trà hoa vàng Ba Chẽ', description: 'Loài trà quý có hoa màu vàng.', wiki: 'Trà hoa vàng' },
       { name: 'Ba kích', description: 'Dược liệu ngâm rượu nổi tiếng của vùng núi Quảng Ninh.', wiki: 'Ba kích' },
-      { name: 'Gà Tiên Yên', description: 'Gà đồi thả vườn, thịt chắc, ngọt.', imageSearch: 'Tiên Yên chicken' },
+      { name: 'Gà Tiên Yên', imageFile: 'Chicken in Hanoi.jpg', description: 'Gà đồi thả vườn, thịt chắc, ngọt.', imageSearch: 'Tiên Yên chicken' },
     ],
   },
 
@@ -459,7 +459,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         { name: 'Khu di tích lịch sử Đền Hùng', description: 'Nơi thờ các Vua Hùng trên núi Nghĩa Lĩnh.', wiki: 'Đền Hùng' },
         { name: 'Thủy điện Hòa Bình', description: 'Công trình thế kỷ trên sông Đà, hồ chứa rộng lớn.', wiki: 'Nhà máy thủy điện Hòa Bình' },
         { name: 'Tháp Bình Sơn', description: 'Tháp gạch cổ thời Trần cao nhất Việt Nam.', wiki: 'Tháp Bình Sơn' },
-        { name: 'Thung lũng Mai Châu', description: 'Bản Lác, bản Poom Coọng của người Thái giữa cánh đồng.' },
+        { name: 'Thung lũng Mai Châu', imageFile: 'Mai Chau.jpg', description: 'Bản Lác, bản Poom Coọng của người Thái giữa cánh đồng.' },
       ],
     },
     festivals: [
@@ -488,8 +488,8 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Cơm lam', description: 'Gạo nếp nướng trong ống tre, món quen thuộc của người Mường.', wiki: 'Cơm lam' },
     ],
     specialties: [
-      { name: 'Bưởi Đoan Hùng', description: 'Bưởi tiến vua, múi mọng, ngọt thanh.', imageSearch: 'Đoan Hùng pomelo' },
-      { name: 'Cam Cao Phong', description: 'Cam ngọt đậm của vùng đồi Hòa Bình.', imageSearch: 'Cao Phong orange' },
+      { name: 'Bưởi Đoan Hùng', imageFile: 'Bưởi Bằng Luân.jpg', description: 'Bưởi tiến vua, múi mọng, ngọt thanh.', imageSearch: 'Đoan Hùng pomelo' },
+      { name: 'Cam Cao Phong', imageFile: 'Cam sành.JPG', description: 'Cam ngọt đậm của vùng đồi Hòa Bình.', imageSearch: 'Cao Phong orange' },
       { name: 'Su su Tam Đảo', description: 'Su su trồng trên núi mát, giòn ngọt.', wiki: 'Su su' },
     ],
   },
@@ -542,11 +542,11 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Bánh phu thê Đình Bảng', description: 'Bánh xu xê dẻo trong, nhân đậu xanh, gói lá chuối.', wiki: 'Bánh phu thê' },
       { name: 'Nem Bùi', description: 'Nem thính trộn bì lợn, ăn với lá sung, lá đinh lăng.', imageSearch: 'nem thính' },
-      { name: 'Bánh đa Kế', description: 'Bánh đa nướng giòn của làng Kế, Bắc Giang.' },
-      { name: 'Mỳ Chũ', description: 'Mỳ gạo phơi nắng của Lục Ngạn, sợi dai, thơm.' },
+      { name: 'Bánh đa Kế', imageFile: 'Bánh đa nướng.jpg', description: 'Bánh đa nướng giòn của làng Kế, Bắc Giang.' },
+      { name: 'Mỳ Chũ', imageUrl: 'images/bac-ninh/my-chu.jpg', imageCredit: 'MarlyneArt · Pixabay', imagePage: 'https://pixabay.com/photos/drying-of-rice-noodles-burma-myanmar-4904850/', description: 'Mỳ gạo phơi nắng của Lục Ngạn, sợi dai, thơm.' },
     ],
     specialties: [
-      { name: 'Vải thiều Lục Ngạn', description: 'Vải chín mọng vào tháng 6, xuất khẩu nhiều nước.', imageSearch: 'Lục Ngạn lychee' },
+      { name: 'Vải thiều Lục Ngạn', imageFile: 'Vai-thieu-thanh-ha.jpg', description: 'Vải chín mọng vào tháng 6, xuất khẩu nhiều nước.', imageSearch: 'Lục Ngạn lychee' },
       { name: 'Tranh Đông Hồ', description: 'Tranh dân gian in trên giấy dó, màu từ thiên nhiên.', wiki: 'Tranh Đông Hồ' },
       { name: 'Gốm Phù Lãng', description: 'Gốm men da lươn mộc mạc bên sông Cầu.', imageSearch: 'Phù Lãng pottery' },
     ],
@@ -652,12 +652,12 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Canh cá Quỳnh Côi', description: 'Bánh đa nấu với cá rô đồng, rau cần, cải cúc.', imageSearch: 'canh cá Quỳnh Côi' },
+      { name: 'Canh cá Quỳnh Côi', imageFile: 'Canh-ca-ro-dong-thai-binh-viet-nam.jpg', description: 'Bánh đa nấu với cá rô đồng, rau cần, cải cúc.', imageSearch: 'canh cá Quỳnh Côi' },
       { name: 'Bánh cáy Thái Bình', description: 'Bánh làm từ gạo nếp, gấc, vừng, mỡ phần.', wiki: 'Bánh cáy' },
       { name: 'Gà Đông Tảo', description: 'Giống gà chân to quý hiếm của Khoái Châu.', wiki: 'Gà Đông Tảo' },
     ],
     specialties: [
-      { name: 'Nhãn lồng Hưng Yên', description: 'Nhãn tiến vua cùi dày, ngọt sắc.', imageSearch: 'Hưng Yên longan' },
+      { name: 'Nhãn lồng Hưng Yên', imageFile: 'Dimocarpus longan fruits.jpg', description: 'Nhãn tiến vua cùi dày, ngọt sắc.', imageSearch: 'Hưng Yên longan' },
       { name: 'Tương Bần', description: 'Tương nếp truyền thống của Mỹ Hào.', imageSearch: 'tương Bần' },
       { name: 'Chiếu cói Thái Bình', description: 'Chiếu dệt từ cói ven biển.', imageSearch: 'chiếu cói' },
     ],
@@ -711,13 +711,13 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Cơm cháy Ninh Bình', description: 'Cơm cháy giòn rụm chan sốt thịt bò, tim cật.', wiki: 'Cơm cháy' },
       { name: 'Thịt dê núi', description: 'Dê thả trên núi đá vôi, làm tái chanh, nướng.', imageSearch: 'dê núi Ninh Bình' },
-      { name: 'Phở bò Nam Định', description: 'Một trong những cái nôi của phở Việt.' },
-      { name: 'Gỏi cá nhệch Kim Sơn', description: 'Cá nhệch vùng nước lợ cuốn với lá rừng.', imageSearch: 'gỏi cá nhệch' },
+      { name: 'Phở bò Nam Định', imageFile: 'Beef noodle soup (Phở bò) - Pho Hanoi Authentic 2024-12-01.jpg', description: 'Một trong những cái nôi của phở Việt.' },
+      { name: 'Gỏi cá nhệch Kim Sơn', imageFile: 'Gỏi Cá Trích.jpg', description: 'Cá nhệch vùng nước lợ cuốn với lá rừng.', imageSearch: 'gỏi cá nhệch' },
     ],
     specialties: [
-      { name: 'Cá kho làng Vũ Đại', description: 'Cá trắm kho niêu đất nhiều giờ, xương mềm.' },
-      { name: 'Rượu Kim Sơn', description: 'Rượu gạo nếp truyền thống của Kim Sơn.' },
-      { name: 'Kẹo Sìu Châu', description: 'Kẹo lạc vừng truyền thống của Nam Định.', imageSearch: 'kẹo Sìu Châu' },
+      { name: 'Cá kho làng Vũ Đại', imageFile: 'Cá kho tộ, cá hú.jpg', description: 'Cá trắm kho niêu đất nhiều giờ, xương mềm.' },
+      { name: 'Rượu Kim Sơn', imageFile: 'Ruoukimson.JPG', description: 'Rượu gạo nếp truyền thống của Kim Sơn.' },
+      { name: 'Kẹo Sìu Châu', imageUrl: 'images/ninh-binh/keo-siu-chau.jpg', imageCredit: '1900mmc · Pixabay', imagePage: 'https://pixabay.com/photos/sesame-candy-dessert-food-5602956/', description: 'Kẹo lạc vừng truyền thống của Nam Định.', imageSearch: 'kẹo Sìu Châu' },
     ],
   },
 
@@ -814,7 +814,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     },
     festivals: [
       {
-        name: 'Lễ hội Gầu Tào',
+        name: 'Lễ hội Gầu Tào', imageFile: 'Hmong New Year - Hmoob Noj Peb Caug.jpg',
         time: 'Dịp Tết, đầu xuân',
         description: "Lễ hội cầu phúc, cầu mùa của người H'Mông với múa khèn, ném pao, đánh tu lu.",
       },
@@ -840,7 +840,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     ],
     foods: [
       { name: 'Thắng cố', description: "Món hầm truyền thống của người H'Mông, thường bán ở chợ phiên.", wiki: 'Thắng cố' },
-      { name: 'Cá hồi Sa Pa', description: 'Cá hồi nuôi bằng nước suối lạnh vùng cao, làm gỏi hoặc lẩu.', },
+      { name: 'Cá hồi Sa Pa', imageUrl: 'https://live.staticflickr.com/2714/4137611122_3225fa053d_z.jpg', imageCredit: 'Quang Le™ - Moment Hunter Photography ® · CC BY-NC-ND 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/18597239@N06/4137611122', description: 'Cá hồi nuôi bằng nước suối lạnh vùng cao, làm gỏi hoặc lẩu.', },
       { name: 'Lợn cắp nách', description: 'Lợn bản nhỏ thả rông, thịt săn chắc, thường nướng hoặc quay.', wiki: 'Lợn cắp nách' },
       { name: 'Xôi ngũ sắc', description: 'Xôi nhuộm màu từ lá, củ rừng, xuất hiện trong lễ tết.', wiki: 'Xôi', imageFile: 'Xôi ngũ sắc.JPG' },
     ],

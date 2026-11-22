@@ -1,0 +1,99 @@
+.summary {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.summary strong {
+  color: var(--text-strong);
+}
+
+.muted {
+  margin: 6px 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.list {
+  position: relative;
+}
+
+/* Thu gọn: hiện vài hàng đầu, mờ dần ở đáy */
+.collapsed {
+  max-height: 150px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
+}
+
+.group + .group {
+  margin-top: 10px;
+}
+
+.groupTitle {
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.count {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--hover);
+  font-size: 12px;
+  color: var(--text);
+}
+
+.focus {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.more {
+  margin-top: 6px;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+.old {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.old summary {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-strong);
+  cursor: pointer;
+}
+
+.old .group:first-of-type {
+  margin-top: 6px;
+}

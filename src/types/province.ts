@@ -35,6 +35,8 @@ export interface MediaRef {
   imageUrl?: string
   /** Ghi nguồn cho imageUrl, vd. 'Nguyễn Văn A · CC BY 4.0' hoặc 'Ảnh tự chụp' */
   imageCredit?: string
+  /** Trang gốc của imageUrl (vd. trang ảnh Flickr) — ghi nguồn sẽ là link tới trang này */
+  imagePage?: string
   /** Tiêu đề bài Wikipedia tiếng Việt, dùng để lấy ảnh tự động */
   wiki?: string
   /** Tên file trên Wikimedia Commons (không kèm "File:"), dùng khi ảnh tự chọn chưa đẹp */
