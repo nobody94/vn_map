@@ -78,6 +78,78 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Ô tìm kiếm trận / người lãnh đạo */
+.search {
+  position: relative;
+  margin-top: 16px;
+  max-width: 480px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  height: 42px;
+  padding: 0 40px 0 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  font: inherit;
+  font-size: 16px; /* ≥16px: iOS không tự phóng to khi gõ */
+  color: var(--text-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+/* Ẩn nút xóa mặc định của trình duyệt, dùng nút riêng */
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.searchClear {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.searchClear:hover {
+  background: var(--border);
+  color: var(--text-strong);
+}
+
+.searchInfo {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
 .content {
   width: min(880px, 100%);
   margin: 0 auto;
@@ -188,18 +260,6 @@
   color: var(--text-muted);
 }
 
-.wiki {
-  flex: none;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.wiki:hover {
-  text-decoration: underline;
-}
-
 .cardTitle {
   margin: 4px 0 0;
   font-size: 16px;
@@ -227,16 +287,6 @@
   gap: 12px;
 }
 
-.leader,
-.battle {
-  scroll-margin-top: 72px;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-sm);
-}
 
 .leaderHead {
   display: flex;

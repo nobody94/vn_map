@@ -1,0 +1,237 @@
+/* Ảnh đầu popup, tràn viền trên */
+.figure {
+  margin: 0;
+}
+
+.frame {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+  background: var(--hover);
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lược đồ / bản đồ: hiện nguyên, không cắt */
+.contain {
+  background: #f8fafc;
+}
+
+.contain img {
+  object-fit: contain;
+}
+
+.credit {
+  padding: 6px 24px 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.credit a:hover {
+  text-decoration: underline;
+}
+
+.body {
+  padding: 16px 24px 24px;
+}
+
+/* Khi không có ảnh, chừa chỗ cho nút đóng */
+.noImage {
+  padding-top: 24px;
+  padding-right: 64px;
+}
+
+.kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.war {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.name {
+  margin: 4px 0 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+/* Các thông tin chính: lưới 2 cột */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--hover);
+}
+
+.facts dt {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.facts dd {
+  margin: 2px 0 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.result {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
+.lead {
+  margin: 16px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-strong);
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.heading {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-strong);
+}
+
+.para {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* Chỉ huy: ngay dưới tên trận */
+.cmdSection {
+  margin-top: 12px;
+}
+
+.commanders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.commander {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.commander:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Ảnh tròn trong nút chỉ huy nhỏ hơn ảnh trên thẻ */
+.commander > span:first-child {
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+}
+
+.cmdName {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.cmdRole {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.forces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.force {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.side {
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--accent);
+}
+
+.strength {
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.wiki {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.wiki:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .credit {
+    padding: 6px 16px 0;
+  }
+
+  .body {
+    padding: 14px 16px 24px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+}
