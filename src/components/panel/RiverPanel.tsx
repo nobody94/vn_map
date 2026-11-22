@@ -62,18 +62,24 @@ export function RiverPanel({ river: r, onClose, onOpenProvince }: Props) {
           </section>
         )}
 
-        <section className={tab.section}>
-          <dl className={styles.flow}>
-            <div>
-              <dt>Bắt nguồn</dt>
-              <dd>{r.source}</dd>
-            </div>
-            <div>
-              <dt>Đổ ra</dt>
-              <dd>{r.mouth}</dd>
-            </div>
-          </dl>
-        </section>
+        {(r.source || r.mouth) && (
+          <section className={tab.section}>
+            <dl className={styles.flow}>
+              {r.source && (
+                <div>
+                  <dt>Bắt nguồn</dt>
+                  <dd>{r.source}</dd>
+                </div>
+              )}
+              {r.mouth && (
+                <div>
+                  <dt>Đổ ra</dt>
+                  <dd>{r.mouth}</dd>
+                </div>
+              )}
+            </dl>
+          </section>
+        )}
 
         <section className={tab.section}>
           <h3 className={tab.heading}>Giới thiệu</h3>

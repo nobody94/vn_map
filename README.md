@@ -20,7 +20,7 @@ Website bản đồ Việt Nam tương tác theo **34 tỉnh, thành phố sau s
 - **Lớp bản đồ** (bật/tắt ở góc trên bên phải):
   - **Địa hình:** tô màu lãnh thổ theo độ cao (xanh lá vùng thấp → vàng → nâu → trắng trên 3.000 m), kèm bóng đổ núi và chú giải độ cao.
   - **Đỉnh núi:** 20 đỉnh núi tiêu biểu, kèm nhãn các dãy núi và cao nguyên.
-  - **Sông ngòi:** 21 con sông chính. Bấm vào sông để xem chiều dài, nơi bắt nguồn, cửa sông và các tỉnh sông chảy qua. Khi đang chọn một tỉnh, bản đồ chỉ hiện phần sông nằm trong tỉnh đó.
+  - **Sông ngòi:** 104 con sông trên cả nước, gồm các sông lớn và sông nhỏ tiêu biểu từng vùng. Bấm vào sông để xem chiều dài, nơi bắt nguồn, cửa sông (nếu có nguồn) và các tỉnh sông chảy qua. Khi đang chọn một tỉnh, bản đồ chỉ hiện phần sông nằm trong tỉnh đó.
 - **Giao diện:** tối giản, tiếng Việt, dùng tốt trên điện thoại (panel trượt lên từ phía dưới).
 
 ## Công nghệ

@@ -40,7 +40,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Đền Bà Triệu',
       },
       {
-        name: 'Lễ hội Pôồn Pôông',
+        name: 'Lễ hội Pôồn Pôông', imageUrl: 'images/thanh-hoa/le-hoi-poon-poong.jpg', imageCredit: 'Viethavvh · CC BY-SA 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Muong_stilt_houses.jpg',
         time: 'Tháng Giêng âm lịch',
         description: 'Lễ hội dân gian của người Mường với các trò diễn, hát múa cầu mùa.',
       },
@@ -99,13 +99,13 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Cháo lươn Vinh', description: 'Cháo nấu với lươn xào nghệ, ăn kèm bánh mướt.' },
-      { name: 'Nhút Thanh Chương', description: 'Mít non muối chua, món dân dã xứ Nghệ.' },
+      { name: 'Cháo lươn Vinh', imageUrl: 'images/nghe-an/chao-luon-vinh.jpg', imageCredit: 'subarasikiai · Pixabay', imagePage: 'https://pixabay.com/photos/eel-unagi-eel-kabayaki-7029526/', description: 'Cháo nấu với lươn xào nghệ, ăn kèm bánh mướt.' },
+      { name: 'Nhút Thanh Chương', imageUrl: 'images/nghe-an/nhut-thanh-chuong.jpg', imageCredit: 'Bungari · CC BY-SA 4.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Jackfruit_2.png', description: 'Mít non muối chua, món dân dã xứ Nghệ.' },
       { name: 'Bánh mướt Diễn Châu', description: 'Bánh tráng mỏng mịn, ăn với chả, nước mắm.', imageSearch: 'bánh mướt' },
     ],
     specialties: [
       { name: 'Cam Vinh', description: 'Cam xã Đoài vỏ mỏng, ngọt thơm.', imageSearch: 'Cam Vinh' },
-      { name: 'Tương Nam Đàn', description: 'Tương ngô, đậu nành ủ chum truyền thống.' },
+      { name: 'Tương Nam Đàn', imageUrl: 'images/nghe-an/tuong-nam-dan.jpg', imageCredit: 'KIMDAEJEUNG · Pixabay', imagePage: 'https://pixabay.com/photos/old-tree-of-wood-of-the-countryside-3234727/', description: 'Tương ngô, đậu nành ủ chum truyền thống.' },
       { name: 'Chè xanh xứ Nghệ', imageFile: 'Fresh green tea bowl Vietnam.jpg', description: 'Nước chè xanh đặc, uống trong bát.' },
     ],
   },
@@ -196,7 +196,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         imageSearch: 'Hien Luong bridge',
       },
       {
-        name: 'Lễ hội đua thuyền sông Kiến Giang',
+        name: 'Lễ hội đua thuyền sông Kiến Giang', imageUrl: 'images/quang-tri/le-hoi-dua-thuyen-song-kien-giang.jpg', imageCredit: 'Genghiskhan · CC BY-SA 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Kien_Giang_River1.JPG',
         time: 'Dịp 2/9 dương lịch',
         description: 'Đua thuyền truyền thống sôi nổi của Lệ Thủy, Quảng Bình.',
       },
@@ -311,7 +311,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Không gian văn hóa Cồng chiêng Tây Nguyên',
       },
       {
-        name: 'Đua thuyền Tứ linh Lý Sơn',
+        name: 'Đua thuyền Tứ linh Lý Sơn', imageUrl: 'images/quang-ngai/dua-thuyen-tu-linh-ly-son.jpg', imageCredit: 'Kim Yong Soo · CC BY 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Ly_Son_Island_10_-_panoramio.jpg',
         time: 'Tháng Giêng âm lịch',
         description: 'Đua thuyền rồng, lân, quy, phụng truyền thống của ngư dân Lý Sơn.',
         imageSearch: 'Ly Son island boat',
@@ -319,7 +319,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
     ],
     foods: [
       { name: 'Cá bống sông Trà', description: 'Cá bống nhỏ kho tiêu, đặc sản Quảng Ngãi.' },
-      { name: 'Don Quảng Ngãi', description: 'Món canh từ loài nhuyễn thể nhỏ sống ở sông Trà Khúc.' },
+      { name: 'Don Quảng Ngãi', imageUrl: 'images/quang-ngai/don-quang-ngai.jpg', imageCredit: 'Lucas Jans · CC BY-SA 2.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:H%E1%BA%BFn_tr%E1%BB%99n.jpg', description: 'Món canh từ loài nhuyễn thể nhỏ sống ở sông Trà Khúc.' },
       { name: 'Gỏi lá Kon Tum', description: 'Hàng chục loại lá rừng cuốn với thịt, tôm.', imageSearch: 'gỏi lá Kon Tum' },
     ],
     specialties: [
@@ -429,7 +429,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Bánh hỏi cháo lòng', description: 'Bánh hỏi mỏng, ăn cùng cháo lòng heo.', wiki: 'Bánh hỏi' },
     ],
     specialties: [
-      { name: 'Rượu Bàu Đá', description: 'Rượu gạo nấu bằng nước giếng làng Bàu Đá.', imageSearch: 'rượu Bàu Đá' },
+      { name: 'Rượu Bàu Đá', imageUrl: 'images/gia-lai/ruou-bau-da.jpg', imageCredit: 'Khương Việt Hà · Public domain (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Khap_ruou.jpg', description: 'Rượu gạo nấu bằng nước giếng làng Bàu Đá.', imageSearch: 'rượu Bàu Đá' },
       { name: 'Hồ tiêu Chư Sê', description: 'Tiêu đất đỏ bazan, hạt chắc, cay thơm.', wiki: 'Hồ tiêu' },
       { name: 'Bánh ít lá gai', description: 'Bánh nếp lá gai nhân đậu xanh, dừa.', wiki: 'Bánh ít' },
     ],
@@ -468,7 +468,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
         description: 'Những chú voi đua tài trên bãi đất ven sông Sêrêpốk.',
       },
       {
-        name: 'Hội đua ngựa Gò Thì Thùng',
+        name: 'Hội đua ngựa Gò Thì Thùng', imageUrl: 'images/dak-lak/hoi-dua-ngua-go-thi-thung.jpg', imageCredit: 'Phương Huy · Public domain (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Ng%E1%BB%B1a_%C4%91en_Ph%C3%BA_Y%C3%AAn_7_(cropped).jpg',
         time: 'Mùng 9 Tết Nguyên đán',
         description: 'Hội đua ngựa truyền thống trên đồi Gò Thì Thùng, Phú Yên.',
       },
@@ -557,7 +557,7 @@ export const TRUNG: Partial<Record<number, ProvinceDetail>> = {
     specialties: [
       { name: 'Sâm Ngọc Linh', description: 'Loài sâm quý mọc ở vùng núi Ngọc Linh (Nam Trà My).', wiki: 'Sâm Ngọc Linh' },
       { name: 'Nước mắm Nam Ô', description: 'Nước mắm cá cơm truyền thống của làng chài Nam Ô.', wiki: 'Nước mắm' },
-      { name: 'Chả bò Đà Nẵng', description: 'Chả bò giã tay, thơm tiêu và thì là.' },
+      { name: 'Chả bò Đà Nẵng', imageUrl: 'images/da-nang/cha-bo-da-nang.jpg', imageCredit: 'RitaE · Pixabay', imagePage: 'https://pixabay.com/photos/meatloaf-food-meal-liver-cheese-3747129/', description: 'Chả bò giã tay, thơm tiêu và thì là.' },
       { name: 'Đèn lồng Hội An', description: 'Đèn lồng tre bọc vải lụa, biểu tượng của phố cổ.', imageSearch: 'Hoi An lanterns' },
     ],
   },

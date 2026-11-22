@@ -27,7 +27,8 @@ const COLOR_STRONG = '#0b4f8a'
 const ATTRIBUTION = 'Sông: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>'
 
 function lineStyle(id: string, selectedId: string | null, hovered: boolean): L.PathOptions {
-  const base = MAJOR.has(id) ? 2.6 : 1.8
+  // Sông chính lớn đậm nhất, sông nhỏ (minor) mảnh nhất
+  const base = MAJOR.has(id) ? 2.6 : RIVER_BY_ID.get(id)?.minor ? 1.2 : 1.8
   const selected = id === selectedId
   return {
     color: selected || hovered ? COLOR_STRONG : COLOR,

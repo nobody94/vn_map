@@ -1,4 +1,4 @@
-DANH SÁCH MỤC CHƯA CÓ ẢNH — 31/545 mục
+DANH SÁCH MỤC CHƯA CÓ ẢNH — 7/628 mục
 Tạo bởi: npm run media:missing  (2026-11-22)
 
 Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
@@ -9,75 +9,11 @@ Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
   3. Chỉ dùng ảnh tự chụp hoặc ảnh có giấy phép cho phép dùng lại (CC, public domain), ghi rõ nguồn.
   4. Chạy lại npm run media:missing để cập nhật danh sách này.
 
-■ 2. Cao Bằng
-  [ ] Lễ hội     Lễ hội Lồng tồng (Xuống đồng)              → public/images/cao-bang/le-hoi-long-tong-xuong-dong.jpg
-  [ ] Lễ hội     Lễ hội đền Kỳ Sầm                          → public/images/cao-bang/le-hoi-den-ky-sam.jpg
-  [ ] Lễ hội     Lễ hội Nàng Hai                            → public/images/cao-bang/le-hoi-nang-hai.jpg
-  [ ] Món ăn     Bánh trứng kiến                            → public/images/cao-bang/banh-trung-kien.jpg
-
-■ 3. Tuyên Quang
-  [ ] Lễ hội     Lễ hội Thành Tuyên                         → public/images/tuyen-quang/le-hoi-thanh-tuyen.jpg
-  [ ] Món ăn     Cháo ấu tẩu                                → public/images/tuyen-quang/chao-au-tau.jpg
-
-■ 4. Lào Cai
-  [ ] Đặc sản    Rượu ngô Bắc Hà                            → public/images/lao-cai/ruou-ngo-bac-ha.jpg
-
-■ 5. Điện Biên
-  [ ] Lễ hội     Lễ hội Xên bản, Xên mường                  → public/images/dien-bien/le-hoi-xen-ban-xen-muong.jpg
-  [ ] Món ăn     Nậm pịa                                    → public/images/dien-bien/nam-pia.jpg
-
-■ 6. Lai Châu
-  [ ] Di sản     Động Tiên Sơn                              → public/images/lai-chau/dong-tien-son.jpg
-  [ ] Lễ hội     Lễ hội Then Kin Pang                       → public/images/lai-chau/le-hoi-then-kin-pang.jpg
-
-■ 7. Sơn La
-  [ ] Lễ hội     Lễ hội Hết Chá                             → public/images/son-la/le-hoi-het-cha.jpg
-  [ ] Lễ hội     Ngày hội Xòe Thái                          → public/images/son-la/ngay-hoi-xoe-thai.jpg
-
-■ 8. Thái Nguyên
-  [ ] Món ăn     Bánh coóc mò                               → public/images/thai-nguyen/banh-cooc-mo.jpg
-
-■ 10. Quảng Ninh
-  [ ] Lễ hội     Carnaval Hạ Long                           → public/images/quang-ninh/carnaval-ha-long.jpg
-
-■ 11. Phú Thọ
-  [ ] Món ăn     Cá thính Lập Thạch                         → public/images/phu-tho/ca-thinh-lap-thach.jpg
-
-■ 13. Hải Phòng
-  [ ] Lễ hội     Lễ hội chọi trâu Đồ Sơn                    → public/images/hai-phong/le-hoi-choi-trau-do-son.jpg
-
-■ 16. Thanh Hóa
-  [ ] Lễ hội     Lễ hội Pôồn Pôông                          → public/images/thanh-hoa/le-hoi-poon-poong.jpg
-
-■ 17. Nghệ An
-  [ ] Món ăn     Cháo lươn Vinh                             → public/images/nghe-an/chao-luon-vinh.jpg
-  [ ] Món ăn     Nhút Thanh Chương                          → public/images/nghe-an/nhut-thanh-chuong.jpg
-  [ ] Đặc sản    Tương Nam Đàn                              → public/images/nghe-an/tuong-nam-dan.jpg
-
-■ 19. Quảng Trị
-  [ ] Lễ hội     Lễ hội đua thuyền sông Kiến Giang          → public/images/quang-tri/le-hoi-dua-thuyen-song-kien-giang.jpg
-
-■ 21. Đà Nẵng
-  [ ] Đặc sản    Chả bò Đà Nẵng                             → public/images/da-nang/cha-bo-da-nang.jpg
-
-■ 22. Quảng Ngãi
-  [ ] Lễ hội     Đua thuyền Tứ linh Lý Sơn                  → public/images/quang-ngai/dua-thuyen-tu-linh-ly-son.jpg
-  [ ] Món ăn     Don Quảng Ngãi                             → public/images/quang-ngai/don-quang-ngai.jpg
-
-■ 24. Gia Lai
-  [ ] Đặc sản    Rượu Bàu Đá                                → public/images/gia-lai/ruou-bau-da.jpg
-
-■ 25. Đắk Lắk
-  [ ] Lễ hội     Hội đua ngựa Gò Thì Thùng                  → public/images/dak-lak/hoi-dua-ngua-go-thi-thung.jpg
-
-■ 32. An Giang
-  [ ] Món ăn     Bánh bò thốt nốt                           → public/images/an-giang/banh-bo-thot-not.jpg
-
-■ 33. Cần Thơ
-  [ ] Món ăn     Lẩu mắm                                    → public/images/can-tho/lau-mam.jpg
-
-■ 34. Cà Mau
-  [ ] Di sản     Rừng U Minh Hạ                             → public/images/ca-mau/rung-u-minh-ha.jpg
-
-■ Núi
-  [ ] Núi        Kon Ka Kinh                                → public/images/nui/kon-ka-kinh.jpg
+■ Sông
+  [ ] Sông       Sông Nhuệ                                  → public/images/song/song-nhue.jpg
+  [ ] Sông       Sông Bắc Vọng                              → public/images/song/song-bac-vong.jpg
+  [ ] Sông       Sông Thương                                → public/images/song/song-thuong.jpg
+  [ ] Sông       Sông Kỳ Lộ                                 → public/images/song/song-ky-lo.jpg
+  [ ] Sông       Sông Ray                                   → public/images/song/song-ray.jpg
+  [ ] Sông       Sông Dinh (Bà Rịa)                         → public/images/song/song-dinh-ba-ria.jpg
+  [ ] Sông       Sông Mỹ Thanh                              → public/images/song/song-my-thanh.jpg

@@ -112,6 +112,7 @@ export const MOUNTAINS: Mountain[] = [
   },
   {
     id: 'kon-ka-kinh', name: 'Kon Ka Kinh', heightM: 1748, lat: 14.2, lng: 108.3, provinceCode: 24,
+    imageUrl: 'images/nui/kon-ka-kinh.jpg', imageCredit: 'Christoph Moning · CC BY 4.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Ianthocincla_konkakinhensis_105778535.jpg',
     location: 'Kbang (Gia Lai)',
     description:
       'Thuộc Vườn quốc gia Kon Ka Kinh – Vườn di sản ASEAN, với rừng nhiệt đới nguyên sinh và nhiều loài động vật quý hiếm như voọc chà vá chân xám.',

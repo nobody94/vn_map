@@ -32,17 +32,17 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     },
     festivals: [
       {
-        name: 'Lễ hội Lồng tồng (Xuống đồng)',
+        name: 'Lễ hội Lồng tồng (Xuống đồng)', imageUrl: 'images/cao-bang/le-hoi-long-tong-xuong-dong.jpg', imageCredit: 'Oliver_Nguyen · Pixabay', imagePage: 'https://pixabay.com/photos/mountain-field-terraces-paddy-soil-6576362/',
         time: 'Tháng Giêng âm lịch',
         description: 'Lễ cầu mùa của người Tày, Nùng với tung còn, kéo co, hát lượn.',
       },
       {
-        name: 'Lễ hội đền Kỳ Sầm',
+        name: 'Lễ hội đền Kỳ Sầm', imageUrl: 'images/cao-bang/le-hoi-den-ky-sam.jpg', imageCredit: 'Ajarnmike · CC BY-SA 2.5 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:CaoBang.jpg',
         time: 'Mùng 10 tháng Giêng âm lịch',
         description: 'Tưởng nhớ Nùng Trí Cao, người anh hùng dân tộc Nùng thế kỷ XI.',
       },
       {
-        name: 'Lễ hội Nàng Hai',
+        name: 'Lễ hội Nàng Hai', imageUrl: 'images/cao-bang/le-hoi-nang-hai.jpg', imageCredit: 'DXLINH · CC BY-SA 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Tay_Women.jpg',
         time: 'Tháng Giêng – tháng Ba âm lịch',
         description: 'Lễ hội thờ Mẹ Trăng của người Tày, cầu mưa thuận gió hòa.',
       },
@@ -50,7 +50,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Phở chua', description: 'Bánh phở trộn nước sốt chua ngọt, thịt quay, gan, lạc rang.' },
       { name: 'Bánh cuốn canh', imageFile: 'Bánh cuốn nhân thịt.JPG', description: 'Bánh cuốn chan nước dùng xương nóng, ăn kèm chả.', imageSearch: 'bánh cuốn Cao Bằng' },
-      { name: 'Bánh trứng kiến', description: 'Bánh lá ngải nhân trứng kiến, chỉ có vào mùa xuân.' },
+      { name: 'Bánh trứng kiến', imageUrl: 'images/cao-bang/banh-trung-kien.jpg', imageCredit: 'Renaudsechet · CC BY-SA 4.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Mot_daeng._fourmis_rouges,_les_%C5%93ufs_(kai_mot_daeng),_les_larves(plus_petites)_et_enfin_les_insectes..jpg', description: 'Bánh lá ngải nhân trứng kiến, chỉ có vào mùa xuân.' },
       { name: 'Lạp sườn hun khói', imageFile: 'Ảnh lạp xưởng.jpg', description: 'Lạp sườn treo gác bếp, thơm mùi khói củi.', imageSearch: 'lạp sườn Cao Bằng' },
     ],
     specialties: [
@@ -87,7 +87,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     },
     festivals: [
       {
-        name: 'Lễ hội Thành Tuyên',
+        name: 'Lễ hội Thành Tuyên', imageUrl: 'images/tuyen-quang/le-hoi-thanh-tuyen.jpg', imageCredit: 'mailanmaik · Pixabay', imagePage: 'https://pixabay.com/photos/market-lamps-light-person-hoi-an-2494520/',
         time: 'Rằm tháng Tám âm lịch',
         description: 'Lễ hội rước đèn Trung thu khổng lồ, độc đáo nhất cả nước.',
         imageSearch: 'Thành Tuyên lantern festival',
@@ -106,7 +106,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Cháo ấu tẩu', description: 'Cháo nấu với củ ấu tẩu và chân giò, vị đắng nhẹ, ăn vào buổi tối.' },
+      { name: 'Cháo ấu tẩu', imageUrl: 'images/tuyen-quang/chao-au-tau.jpg', imageCredit: 'hongnhung106 · CC BY 2.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Ch%C3%A1o_l%C3%B2ng.jpg', description: 'Cháo nấu với củ ấu tẩu và chân giò, vị đắng nhẹ, ăn vào buổi tối.' },
       { name: 'Bánh tam giác mạch', description: 'Bánh làm từ bột hạt tam giác mạch, nướng than.', imageSearch: 'bánh tam giác mạch' },
       { name: 'Thịt trâu gác bếp', description: 'Thịt trâu tẩm mắc khén, hun khói trên gác bếp.', imageSearch: 'thịt trâu gác bếp' },
     ],
@@ -152,7 +152,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Thành Bản Phủ (Điện Biên)',
       },
       {
-        name: 'Lễ hội Xên bản, Xên mường',
+        name: 'Lễ hội Xên bản, Xên mường', imageUrl: 'images/dien-bien/le-hoi-xen-ban-xen-muong.jpg', imageCredit: 'Adam Jones · CC BY-SA 2.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Traditional_Thai_Dam_House_-_Muong_Thanh_Valley_-_Dien_Bien_Phu_-_Vietnam_-_01_(48178539312).jpg',
         time: 'Đầu năm âm lịch',
         description: 'Lễ cúng bản, cúng mường của người Thái, cầu bình an, mùa màng tốt tươi.',
       },
@@ -160,7 +160,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Pa pỉnh tộp', description: 'Cá suối gập đôi, nhồi gia vị rừng, nướng than.', wiki: 'Pa pỉnh tộp' },
       { name: 'Chẩm chéo', description: 'Nước chấm giã từ ớt, mắc khén, rau thơm của người Thái.', wiki: 'Chẩm chéo' },
-      { name: 'Nậm pịa', description: 'Món nấu từ lòng bò, dạ dày non, vị đắng đặc trưng.', wiki: 'Nậm pịa' },
+      { name: 'Nậm pịa', imageUrl: 'images/dien-bien/nam-pia.jpg', imageCredit: 'ivabalk · Pixabay', imagePage: 'https://pixabay.com/photos/tripe-soup-traditional-czech-5002136/', description: 'Món nấu từ lòng bò, dạ dày non, vị đắng đặc trưng.', wiki: 'Nậm pịa' },
     ],
     specialties: [
       { name: 'Gạo Điện Biên', imageFile: 'Cánh đồng ở Điện Biên.jpg', description: 'Gạo cánh đồng Mường Thanh dẻo, thơm.', imageSearch: 'Muong Thanh rice field' },
@@ -190,12 +190,12 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         { name: 'Đèo Ô Quy Hồ', description: 'Con đèo dài nhất miền Bắc, nối Lai Châu với Sa Pa.', wiki: 'Đèo Ô Quy Hồ' },
         { name: 'Đỉnh Pu Si Lung', description: 'Đỉnh núi cao thứ hai Việt Nam, nằm trên biên giới.', wiki: 'Pu Si Lung' },
         { name: 'Cao nguyên Sìn Hồ', imageFile: 'Nậm Ban, Sìn Hồ, Lai Châu, Vietnam - panoramio (3).jpg', description: 'Cao nguyên quanh năm mây phủ, nhiều bản làng cổ.', wiki: 'Sìn Hồ (huyện)' },
-        { name: 'Động Tiên Sơn', description: 'Hang động thạch nhũ gần thành phố Lai Châu.', imageSearch: 'Tiên Sơn cave Lai Châu' },
+        { name: 'Động Tiên Sơn', imageUrl: 'images/lai-chau/dong-tien-son.jpg', imageCredit: 'nadkol19 · Pixabay', imagePage: 'https://pixabay.com/photos/cave-frasassi-stalactite-cave-2703778/', description: 'Hang động thạch nhũ gần thành phố Lai Châu.', imageSearch: 'Tiên Sơn cave Lai Châu' },
       ],
     },
     festivals: [
       {
-        name: 'Lễ hội Then Kin Pang',
+        name: 'Lễ hội Then Kin Pang', imageUrl: 'images/lai-chau/le-hoi-then-kin-pang.jpg', imageCredit: 'Nguyễn Thanh Quang · CC BY-SA 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Ng%C6%B0%E1%BB%9Di_L%E1%BB%B1_%E1%BB%9F_Lai_Ch%C3%A2u.jpg',
         time: 'Tháng Giêng – tháng Ba âm lịch',
         description: 'Lễ hội cầu mưa, cầu mùa của người Lự, có múa nón, múa quạt, thi bắn nỏ.',
       },
@@ -245,7 +245,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     },
     festivals: [
       {
-        name: 'Lễ hội Hết Chá',
+        name: 'Lễ hội Hết Chá', imageUrl: 'images/son-la/le-hoi-het-cha.jpg', imageCredit: 'Quangpraha · Pixabay', imagePage: 'https://pixabay.com/photos/farm-morning-s%C6%A1nla-tea-dew-3358872/',
         time: 'Tháng Giêng – tháng Ba âm lịch',
         description: 'Lễ tạ ơn thầy mo của người Thái, có cây hoa chá rực rỡ.',
       },
@@ -256,7 +256,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         imageSearch: 'Moc Chau plum blossom',
       },
       {
-        name: 'Ngày hội Xòe Thái',
+        name: 'Ngày hội Xòe Thái', imageUrl: 'images/son-la/ngay-hoi-xoe-thai.jpg', imageCredit: 'USAID Vietnam · Public domain (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Ambassador_Ted_Osius%E2%80%99s_Visit_to_HIV_AIDS_Programs_in_Dien_Bien_(29564030532).jpg',
         time: 'Các dịp lễ, Tết',
         description: 'Vòng xòe đoàn kết của người Thái, di sản phi vật thể của nhân loại.',
       },
@@ -321,7 +321,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Bánh chưng Bờ Đậu', description: 'Bánh chưng nếp nương, gói chặt tay, để được lâu.', wiki: 'Bánh chưng' },
       { name: 'Cá nướng hồ Ba Bể', imageFile: 'Grilled snakeheads.jpg', description: 'Cá tươi hồ Ba Bể nướng than, ăn với rau rừng.' },
-      { name: 'Bánh coóc mò', description: 'Bánh nếp hình sừng bò của người Tày.', imageSearch: 'bánh coóc mò' },
+      { name: 'Bánh coóc mò', imageUrl: 'images/thai-nguyen/banh-cooc-mo.jpg', imageCredit: 'Hoangkid · CC BY-SA 4.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:B%C3%A1nh_gio.jpg', description: 'Bánh nếp hình sừng bò của người Tày.', imageSearch: 'bánh coóc mò' },
     ],
     specialties: [
       { name: 'Chè Tân Cương', description: '"Đệ nhất danh trà" với nước xanh, vị chát dịu, hậu ngọt.', imageSearch: 'Tân Cương tea' },
@@ -422,7 +422,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
         wiki: 'Bãi cọc Bạch Đằng',
       },
       {
-        name: 'Carnaval Hạ Long',
+        name: 'Carnaval Hạ Long', imageUrl: 'images/quang-ninh/carnaval-ha-long.jpg', imageCredit: 'Martin Lewison · CC BY 2.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:B%C3%A3i_Ch%C3%A1y_Bridge_from_Ha_Long_Queen_Cable_Car_(49373501376).jpg',
         time: 'Dịp 30/4 – 1/5 dương lịch',
         description: 'Lễ hội đường phố sôi động mở đầu mùa du lịch biển.',
         imageSearch: 'Carnaval Ha Long',
@@ -484,7 +484,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     ],
     foods: [
       { name: 'Thịt chua Thanh Sơn', description: 'Thịt lợn lên men gói lá ổi, ăn với lá sung.', imageSearch: 'thịt chua Thanh Sơn' },
-      { name: 'Cá thính Lập Thạch', description: 'Cá ủ với thính gạo rang, vị chua thơm.' },
+      { name: 'Cá thính Lập Thạch', imageUrl: 'images/phu-tho/ca-thinh-lap-thach.jpg', imageCredit: 'Viethavvh · Public domain (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Lap_Thach.jpg', description: 'Cá ủ với thính gạo rang, vị chua thơm.' },
       { name: 'Cơm lam', description: 'Gạo nếp nướng trong ống tre, món quen thuộc của người Mường.', wiki: 'Cơm lam' },
     ],
     specialties: [
@@ -579,7 +579,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
     },
     festivals: [
       {
-        name: 'Lễ hội chọi trâu Đồ Sơn',
+        name: 'Lễ hội chọi trâu Đồ Sơn', imageUrl: 'images/hai-phong/le-hoi-choi-trau-do-son.jpg', imageCredit: 'Viethavvh · Public domain (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Choi_trau_Hai_Luu.jpg',
         time: '9/8 âm lịch (vòng chung kết)',
         description: 'Lễ hội cổ truyền thờ Thành hoàng của vùng biển Đồ Sơn.',
         wiki: 'Lễ hội chọi trâu Đồ Sơn',
@@ -849,7 +849,7 @@ export const BAC: Partial<Record<number, ProvinceDetail>> = {
       { name: 'Mận Bắc Hà', description: 'Mận hậu chín vào khoảng tháng 5 – 6.', wiki: 'Mận' },
       { name: 'Chè Shan tuyết Suối Giàng', description: 'Chè từ những cây chè cổ thụ trên núi cao.', wiki: 'Chè Shan tuyết' },
       { name: 'Quế Văn Yên', description: 'Vỏ quế tinh dầu cao, dùng làm gia vị và dược liệu.', wiki: 'Quế' },
-      { name: 'Rượu ngô Bắc Hà', description: 'Rượu nấu từ ngô và men lá truyền thống.', wiki: 'Rượu ngô Bản Phố' },
+      { name: 'Rượu ngô Bắc Hà', imageUrl: 'images/lao-cai/ruou-ngo-bac-ha.jpg', imageCredit: 'Truth\'soutthere · CC BY-SA 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:B%E1%BA%AFc_H%C3%A0_Sunday_market,_Vietnam_-_20131027-13.JPG', description: 'Rượu nấu từ ngô và men lá truyền thống.', wiki: 'Rượu ngô Bản Phố' },
     ],
   },
 }

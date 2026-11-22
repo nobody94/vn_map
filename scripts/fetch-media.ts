@@ -23,10 +23,10 @@ import { fallbackKey } from '../src/data/mediaKey.ts'
 
 const OUT = fileURLToPath(new URL('../src/data/media.generated.json', import.meta.url))
 const UA = 'vn-map-media-script/0.1 (educational map project)'
-const DELAY_MS = 400
+const DELAY_MS = 1000
 const THUMB_WIDTH = 640
 
-const BAD_FILE = /(map|bản[_ ]đồ|location|flag|cờ|logo|icon|symbol|coat[_ ]of[_ ]arms|huy[_ ]hiệu|signature|chữ[_ ]ký|seal|emblem|diagram|wiki)/i
+const BAD_FILE = /(map|bản[_ ]đồ|location|flag|cờ|logo|icon|symbol|coat[_ ]of[_ ]arms|huy[_ ]hiệu|signature|chữ[_ ]ký|seal|emblem|diagram|sơ[_ ]đồ|cyclosm|openstreetmap|wiki)/i
 const GOOD_EXT = /\.(jpe?g|png|webp)$/i
 
 type Article = { url: string; image: string | null; imageChecked?: boolean }
@@ -48,13 +48,22 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 async function api(host: string, params: Record<string, string>): Promise<any> {
   const url = new URL(`https://${host}/w/api.php`)
   for (const [k, v] of Object.entries({ format: 'json', formatversion: '2', ...params })) url.searchParams.set(k, v)
-  for (let attempt = 0; attempt < 5; attempt++) {
+  for (let attempt = 0; attempt < 8; attempt++) {
     await sleep(DELAY_MS)
-    const res = await fetch(url, { headers: { 'User-Agent': UA } })
-    const text = await res.text()
-    if (res.ok && text.startsWith('{')) return JSON.parse(text)
-    const wait = 10_000 * (attempt + 1)
-    console.warn(`  ! ${res.status} ${host} — thử lại sau ${wait / 1000}s`)
+    let status = 'lỗi mạng'
+    let retryAfter = 0
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': UA } })
+      const text = await res.text()
+      if (res.ok && text.startsWith('{')) return JSON.parse(text)
+      status = String(res.status)
+      retryAfter = Number(res.headers.get('retry-after')) || 0
+    } catch {
+      // lỗi mạng tạm thời → thử lại
+    }
+    // 429 (quá nhiều truy vấn): theo Retry-After nếu có, không thì chờ tăng dần
+    const wait = Math.max(retryAfter * 1000, 15_000 * (attempt + 1))
+    console.warn(`  ! ${status} ${host} — thử lại sau ${wait / 1000}s`)
     await sleep(wait)
   }
   throw new Error(`API lỗi: ${url}`)
@@ -119,6 +128,17 @@ for (const [title, a] of Object.entries(articles)) {
   a.imageChecked = true
   console.log(`  ${a.image ? '✓' : '·'} ${title}${a.image ? ` → ${a.image}` : ' (không có ảnh phù hợp)'}`)
 }
+/** Ảnh trong bài wiki đã xem và thấy sai chủ đề (sông khác, núi, bản đồ…) — bỏ, để tìm ảnh khác */
+const BAD_ARTICLE_IMAGE = new Set([
+  'Bang_River_at_Ta_Lung_-_Suikou_border_gates_in_Vietnam_-_China_border.JPG', // sông Bằng, không phải Bắc Vọng
+  'Bắc_Giang_Viet_Yen3.jpg', // sông Cầu, không phải sông Thương
+  'KienGiangTown.jpg', // thị trấn Kiến Giang
+  '92._La_Nui_Bara.jpg', // núi Bà Rá
+  'Sơn_Bình,_Châu_Đức_District,_Ba_Ria_-_Vung_Tau,_Vietnam_-_panoramio_(14).jpg', // không rõ là sông Ray
+  'Dong_Nai_River.png', // bản đồ
+  'Bờ_kè_đường_Hoàng_Sa,_Phường_6,_Thành_phố_Mỹ_Tho.jpg', // bờ kè sông Bảo Định
+])
+for (const a of Object.values(articles)) if (a.image && BAD_ARTICLE_IMAGE.has(a.image.replace(/ /g, '_'))) a.image = null
 
 // ─── 3. Tìm ảnh trên Commons ───────────────────────────────────────
 const searchResults: Record<string, string | null> = {}
@@ -199,6 +219,13 @@ const NO_FALLBACK = new Set([
   'Rừng U Minh Hạ', // ảnh cây chuối
   'Mỳ Chũ', // ảnh căn phòng
   'Động Tiên Sơn', // ảnh bàn thờ, không phải hang
+  'Nậm Mu', // bản đồ CyclOSM
+  'Sông Ninh Cơ', // sơ đồ đường bờ
+  'Sông Dinh (Bà Rịa)', // ảnh núi Dinh
+  'Sông Mỹ Thanh', // xã Mỹ Thạnh trên sông Hậu
+  'Sông Lại Giang', // sông An Lão (nhánh)
+  'Sông Ba Lai', // cầu trên sông Ba
+  'Sông Thương', 'Sông Bắc Vọng', 'Sông Kiến Giang', 'Sông Bé', 'Sông Ray', 'Sông Vàm Cỏ', 'Sông Mỹ Tho',
 ])
 
 const fallback: Record<string, string | null> = {}

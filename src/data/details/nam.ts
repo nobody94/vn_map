@@ -252,7 +252,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
     foods: [
       { name: 'Bún cá Châu Đốc', imageUrl: 'https://live.staticflickr.com/4035/4659181999_b71c58be6b_z.jpg', imageCredit: 'avlxyz · CC BY-SA 2.0 (Flickr)', imagePage: 'https://www.flickr.com/photos/10559879@N00/4659181999', description: 'Bún nước nghệ vàng với cá lóc, bông điên điển.', imageSearch: 'bún cá Châu Đốc' },
       { name: 'Gỏi cá trích Phú Quốc', description: 'Cá trích tươi trộn dừa nạo, cuốn bánh tráng.', imageSearch: 'gỏi cá trích' },
-      { name: 'Bánh bò thốt nốt', description: 'Bánh bò làm từ đường thốt nốt, vàng thơm.', imageSearch: 'bánh bò thốt nốt' },
+      { name: 'Bánh bò thốt nốt', imageUrl: 'images/an-giang/banh-bo-thot-not.jpg', imageCredit: 'Bùi Thụy Đào Nguyên · CC BY-SA 3.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:C%C3%A2y_th%E1%BB%91t_n%E1%BB%91t.jpg', description: 'Bánh bò làm từ đường thốt nốt, vàng thơm.', imageSearch: 'bánh bò thốt nốt' },
     ],
     specialties: [
       { name: 'Nước mắm Phú Quốc', description: 'Nước mắm cá cơm ủ thùng gỗ, có chỉ dẫn địa lý châu Âu.', wiki: 'Nước mắm Phú Quốc' },
@@ -297,7 +297,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       },
     ],
     foods: [
-      { name: 'Lẩu mắm', description: 'Lẩu nấu từ mắm cá linh, cá sặc, ăn với rau đồng.' },
+      { name: 'Lẩu mắm', imageUrl: 'images/can-tho/lau-mam.jpg', imageCredit: 'grsky · Pixabay', imagePage: 'https://pixabay.com/photos/hot-pot-soup-food-spices-herbs-7003055/', description: 'Lẩu nấu từ mắm cá linh, cá sặc, ăn với rau đồng.' },
       { name: 'Bánh cống Sóc Trăng', description: 'Bánh chiên giòn với đậu xanh, tôm tươi.', imageSearch: 'bánh cống' },
       { name: 'Bánh xèo miền Tây', description: 'Bánh xèo to giòn, nhân giá, tôm, thịt.', wiki: 'Bánh xèo' },
     ],
@@ -324,7 +324,7 @@ export const NAM: Partial<Record<number, ProvinceDetail>> = {
       ethnicGroups: ['Kinh', 'Khmer', 'Hoa'],
       heritage: [
         { name: 'Vườn quốc gia Mũi Cà Mau', description: 'Điểm cực Nam, khu dự trữ sinh quyển thế giới.', wiki: 'Vườn quốc gia Mũi Cà Mau' },
-        { name: 'Rừng U Minh Hạ', description: 'Rừng tràm ngập nước đặc trưng Nam Bộ.' },
+        { name: 'Rừng U Minh Hạ', imageUrl: 'images/ca-mau/rung-u-minh-ha.jpg', imageCredit: 'pattyjansen · Pixabay', imagePage: 'https://pixabay.com/photos/park-trees-path-centennial-park-338726/', description: 'Rừng tràm ngập nước đặc trưng Nam Bộ.' },
         { name: 'Nhà Công tử Bạc Liêu', description: 'Dinh thự của "công tử" nổi tiếng ăn chơi.', imageSearch: 'Công tử Bạc Liêu' },
         { name: 'Cánh đồng điện gió Bạc Liêu', description: 'Hàng trăm trụ điện gió trên bãi bồi ven biển.', imageSearch: 'Bac Lieu wind farm' },
       ],

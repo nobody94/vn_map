@@ -1,4 +1,5 @@
 import type { MediaRef } from '../types/province'
+import { MORE_RIVERS } from './riversMore.ts'
 
 /**
  * Các sông chính cho lớp "Sông ngòi". Đường sông: public/geo/rivers.geojson
@@ -19,13 +20,18 @@ export interface River extends MediaRef {
   lengthKm?: number
   /** Chiều dài đoạn chảy trên lãnh thổ Việt Nam (km) */
   lengthVnKm?: number
-  source: string
-  mouth: string
+  /** Nơi bắt nguồn / nơi đổ ra (bỏ trống nếu nguồn tham khảo không nêu) */
+  source?: string
+  mouth?: string
   /** Mã tỉnh (34 tỉnh mới) sông chảy qua — bấm để mở tỉnh */
   provinces: number[]
   description: string
   /** Tên gọi khác */
   aka?: string
+  /** Sông nhỏ (vd. sông nội thành): vẽ nét mảnh hơn */
+  minor?: boolean
+  /** Khung [nam, tây, bắc, đông] giữ lại khi tải từ OSM (tránh sông trùng tên nơi khác) */
+  clip?: [number, number, number, number]
 }
 
 export const RIVER_SYSTEMS: Record<RiverSystem, { name: string; color: string }> = {
@@ -37,7 +43,7 @@ export const RIVER_SYSTEMS: Record<RiverSystem, { name: string; color: string }>
   mekong: { name: 'Hệ thống sông Mê Kông (Cửu Long)', color: '#1f6fa8' },
 }
 
-export const RIVERS: River[] = [
+const BASE_RIVERS: River[] = [
   // ───── Hệ thống sông Hồng
   {
     id: 'hong', name: 'Sông Hồng', osmName: 'Sông Hồng', system: 'hong', aka: 'Sông Cái, sông Thao (thượng nguồn)',
@@ -84,6 +90,50 @@ export const RIVERS: River[] = [
       'Con sông nối sông Hồng với sông Thái Bình, chảy qua vùng Kinh Bắc. Hai bên bờ là các làng tranh Đông Hồ, làng gốm Phù Lãng; đi vào thơ "Bên kia sông Đuống" của Hoàng Cầm.',
     wiki: 'Sông Đuống',
   },
+  // Sông nhỏ vùng Hà Nội (thông tin theo vi.wikipedia)
+  {
+    id: 'day', name: 'Sông Đáy', osmName: 'Sông Đáy', system: 'hong',
+    lengthKm: 250,
+    source: 'Tách từ sông Hồng (Hà Nội)', mouth: 'Biển Đông (cửa Đáy)',
+    provinces: [1, 15],
+    description:
+      'Chảy song song bên hữu ngạn hạ lưu sông Hồng qua Hà Nội và Ninh Bình, là cửa sông lớn nhất của lưu vực sông Hồng. Lưu vực sông Đáy gồm nhiều sông như sông Tích, sông Nhuệ, sông Hoàng Long; đoạn từ ngã ba Vân Đình tới cửa Đáy là tuyến đường thủy quốc gia.',
+    wiki: 'Sông Đáy', imageFile: 'Ninh Phuc Port.jpg',
+  },
+  {
+    id: 'nhue', name: 'Sông Nhuệ', osmName: 'Sông Nhuệ', system: 'hong', aka: 'Nhuệ Giang', minor: true,
+    lengthKm: 76,
+    source: 'Lấy nước sông Hồng qua cống Liên Mạc (Hà Nội)', mouth: 'Đổ vào sông Đáy (Phủ Lý)',
+    provinces: [1, 15],
+    description:
+      'Phụ lưu của sông Đáy, chảy ngoằn ngoèo theo hướng tây bắc – đông nam qua Từ Liêm, Hà Đông, Thường Tín, Ứng Hòa rồi về Phủ Lý. Sông nhận nước thải từ nội thành qua sông Tô Lịch nên đang bị ô nhiễm nặng.',
+    wiki: 'Sông Nhuệ',
+  },
+  {
+    id: 'tich', name: 'Sông Tích', osmName: 'Sông Tích', system: 'hong', aka: 'Tích Lịch Giang, sông Con', minor: true,
+    lengthKm: 91,
+    source: 'Dãy núi Ba Vì (hồ Suối Hai, Đồng Mô)', mouth: 'Đổ vào sông Đáy',
+    provinces: [1],
+    description:
+      'Phụ lưu cấp I của sông Đáy, chảy qua Ba Vì, Sơn Tây, Phúc Thọ, Thạch Thất, Quốc Oai, Chương Mỹ. Dọc sông có làng cổ Đường Lâm, đền Và, thành cổ Sơn Tây và các hồ Suối Hai, Đồng Mô.',
+    wiki: 'Sông Tích',
+  },
+  {
+    id: 'to-lich', name: 'Sông Tô Lịch', osmName: 'Sông Tô Lịch', system: 'hong', aka: 'Kim Giang (đoạn hạ lưu)', minor: true,
+    source: 'Nghĩa Đô, Cầu Giấy (Hà Nội)', mouth: 'Hợp lưu với sông Nhuệ (Thường Tín)',
+    provinces: [1],
+    description:
+      'Sông cổ chảy qua nội thành Hà Nội, từng là một cạnh của "tứ giác nước" bao quanh kinh thành Thăng Long. Xưa là phân lưu của sông Hồng, nay đoạn đầu đã bị lấp; sông chảy về phía nam qua Cầu Giấy, Đống Đa, Thanh Xuân, Hoàng Mai rồi nhập vào sông Nhuệ.',
+    wiki: 'Sông Tô Lịch',
+  },
+  {
+    id: 'kim-nguu', name: 'Sông Kim Ngưu', imageUrl: 'images/song/song-kim-nguu.jpg', imageCredit: 'Vuong Tri Binh · CC BY-SA 4.0 (Wikimedia Commons)', imagePage: 'https://commons.wikimedia.org/wiki/File:Kim_Nguu_artificial_river_1.jpg', osmName: 'Sông Kim Ngưu', system: 'hong', minor: true,
+    source: 'Nội thành Hà Nội', mouth: 'Hợp lưu với sông Tô Lịch (Thanh Trì)',
+    provinces: [1],
+    description:
+      'Sông nhỏ phía nam nội thành Hà Nội. "Kim Ngưu" nghĩa là trâu vàng: tương truyền trâu vàng chạy tìm mẹ, đường chạy lún xuống thành sông. Dân gian có câu: "Nhị Hà quanh Bắc sang Đông, Kim Ngưu, Tô Lịch là sông bên này".',
+    wiki: 'Sông Kim Ngưu',
+  },
   // ───── Đông Bắc
   {
     id: 'cau', name: 'Sông Cầu', osmName: 'Sông Cầu', system: 'thaibinh',
@@ -93,7 +143,16 @@ export const RIVERS: River[] = [
     description: 'Dòng sông của dân ca Quan họ, chảy qua Thái Nguyên, Bắc Ninh. "Sông Cầu nước chảy lơ thơ…" là hình ảnh quen thuộc của vùng Kinh Bắc.',
     wiki: 'Sông Cầu',
     imageFile: 'Sông Cầu, đoạn qua Bắc Giang.JPG',
+  },  {
+    id: 'ca-lo', name: 'Sông Cà Lồ', osmName: 'Sông Cà Lồ', system: 'thaibinh', aka: 'Sông Nguyệt Đức, sông Phù Lỗ', minor: true,
+    lengthKm: 89,
+    source: 'Suối từ dãy Tam Đảo; đầu nguồn ở Yên Lãng (Hà Nội)', mouth: 'Hợp lưu với sông Cầu (ngã ba Xà, Bắc Ninh)',
+    provinces: [11, 1, 12],
+    description:
+      'Phụ lưu của sông Cầu, từng là phân lưu của sông Hồng nhưng đoạn đầu nguồn đã bị bịt đầu thế kỷ 20. Sông là ranh giới tự nhiên giữa nhiều xã của Sóc Sơn, Mê Linh; hạ lưu quanh co nên nước thoát chậm, mùa lũ kéo dài 30–40 ngày.',
+    wiki: 'Sông Cà Lồ',
   },
+
   {
     id: 'ky-cung', name: 'Sông Kỳ Cùng', osmName: 'Sông Kỳ Cùng', system: 'thaibinh',
     lengthKm: 243,
@@ -224,5 +283,8 @@ export const RIVERS: River[] = [
     wiki: 'Sông Hậu',
   },
 ]
+
+/** Sông chính + sông bổ sung theo vùng (riversMore.ts) */
+export const RIVERS: River[] = [...BASE_RIVERS, ...MORE_RIVERS]
 
 export const RIVER_BY_ID = new Map(RIVERS.map((r) => [r.id, r]))
