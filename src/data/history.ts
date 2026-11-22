@@ -409,6 +409,12 @@ export const LEADERS: Leader[] = [
       'Nguyễn Chí Thanh là Đại tướng và là tướng lĩnh chính trị đầu tiên của Quân đội nhân dân Việt Nam. Ông công tác ở nhiều lĩnh vực chính trị khác nhau và đều phát triển được lĩnh vực đó, nên còn được gọi là “vị tướng phong trào”.',
       'Trong Chiến tranh Việt Nam, ông giữ chức Bí thư Trung ương Cục miền Nam, Bí thư Quân ủy Miền kiêm Chính ủy Quân Giải phóng miền Nam, trực tiếp lãnh đạo chiến trường miền Nam. Ông là người phát triển phương châm chiến lược “Nắm thắt lưng địch mà đánh” cho toàn miền Nam.',
     ],
+    image: {
+      url: 'images/history/nguyen-chi-thanh.jpg',
+      credit: 'Ảnh năm 1951 · Không rõ tác giả · Public domain',
+      page: 'https://commons.wikimedia.org/wiki/File:NguyenChiThanh1951.jpg',
+      position: '50% 30%',
+    },
     wiki: 'Nguyễn Chí Thanh',
   },
   {
@@ -998,7 +1004,7 @@ export const WARS: War[] = [
           url: 'images/history/battles/tay-nguyen.jpg',
           credit: 'Tượng đài Chiến thắng Buôn Ma Thuột · Canpark · Public domain',
           page: 'https://commons.wikimedia.org/wiki/File:Victory_Central_Highlands.jpg',
-          position: '50% 30%',
+          fit: 'contain',
         },
       },
       {

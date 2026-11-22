@@ -1,47 +1,43 @@
-import { LEADER_BY_ID, LEADERS, WARS, type Battle, type Leader, type War } from '../data/history'
+import { LEADERS, WARS, type Battle, type Leader, type War } from '../data/history'
 import { normalize } from './normalize'
 
-/** Văn bản tìm kiếm (đã bỏ dấu) của từng trận: tên, thời gian, địa điểm, kháng chiến, đối phương, chỉ huy, tóm tắt */
+/** Năm trong chuỗi ngày (số 3–4 chữ số): "13/3 – 7/5/1954" → "1954" */
+const yearsOf = (date: string) => (date.match(/\d+/g) ?? []).filter((n) => n.length >= 3).join(' ')
+
+/** Trận chỉ tìm theo tên trận và năm */
 const BATTLE_TEXT = new Map<string, string>(
-  WARS.flatMap((w) =>
-    w.battles.map((b) => [
-      b.id,
-      normalize(
-        [b.name, b.date, b.place, w.name, w.enemy, b.summary, ...(b.commanders ?? []).map((id) => LEADER_BY_ID.get(id)?.name)].join(' '),
-      ),
-    ]),
-  ),
+  WARS.flatMap((w) => w.battles.map((b) => [b.id, normalize(`${b.name} ${yearsOf(b.date)}`)])),
 )
 
-/** Chỉ tên, thời kỳ, đối phương — tìm theo người thì đi qua chỉ huy của từng trận, để không hiện cả cuộc kháng chiến */
-const WAR_TEXT = new Map<string, string>(WARS.map((w) => [w.id, normalize([w.name, w.period, w.enemy].join(' '))]))
+/** Người lãnh đạo chỉ tìm theo tên */
+const LEADER_TEXT = new Map<string, string>(LEADERS.map((l) => [l.id, normalize(l.name)]))
 
-const LEADER_TEXT = new Map<string, string>(
-  LEADERS.map((l) => [l.id, normalize([l.name, l.alias, l.lifespan, l.role, l.summary].join(' '))]),
-)
-
-/** Mọi từ trong truy vấn đều có trong văn bản (không phân biệt dấu) */
-function matches(text: string | undefined, words: string[]): boolean {
-  return !!text && words.every((w) => text.includes(w))
+/**
+ * Bộ so khớp cho một truy vấn (không phân biệt dấu): ưu tiên khớp nguyên cụm từ
+ * ("dai tuong" không khớp "đại … tượng"); nếu không mục nào khớp cụm thì cho phép các từ đứng rời
+ * ("bach dang 1288").
+ */
+function matcher(query: string, texts: Iterable<string>): ((text: string | undefined) => boolean) | null {
+  const phrase = normalize(query)
+  if (!phrase) return null
+  const hasPhrase = [...texts].some((t) => (` ${t} `).includes(` ${phrase}`))
+  if (hasPhrase) return (t) => !!t && ` ${t} `.includes(` ${phrase}`)
+  const words = phrase.split(' ')
+  return (t) => !!t && words.every((w) => t.includes(w))
 }
 
-function words(query: string): string[] {
-  return normalize(query).split(' ').filter(Boolean)
-}
-
-/** Lọc dòng thời gian: cuộc kháng chiến khớp → giữ cả; không thì chỉ giữ các trận khớp */
+/** Lọc dòng thời gian: chỉ giữ các trận khớp (và cuộc kháng chiến chứa chúng) */
 export function filterWars(query: string): { war: War; battles: Battle[] }[] {
-  const ws = words(query)
-  if (ws.length === 0) return WARS.map((war) => ({ war, battles: war.battles }))
+  const match = matcher(query, BATTLE_TEXT.values())
+  if (!match) return WARS.map((war) => ({ war, battles: war.battles }))
   return WARS.flatMap((war) => {
-    if (matches(WAR_TEXT.get(war.id), ws)) return [{ war, battles: war.battles }]
-    const battles = war.battles.filter((b) => matches(BATTLE_TEXT.get(b.id), ws))
+    const battles = war.battles.filter((b) => match(BATTLE_TEXT.get(b.id)))
     return battles.length > 0 ? [{ war, battles }] : []
   })
 }
 
 export function filterLeaders(query: string): Leader[] {
-  const ws = words(query)
-  if (ws.length === 0) return LEADERS
-  return LEADERS.filter((l) => matches(LEADER_TEXT.get(l.id), ws))
+  const match = matcher(query, LEADER_TEXT.values())
+  if (!match) return LEADERS
+  return LEADERS.filter((l) => match(LEADER_TEXT.get(l.id)))
 }

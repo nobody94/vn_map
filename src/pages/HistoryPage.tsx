@@ -69,7 +69,7 @@ export default function HistoryPage() {
             className={styles.searchInput}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={view === 'battles' ? 'Tìm trận, địa điểm, năm, người chỉ huy…' : 'Tìm tên, vai trò, thời kỳ…'}
+            placeholder={view === 'battles' ? 'Tìm theo tên trận hoặc năm…' : 'Tìm theo tên người lãnh đạo…'}
             aria-label={view === 'battles' ? 'Tìm trận chiến' : 'Tìm người lãnh đạo'}
           />
           {searching && (
