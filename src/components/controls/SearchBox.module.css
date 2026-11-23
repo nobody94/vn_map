@@ -26,6 +26,14 @@
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
+/* Điện thoại: ≥16px thì iOS không tự phóng to trang khi chạm vào ô nhập */
+@media (max-width: 768px) {
+  .input {
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
 .input::placeholder {
   color: #94a3b8;
 }
