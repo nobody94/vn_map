@@ -42,7 +42,8 @@ Chỉ dùng dữ liệu `history.ts`. Luồng `HistoryGames`: chọn trò (`GAME
 | Sắp xếp dòng thời gian | `TimelineGame`, `historyTimeline.ts` | 5 vòng, 4 / 5 / 6 thẻ, mỗi vòng năm khác nhau và không trùng tên; kéo thả Pointer Events nghe trên `window` (React dời `<li>` → mất pointer capture), cảm ứng kéo ở tay cầm ⠿, có nút ↑ ↓ |
 | Ghép cặp | `MatchGame`, `historyMatch.ts` | 5 vòng, 4 / 5 / 6 cặp người ↔ kháng chiến / trận; **mỗi vòng một cách ghép duy nhất** (không đưa người cùng chỉ huy / cùng lãnh đạo vào một vòng); đúng ngay lần đầu 1 điểm |
 | Đoán nhân vật | `GuessGame`, `historyGuess.ts` | 5 vòng, tối đa 4 điểm, mở gợi ý / đoán sai −1; gợi ý thời kỳ → vai trò → trận → chân dung (thiếu thì tóm tắt), **che tên + tên khác** bằng "…" |
+| Nhìn ảnh đoán nhân vật | `PhotoGame`, `historyPhoto.ts` | Chỉ người có `image`; tối đa 10 ảnh, 4 / 4 / 6 lựa chọn; ảnh `contain`, `alt` trống + ghi nguồn chỉ hiện sau khi trả lời (không lộ tên); đúng 1 điểm |
 
 ## Trạng thái (23/11/2026)
 
-Phần 8 ✅: trang Lịch sử (popup, tìm kiếm, nội dung), tab Trò chơi 4 trò + độ khó. Ảnh thiếu 3/40 (Trần Thái Tông, Trần Thánh Tông, Trần Quang Khải — xem `missing-images.txt`).
+Phần 8 ✅: trang Lịch sử (popup, tìm kiếm, nội dung), tab Trò chơi 5 trò + độ khó. Ảnh thiếu 3/40 (Trần Thái Tông, Trần Thánh Tông, Trần Quang Khải — xem `missing-images.txt`).

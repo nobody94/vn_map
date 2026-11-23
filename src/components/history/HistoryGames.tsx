@@ -2,14 +2,16 @@ import { useState } from 'react'
 import { bestKey, LEVEL_LABEL, LEVELS, readBest, type Level } from '../../utils/historyGames'
 import { MAX_POINTS, OPTION_COUNT } from '../../utils/historyGuess'
 import { PAIR_COUNT } from '../../utils/historyMatch'
+import { PHOTO_OPTIONS, PHOTO_ROUNDS } from '../../utils/historyPhoto'
 import { CARD_COUNT } from '../../utils/historyTimeline'
 import { GuessGame } from './GuessGame'
 import styles from './HistoryGames.module.css'
 import { MatchGame } from './MatchGame'
+import { PhotoGame } from './PhotoGame'
 import { QuizGame } from './QuizGame'
 import { TimelineGame } from './TimelineGame'
 
-type GameId = 'quiz' | 'timeline' | 'match' | 'guess'
+type GameId = 'quiz' | 'timeline' | 'match' | 'guess' | 'photo'
 
 interface GameInfo {
   id: GameId
@@ -76,6 +78,19 @@ const GAMES: GameInfo[] = [
     },
     max: { easy: 5 * MAX_POINTS, medium: 5 * MAX_POINTS, hard: 5 * MAX_POINTS },
   },
+  {
+    id: 'photo',
+    icon: '🖼️',
+    name: 'Nhìn ảnh đoán nhân vật',
+    desc: `Xem chân dung, tượng hoặc tranh thờ và chọn đúng người lãnh đạo. ${PHOTO_ROUNDS} ảnh.`,
+    ready: true,
+    levels: {
+      easy: `${PHOTO_OPTIONS.easy} lựa chọn ở các thời kỳ khác xa.`,
+      medium: `${PHOTO_OPTIONS.medium} lựa chọn ngẫu nhiên.`,
+      hard: `${PHOTO_OPTIONS.hard} lựa chọn cùng thời kỳ, dễ nhầm.`,
+    },
+    max: { easy: PHOTO_ROUNDS, medium: PHOTO_ROUNDS, hard: PHOTO_ROUNDS },
+  },
 ]
 
 interface Props {
@@ -130,6 +145,9 @@ export function HistoryGames({ onOpenBattle, onOpenLeader }: Props) {
         )}
         {game.id === 'guess' && (
           <GuessGame key={level} level={level} onOpenLeader={onOpenLeader} onChangeLevel={toLevels} />
+        )}
+        {game.id === 'photo' && (
+          <PhotoGame key={level} level={level} onOpenLeader={onOpenLeader} onChangeLevel={toLevels} />
         )}
       </div>
     )
