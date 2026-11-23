@@ -1,0 +1,593 @@
+.card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 22px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.counter {
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.score strong {
+  color: var(--text-strong);
+}
+
+.progress {
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress > div {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.25s;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 16px;
+}
+
+.prompt {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.4;
+  color: var(--text-strong);
+}
+
+.options {
+  display: grid;
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  font: inherit;
+  font-size: 15px;
+  color: var(--text-strong);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.option:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.letter {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--hover);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.correct {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.correct .letter {
+  background: #16a34a;
+  color: #fff;
+}
+
+.wrong {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.wrong .letter {
+  background: #dc2626;
+  color: #fff;
+}
+
+.dim {
+  opacity: 0.55;
+}
+
+.feedback {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.okText,
+.badText {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.okText {
+  color: #15803d;
+}
+
+.badText {
+  color: #b91c1c;
+}
+
+.explain {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.primary,
+.secondary {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.primary:hover {
+  filter: brightness(1.08);
+}
+
+.secondary {
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+}
+
+.secondary:hover {
+  background: var(--accent-soft);
+}
+
+/* Màn hình kết quả */
+.result {
+  text-align: center;
+  padding: 32px 22px;
+}
+
+.resultScore {
+  font-size: 56px;
+  font-weight: 750;
+  line-height: 1;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.resultScore span {
+  font-size: 28px;
+  color: var(--text-muted);
+}
+
+.resultMsg {
+  margin: 12px 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.resultBest {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Sắp xếp dòng thời gian ── */
+.promptGap {
+  margin: 20px 0 14px;
+}
+
+.sortList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sortItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 8px 8px 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  cursor: grab;
+  user-select: none;
+}
+
+.sortItem:hover:not(.locked) {
+  border-color: var(--accent);
+}
+
+.dragging {
+  z-index: 2;
+  cursor: grabbing;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.locked {
+  cursor: default;
+}
+
+.sortItem.correct {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.sortItem.wrong {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.handle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 40px;
+  font-size: 18px;
+  color: var(--text-muted);
+  touch-action: none; /* cảm ứng: kéo ở tay cầm, chỗ khác vẫn cuộn trang */
+}
+
+.sortText {
+  flex: 1;
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.sortNameText,
+.sortName {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.sortName {
+  justify-self: start;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sortName:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.sortMeta {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.sortYear {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.arrows {
+  flex: none;
+  display: flex;
+  gap: 4px;
+}
+
+.arrows button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  font: inherit;
+  font-size: 15px;
+  color: var(--text-strong);
+  cursor: pointer;
+}
+
+.arrows button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.arrows button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.hint {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.actionsEnd {
+  justify-content: flex-end;
+}
+
+/* ── Ghép cặp ── */
+.matchGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+}
+
+.matchCol {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.matchCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 8px 12px 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  font: inherit;
+  text-align: left;
+  color: var(--text-strong);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.matchCard:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.matchCard:disabled {
+  cursor: default;
+}
+
+.matchCard.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.matchCard.correct {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.matchCard.wrong {
+  border-color: #dc2626;
+  background: #fef2f2;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+/* Chân dung nhỏ trong thẻ ghép cặp (ghi đè cỡ thumb 56px) */
+.mini > span {
+  width: 36px;
+  height: 36px;
+  font-size: 15px;
+}
+
+.mini {
+  flex: none;
+  display: flex;
+}
+
+.matchText {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.matchLabel {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.pairNo {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #16a34a;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ── Đoán nhân vật ── */
+.guessTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 0 12px;
+}
+
+.pointsChip {
+  flex: none;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hints {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hint1 {
+  display: grid;
+  gap: 3px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  background: var(--hover);
+  animation: hintIn 0.25s ease-out;
+}
+
+@keyframes hintIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.hintLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hintText {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text-strong);
+}
+
+.hintPortrait {
+  display: flex;
+  padding-top: 2px;
+}
+
+/* Chân dung gợi ý lớn hơn thumb mặc định */
+.hintPortrait > span {
+  width: 88px;
+  height: 88px;
+  font-size: 30px;
+}
+
+.hintBtn {
+  margin-top: 10px;
+}
+
+.guessGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.guessGrid .option {
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+}
+
+.resultActions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+
+  .prompt {
+    font-size: 17px;
+  }
+
+  .actions > button {
+    flex: 1 1 auto;
+  }
+
+  .matchGrid {
+    gap: 8px;
+  }
+
+  .matchCard {
+    gap: 8px;
+    padding: 8px 10px 8px 8px;
+  }
+
+  .matchLabel {
+    font-size: 13.5px;
+  }
+
+  .mini > span {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+}

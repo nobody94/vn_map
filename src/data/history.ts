@@ -509,6 +509,11 @@ export const WARS: War[] = [
           'Ngày 24/1/981, thủy quân Tống tiến vào cửa Bạch Đằng, quân Đại Cồ Việt thua trận đầu. Quân Tống lập hành doanh nhưng hai đạo thủy, bộ không liên lạc được, bị tập kích quấy rối liên tục. Lê Hoàn đích thân giữ sông Lục Đầu, dựa vào phòng tuyến Bình Lỗ chặn quân Tống. Hầu Nhân Bảo bị giết trên sông Bạch Đằng (sử cũ chép là ở Chi Lăng); Tôn Toàn Hưng bỏ chạy, đạo quân ở Tây Kết bị truy kích tiêu diệt quá nửa.',
         outcome:
           'Khoảng 80.000 quân Tống chết hoặc bị bắt; các tướng Hầu Nhân Bảo, Quách Quân Biện, Triệu Phụng Huân chết hoặc bị bắt. Lưu Trừng, Giả Thực bị nhà Tống xử chém, Tôn Toàn Hưng bị tội chết. Năm 986, nhà Tống chính thức thừa nhận Lê Hoàn là người cai trị hợp pháp Đại Cồ Việt.',
+        image: {
+          url: 'images/history/battles/tong-viet-981.jpg',
+          credit: 'Đền vua Lê Đại Hành (Lê Hoàn) ở cố đô Hoa Lư · Nguoivuban · CC BY-SA 4.0',
+          page: 'https://commons.wikimedia.org/wiki/File:Đền_vua_Lê_Hoàn.jpg',
+        },
       },
     ],
   },

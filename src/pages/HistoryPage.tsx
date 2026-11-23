@@ -3,15 +3,17 @@ import { HomeButton } from '../components/controls/HomeButton'
 import { BattleModal } from '../components/history/BattleModal'
 import { LeaderModal } from '../components/history/LeaderModal'
 import { Portrait } from '../components/history/Portrait'
+import { HistoryGames } from '../components/history/HistoryGames'
 import { BATTLE_BY_ID, LEADER_BY_ID, warsOf } from '../data/history'
 import { filterLeaders, filterWars } from '../utils/historySearch'
 import styles from './HistoryPage.module.css'
 
-type View = 'battles' | 'leaders'
+type View = 'battles' | 'leaders' | 'game'
 
 const VIEWS: { id: View; label: string }[] = [
   { id: 'battles', label: 'Trận chiến' },
   { id: 'leaders', label: 'Người lãnh đạo' },
+  { id: 'game', label: 'Trò chơi' },
 ]
 
 /** Trang Lịch sử: các cuộc kháng chiến (trận đánh) và người lãnh đạo */
@@ -59,26 +61,28 @@ export default function HistoryPage() {
             </button>
           ))}
         </div>
-        <div className={styles.search} role="search">
-          <svg className={styles.searchIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" />
-            <path d="m20 20-3.5-3.5" />
-          </svg>
-          <input
-            type="search"
-            className={styles.searchInput}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={view === 'battles' ? 'Tìm theo tên trận hoặc năm…' : 'Tìm theo tên người lãnh đạo…'}
-            aria-label={view === 'battles' ? 'Tìm trận chiến' : 'Tìm người lãnh đạo'}
-          />
-          {searching && (
-            <button className={styles.searchClear} onClick={() => setQuery('')} aria-label="Xóa từ khóa">
-              ×
-            </button>
-          )}
-        </div>
-        {searching && (
+        {view !== 'game' && (
+          <div className={styles.search} role="search">
+            <svg className={styles.searchIcon} viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+            <input
+              type="search"
+              className={styles.searchInput}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={view === 'battles' ? 'Tìm theo tên trận hoặc năm…' : 'Tìm theo tên người lãnh đạo…'}
+              aria-label={view === 'battles' ? 'Tìm trận chiến' : 'Tìm người lãnh đạo'}
+            />
+            {searching && (
+              <button className={styles.searchClear} onClick={() => setQuery('')} aria-label="Xóa từ khóa">
+                ×
+              </button>
+            )}
+          </div>
+        )}
+        {view !== 'game' && searching && (
           <p className={styles.searchInfo} aria-live="polite">
             {view === 'battles'
               ? wars.length > 0
@@ -92,7 +96,11 @@ export default function HistoryPage() {
       </section>
 
       <main className={styles.content}>
-        {view === 'battles' ? (
+        {/* Trò chơi luôn gắn (ẩn khi ở tab khác) để giữ lượt chơi khi đổi tab / mở popup */}
+        <div hidden={view !== 'game'}>
+          <HistoryGames onOpenBattle={openBattle} onOpenLeader={openLeader} />
+        </div>
+        {view === 'game' ? null : view === 'battles' ? (
           <ol className={styles.timeline}>
             {wars.map(({ war: w, battles }) => (
               <li key={w.id} className={styles.war}>

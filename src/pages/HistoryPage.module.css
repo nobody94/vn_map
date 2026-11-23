@@ -394,6 +394,11 @@
     grid-auto-columns: 1fr;
   }
 
+  .tab {
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+
   .timeline {
     padding-left: 22px;
   }

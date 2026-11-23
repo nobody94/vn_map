@@ -1,10 +1,31 @@
-DANH SÁCH MỤC CHƯA CÓ ẢNH — 0/628 mục
-Tạo bởi: npm run media:missing  (2026-11-22)
+DANH SÁCH MỤC CHƯA CÓ ẢNH — bản đồ 0/628 mục, lịch sử 3/40 mục
+Tạo bởi: npm run media:missing  (2026-11-23)
 
-Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md):
+Cách thêm ảnh (xem mục "Ảnh" trong CLAUDE.md và "Ảnh bản đồ" trong geo.md):
   1. Lưu ảnh vào đường dẫn gợi ý bên phải (thư mục public/images/...), nên là JPG ngang ~1200px, < 300 KB.
   2. Trong file dữ liệu (src/data/details/*.ts, mountains.ts, rivers.ts), thêm vào mục tương ứng:
        imageUrl: 'images/<tỉnh>/<tên>.jpg', imageCredit: 'Tác giả · Giấy phép'
      (hoặc imageUrl là URL https://… nếu ảnh được phép nhúng trực tiếp)
   3. Chỉ dùng ảnh tự chụp hoặc ảnh có giấy phép cho phép dùng lại (CC, public domain), ghi rõ nguồn.
   4. Chạy lại npm run media:missing để cập nhật danh sách này.
+
+Ảnh trang Lịch sử (src/data/history.ts):
+  1. Tìm ảnh trên Wikimedia Commons (ảnh đại diện bài vi.wikipedia, hoặc ảnh liên quan: tượng, đền, tranh, lược đồ).
+     Chỉ CC / public domain; xem ảnh + mô tả gốc trước khi dùng.
+  2. Lấy URL chính xác qua API (tránh 429 do đường dẫn sai):
+       https://commons.wikimedia.org/w/api.php?action=query&titles=File:<tên>&prop=imageinfo&iiprop=url|size&format=json
+  3. Tải: upload.wikimedia.org hay bị chặn 429 theo IP → dùng https://commons.wikimedia.org/w/thumb.php?f=<tên_gạch_dưới>&w=960 (thường vẫn tải được). Hoặc curl:
+       - ảnh gốc < 1200px: tải thẳng file gốc (URL "url" trong kết quả API);
+       - ảnh lớn: thumbnail kích thước chuẩn /thumb/<a>/<ab>/<tên>/<N>px-<tên>, N ∈ 500, 960, 1280 (dấu phẩy là %2C).
+     Bị 429 ("too many requests") → chặn theo IP vài chục phút: chờ rồi thử lại (script nền thử mỗi ~90 s).
+  4. Lưu public/images/history/<id>.jpg (lãnh đạo) hoặc public/images/history/battles/<id>.jpg (trận);
+     > 300 KB thì chạy npm run images:resize; xem lại ảnh sau khi nén.
+  5. Khai báo trong history.ts: image: { url: 'images/history/…jpg', credit: 'Mô tả · Tác giả · Giấy phép', page: '<trang Commons>',
+     position: '50% 30%' (chân dung, để ảnh tròn thấy mặt) hoặc fit: 'contain' (lược đồ / ảnh dọc) }.
+
+■ Lịch sử (src/data/history.ts) — 3/40 mục thiếu ảnh
+
+  Chưa có ảnh (hiện chữ cái đầu / popup không ảnh):
+  [ ] Lãnh đạo   Trần Thái Tông                       → public/images/history/tran-thai-tong.jpg  (không có chân dung; Commons chỉ có ảnh lăng (gò đất, File:Lăng Trần Thái Tông.jpg))
+  [ ] Lãnh đạo   Trần Thánh Tông                      → public/images/history/tran-thanh-tong.jpg  (không có chân dung; Commons chỉ có ảnh lăng (gò đất, File:Lăng Trần Thánh Tông.jpg))
+  [ ] Lãnh đạo   Trần Quang Khải                      → public/images/history/tran-quang-khai.jpg  (Commons không có ảnh nào (kể cả đền thờ))
