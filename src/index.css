@@ -35,6 +35,13 @@ body,
   margin: 0;
 }
 
+/* Trang Địa lý (GeoPage): không cho cả trang cuộn / kéo dãn trên điện thoại */
+html.lock-scroll,
+html.lock-scroll body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 /* Tinh chỉnh control mặc định của Leaflet cho hợp phong cách tối giản */
 .leaflet-container {
   font-family: var(--sans);

@@ -67,6 +67,14 @@ export default function GeoPage() {
     prefetchMedia()
   }, [])
 
+  // Bản đồ chiếm trọn màn hình: khóa cuộn / kéo dãn của cả trang (điện thoại hay cuộn lộ nền ngoài)
+  useEffect(() => {
+    const root = document.documentElement
+    root.classList.add('lock-scroll')
+    window.scrollTo(0, 0)
+    return () => root.classList.remove('lock-scroll')
+  }, [])
+
   /** null (bấm ra biển, nút đóng) bỏ mọi lựa chọn */
   const selectProvince = (code: number | null) => setSelection(code == null ? null : { kind: 'province', code })
   const selectMountain = (id: string) => setSelection({ kind: 'mountain', id })

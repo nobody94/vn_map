@@ -45,6 +45,7 @@ Không sửa tay: `media.generated.json`, `admin-units.json`.
 - Địa hình: `ElevationLayer` (canvas, Terrarium, cắt theo ranh giới tỉnh) + Esri relief `multiply`.
 - Tải theo nhu cầu (`use()` + `Suspense`): chi tiết tỉnh qua `loadProvinceDetail(code)` (1–15 Bắc, 16–26 Trung, 27–34 Nam), media qua `loadMedia()` (chưa xong thì `resolveImage` chỉ trả `imageUrl`). Không import tĩnh `details/*.ts` hay `media.generated.json` trong `src/`; script Node dùng `details/all.ts`.
 - `ProvinceLayer` style imperative qua ref + `styleFor()`; click polygon phải `stopPropagation`.
+- Điện thoại: `GeoPage` gắn class `lock-scroll` cho `<html>` (`overflow: hidden; overscroll-behavior: none`, `index.css`), rời trang thì gỡ; vùng cuộn bên trong (panel, gợi ý tìm kiếm) có `overscroll-behavior: contain` để không kéo cả trang.
 
 ## Trạng thái (23/11/2026)
 
