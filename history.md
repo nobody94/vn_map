@@ -26,7 +26,7 @@ Chunk Lịch sử không được kéo dữ liệu tỉnh: bỏ dấu dùng `src
 
 - **Popup**: tên / "Xem chi tiết" → `BattleModal` / `LeaderModal` (trên `Modal` `<dialog>`, mobile là sheet), hai popup mở lẫn nhau; link Wikipedia chỉ trong popup.
 - **Ảnh** `HistoryImage { url, credit: "Mô tả · Tác giả · Giấy phép", page, position?, fit? }` ở `public/images/history/<id>.jpg` / `battles/<id>.jpg`: `position` để ảnh tròn thấy mặt, `fit: 'contain'` cho lược đồ / ảnh dọc; không có ảnh → chữ cái đầu. Ảnh còn thiếu + cách tải: `missing-images.txt`.
-- **Tìm kiếm** (`historySearch.ts`): không dấu; trận chỉ theo tên + năm, lãnh đạo chỉ theo tên; ưu tiên nguyên cụm từ.
+- **Tìm kiếm** (`historySearch.ts`): không dấu; trận theo tên + năm, **tên cuộc kháng chiến khớp (vd. "mỹ", "chống mỹ") → hiện cả cuộc cùng mọi trận**; lãnh đạo chỉ theo tên; ưu tiên nguyên cụm từ.
 
 ## Trò chơi (tab 3)
 

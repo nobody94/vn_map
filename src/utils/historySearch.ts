@@ -9,6 +9,9 @@ const BATTLE_TEXT = new Map<string, string>(
   WARS.flatMap((w) => w.battles.map((b) => [b.id, normalize(`${b.name} ${yearsOf(b.date)}`)])),
 )
 
+/** Cuộc kháng chiến tìm theo tên ("my" → Kháng chiến chống Mỹ); khớp thì hiện cả các trận của nó */
+const WAR_TEXT = new Map<string, string>(WARS.map((w) => [w.id, normalize(w.name)]))
+
 /** Người lãnh đạo chỉ tìm theo tên */
 const LEADER_TEXT = new Map<string, string>(LEADERS.map((l) => [l.id, normalize(l.name)]))
 
@@ -26,11 +29,15 @@ function matcher(query: string, texts: Iterable<string>): ((text: string | undef
   return (t) => !!t && words.every((w) => t.includes(w))
 }
 
-/** Lọc dòng thời gian: chỉ giữ các trận khớp (và cuộc kháng chiến chứa chúng) */
+/**
+ * Lọc dòng thời gian: tên cuộc kháng chiến khớp → giữ cả cuộc (mọi trận);
+ * ngược lại chỉ giữ các trận khớp (và cuộc kháng chiến chứa chúng).
+ */
 export function filterWars(query: string): { war: War; battles: Battle[] }[] {
-  const match = matcher(query, BATTLE_TEXT.values())
+  const match = matcher(query, [...BATTLE_TEXT.values(), ...WAR_TEXT.values()])
   if (!match) return WARS.map((war) => ({ war, battles: war.battles }))
   return WARS.flatMap((war) => {
+    if (match(WAR_TEXT.get(war.id))) return [{ war, battles: war.battles }]
     const battles = war.battles.filter((b) => match(BATTLE_TEXT.get(b.id)))
     return battles.length > 0 ? [{ war, battles }] : []
   })
